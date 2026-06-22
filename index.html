@@ -9,6 +9,7 @@
         .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         h1 { color: #2c3e50; font-size: 24px; margin-bottom: 5px; }
         .subtitle { color: #7f8c8d; margin-bottom: 25px; font-size: 14px; }
+        
         #pay-screen { display: block; }
         .wave-box { background-color: #f0f7ff; border: 2px dashed #00a4e4; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
         .bold { font-weight: bold; color: #00a4e4; }
@@ -16,12 +17,12 @@
         .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; cursor: pointer; width: 85%; }
         .btn-wa { background-color: #25d366; margin-top: 10px; }
         
-        /* Contenu de l'application (Masqué au début) */
+        /* Lëson yi dañuy laqu ci tàmbat bi */
         #app-content { display: none; }
         
-        /* Style des liens et des cartes */
-        .lesson-link { text-decoration: none; color: inherit; display: block; margin-bottom: 15px; }
-        .lesson-card { background-color: #ecf0f1; padding: 15px; border-radius: 8px; border-left: 6px solid #3498db; text-align: left; }
+        /* Style card yi ngir kenn mënul a juum */
+        .lesson-card { background-color: #ecf0f1; padding: 15px; border-radius: 8px; border-left: 6px solid #3498db; text-align: left; cursor: pointer; margin-bottom: 15px; display: block; }
+        .lesson-card:hover { background-color: #e2e8f0; }
         .fr { font-weight: bold; color: #e74c3c; font-size: 16px; }
         .wo { font-weight: bold; color: #27ae60; margin-top: 5px; font-size: 16px; }
     </style>
@@ -31,7 +32,7 @@
         <h1>JÀNGALE APP</h1>
         <p class="subtitle">Faransé – Wolof ngir Écool yi & Jangkat yi</p>
 
-        <!-- 1. ÉCRAN DE PAIEMENT -->
+        <!-- 1. BUNTU FEY BI -->
         <div id="pay-screen">
             <div class="wave-box">
                 <p>⚠️ <b>Application bi fey la buy laaj.</b></p>
@@ -42,53 +43,52 @@
             <input type="text" id="pinInput" placeholder="Duggalal sa Code PIN fii">
             <button class="btn" onclick="checkPin()">Dugg ci Application bi</button>
             
-            <!-- Lien WhatsApp bi mu ngi and ak sa nimero télefon -->
             <a href="https://wa.me" target="_blank" style="text-decoration: none;">
                 <button class="btn btn-wa">Yonnee mbind ci WhatsApp</button>
             </a>
         </div>
 
-        <!-- 2. CONTENU DE L'APPLICATION -->
+        <!-- 2. LËSON YI -->
         <div id="app-content">
-            <p style="color: #27ae60; font-weight: bold;">🎉 Alhamdouliilah! Léegi nga ngi ci biir sa Jàngale App.</p>
+            <p style="color: #27ae60; font-weight: bold; margin-bottom: 20px;">🎉 Alhamdouliilah! Léegi nga ngi ci biir sa Jàngale App.</p>
             
-            <a href="ecole.html" class="lesson-link">
-                <div class="lesson-card">
-                    <div class="fr">Français: L'école</div>
-                    <div class="wo">Wolof: Écool bi / Jàngu jé</div>
-                </div>
-            </a>
+            <!-- Cuq-cuq bi léegi dina dox dritto ci xët yi -->
+            <div class="lesson-card" onclick="goToLesson('ecole.html')">
+                <div class="fr">Français: L'école</div>
+                <div class="wo">Wolof: Écool bi / Jàngu jé</div>
+            </div>
 
-            <a href="livre.html" class="lesson-link">
-                <div class="lesson-card">
-                    <div class="fr">Français: Le livre</div>
-                    <div class="wo">Wolof: Téere bi</div>
-                </div>
-            </a>
+            <div class="lesson-card" onclick="goToLesson('livre.html')">
+                <div class="fr">Français: Le livre</div>
+                <div class="wo">Wolof: Téere bi</div>
+            </div>
 
-            <a href="eleve.html" class="lesson-link">
-                <div class="lesson-card">
-                    <div class="fr">Français: L'élève apprend sa leçon.</div>
-                    <div class="wo">Wolof: Ndongo bi mu ngiy jàng lësonam.</div>
-                </div>
-            </a>
+            <div class="lesson-card" onclick="goToLesson('eleve.html')">
+                <div class="fr">Français: L'élève apprend sa leçon.</div>
+                <div class="wo">Wolof: Ndongo bi mu ngiy jàng lësonam.</div>
+            </div>
         </div>
     </div>
 
-    <!-- CODE JAVASCRIPT NGIR PIN BI DOX -->
+    <!-- CODE JAVASCRIPT -->
     <script>
         function checkPin() {
             var userInput = document.getElementById("pinInput").value;
-            var correctPin = "1234"; // Fii nga koy soppé sa code PIN dëgg bu la neex
+            var correctPin = "2026"; 
 
             if (userInput === correctPin) {
-                // Li day laq buntu fey bi
+                // Li day faye buntu fey bi
                 document.getElementById("pay-screen").style.display = "none";
                 // Li day ubbil nit bi lëson yi
                 document.getElementById("app-content").style.display = "block";
             } else {
                 alert("Code PIN bi duggal nga baaxul! Seetlaat ko bu baax.");
             }
+        }
+
+        // Fonction bu dëgër buy yóbbu nit bi ci xët yi dritto
+        function goToLesson(pageUrl) {
+            window.location.href = pageUrl;
         }
     </script>
 </body>
