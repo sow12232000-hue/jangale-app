@@ -52,20 +52,28 @@
         <div id="app-content">
             <p style="color: #27ae60; font-weight: bold; margin-bottom: 20px;">🎉 Alhamdouliilah! Léegi nga ngi ci biir sa Jàngale App.</p>
             
-            <!-- Cuq-cuq bi léegi dina dox dritto ci xët yi -->
+            <!-- LESSON 1 -->
             <div class="lesson-card" onclick="goToLesson('ecole.html')">
                 <div class="fr">Français: L'école</div>
                 <div class="wo">Wolof: Écool bi / Jàngu jé</div>
             </div>
 
+            <!-- LESSON 2 -->
             <div class="lesson-card" onclick="goToLesson('livre.html')">
                 <div class="fr">Français: Le livre</div>
                 <div class="wo">Wolof: Téere bi</div>
             </div>
 
+            <!-- LESSON 3 -->
             <div class="lesson-card" onclick="goToLesson('eleve.html')">
                 <div class="fr">Français: L'élève apprend sa leçon.</div>
                 <div class="wo">Wolof: Ndongo bi mu ngiy jàng lësonam.</div>
+            </div>
+
+            <!-- LESSON 4 BU BEES BI (INFORMATIQUE) -->
+            <div class="lesson-card" onclick="goToLesson('informatique.html')" style="border-left-color: #a855f7;">
+                <div class="fr">Français: L'informatique</div>
+                <div class="wo">Wolof: Jumtukaayub Jamono / Érdi bi</div>
             </div>
         </div>
     </div>
@@ -77,16 +85,13 @@
             var correctPin = "2026"; 
 
             if (userInput === correctPin) {
-                // Li day faye buntu fey bi
                 document.getElementById("pay-screen").style.display = "none";
-                // Li day ubbil nit bi lëson yi
                 document.getElementById("app-content").style.display = "block";
             } else {
                 alert("Code PIN bi duggal nga baaxul! Seetlaat ko bu baax.");
             }
         }
 
-        // Fonction bu dëgër buy yóbbu nit bi ci xët yi dritto
         function goToLesson(pageUrl) {
             window.location.href = pageUrl;
         }
