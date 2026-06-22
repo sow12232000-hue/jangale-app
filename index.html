@@ -6,22 +6,23 @@
     <title>Jàngale App - Faransé / Wolof</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 500px; margin: auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         h1 { color: #2c3e50; font-size: 24px; margin-bottom: 5px; }
         .subtitle { color: #7f8c8d; margin-bottom: 25px; font-size: 14px; }
         #pay-screen { display: block; }
         .wave-box { background-color: #f0f7ff; border: 2px dashed #00a4e4; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
         .bold { font-weight: bold; color: #00a4e4; }
-        input[type="text"] { width: 80%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; text-align: center; }
-        .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; width: 85%; }
-        .btn-wa { background-color: #25D366; margin-top: 10px; }
+        input[type="text"] { width: 80%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
+        .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; cursor: pointer; }
+        .btn-wa { background-color: #25d366; margin-top: 10px; }
         
-        /* Contenu de l'application (Masqué au début) */
-        #app-content { display: none; }
+        /* Contenu de l'application (Affiché directement pour débloquer la navigation) */
+        #app-content { display: block; }
         
         /* Style des liens et des cartes */
-        .lesson-link { text-decoration: none; color: inherit; display: block; }
-        .lesson-card { background: #ecf0f1; padding: 15px; margin: 15px 0; border-radius: 8px; border-left: 6px solid #3498db; text-align: left; cursor: pointer; }
+        .lesson-link { text-decoration: none; color: inherit; display: block; margin-bottom: 15px; }
+        .lesson-card { background-color: #ecf0f1; padding: 15px; border-radius: 8px; border-left: 6px solid #3498db; text-align: left; transition: transform 0.2s; }
+        .lesson-card:hover { transform: scale(1.02); }
         .fr { font-weight: bold; color: #e74c3c; font-size: 16px; }
         .wo { font-weight: bold; color: #27ae60; margin-top: 5px; font-size: 16px; }
     </style>
@@ -31,25 +32,11 @@
         <h1>JÀNGALE APP</h1>
         <p class="subtitle">Faransé – Wolof ngir Écool yi & Jangkat yi</p>
 
-        <!-- 1. ÉCRAN DE PAIEMENT -->
-        <div id="pay-screen">
-            <div class="wave-box">
-                <p>⚠️ <b>Application bi fey la buy laaj.</b></p>
-                <p>Yoolal <b>1000 F CFA</b> ci Wave ci nimero bi:</p>
-                <p class="bold" style="font-size: 20px;">76 359 08 77</p>
-                <p style="font-size: 12px; color: #555;">Boo feyé pare, yonnee mbind ci WhatsApp ngir ñu jox la sa Code PIN.</p>
-            </div>
-            <input type="text" id="pinInput" placeholder="Duggalal sa Code PIN fii">
-            <button class="btn" onclick="checkPin()">Dugg ci Application bi</button>
-            <a href="https://wa.me" target="_blank" style="text-decoration: none;">
-                <button class="btn btn-wa">💬 Yonnee mbind ci WhatsApp</button>
-            </a>
-        </div>
-
-        <!-- 2. CONTENU DE L'APPLICATION (SANS LES ALERTES JAVASCRIPT) -->
+        <!-- CONTENT DE L'APPLICATION -->
         <div id="app-content">
-            <p style="color: #27ae60; font-weight: bold;">🎉 Alhamdoulilah! Léegi nga ngi ci biir sa Jàngale App.</p>
+            <p style="color: #27ae60; font-weight: bold;">🎉 Alhamdouliilah! Léegi nga ngi ci biir sa Jàngale App.</p>
             
+            <!-- CARTE 1: ÉCOLE -->
             <a href="ecole.html" class="lesson-link">
                 <div class="lesson-card">
                     <div class="fr">Français: L'école</div>
@@ -57,6 +44,7 @@
                 </div>
             </a>
 
+            <!-- CARTE 2: LIVRE -->
             <a href="livre.html" class="lesson-link">
                 <div class="lesson-card">
                     <div class="fr">Français: Le livre</div>
@@ -64,6 +52,7 @@
                 </div>
             </a>
 
+            <!-- CARTE 3: ÉLÈVE -->
             <a href="eleve.html" class="lesson-link">
                 <div class="lesson-card">
                     <div class="fr">Français: L'élève apprend sa leçon.</div>
@@ -72,18 +61,5 @@
             </a>
         </div>
     </div>
-
-    <script>
-        const CODE_PIN_CORRECT = "2026"; 
-        function checkPin() {
-            var userInput = document.getElementById("pinInput").value;
-            if(userInput === CODE_PIN_CORRECT) {
-                document.getElementById("pay-screen").style.display = "none";
-                document.getElementById("app-content").style.display = "block";
-            } else {
-                alert("🔴 Code PIN bi nga duggal baaxul!");
-            }
-        }
-    </script>
 </body>
 </html>
