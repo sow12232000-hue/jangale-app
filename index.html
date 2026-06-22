@@ -12,16 +12,16 @@
         #pay-screen { display: block; }
         .wave-box { background-color: #f0f7ff; border: 2px dashed #00a4e4; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
         .bold { font-weight: bold; color: #00a4e4; }
-        input[type="text"] { width: 80%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
-        .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; }
+        input[type="text"] { width: 80%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; text-align: center; }
+        .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; cursor: pointer; width: 85%; }
         .btn-wa { background-color: #25d366; margin-top: 10px; }
         
         /* Contenu de l'application (Masqué au début) */
         #app-content { display: none; }
         
         /* Style des liens et des cartes */
-        .lesson-link { text-decoration: none; color: inherit; display: block; }
-        .lesson-card { background-color: #ecf0f1; padding: 15px; margin: 15px 0; border-radius: 8px; border-left: 6px solid #3498db; }
+        .lesson-link { text-decoration: none; color: inherit; display: block; margin-bottom: 15px; }
+        .lesson-card { background-color: #ecf0f1; padding: 15px; border-radius: 8px; border-left: 6px solid #3498db; text-align: left; }
         .fr { font-weight: bold; color: #e74c3c; font-size: 16px; }
         .wo { font-weight: bold; color: #27ae60; margin-top: 5px; font-size: 16px; }
     </style>
@@ -41,6 +41,8 @@
             </div>
             <input type="text" id="pinInput" placeholder="Duggalal sa Code PIN fii">
             <button class="btn" onclick="checkPin()">Dugg ci Application bi</button>
+            
+            <!-- Lien WhatsApp bi mu ngi and ak sa nimero télefon -->
             <a href="https://wa.me" target="_blank" style="text-decoration: none;">
                 <button class="btn btn-wa">Yonnee mbind ci WhatsApp</button>
             </a>
@@ -72,5 +74,22 @@
             </a>
         </div>
     </div>
+
+    <!-- CODE JAVASCRIPT NGIR PIN BI DOX -->
+    <script>
+        function checkPin() {
+            var userInput = document.getElementById("pinInput").value;
+            var correctPin = "1234"; // Fii nga koy soppé sa code PIN dëgg bu la neex
+
+            if (userInput === correctPin) {
+                // Li day laq buntu fey bi
+                document.getElementById("pay-screen").style.display = "none";
+                // Li day ubbil nit bi lëson yi
+                document.getElementById("app-content").style.display = "block";
+            } else {
+                alert("Code PIN bi duggal nga baaxul! Seetlaat ko bu baax.");
+            }
+        }
+    </script>
 </body>
 </html>
