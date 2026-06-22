@@ -17,10 +17,8 @@
         .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; cursor: pointer; width: 85%; }
         .btn-wa { background-color: #25d366; margin-top: 10px; }
         
-        /* Lëson yi dañuy laqu ci tàmbat bi */
         #app-content { display: none; }
         
-        /* Style card yi ngir kenn mënul a juum */
         .lesson-card { background-color: #ecf0f1; padding: 15px; border-radius: 8px; border-left: 6px solid #3498db; text-align: left; cursor: pointer; margin-bottom: 15px; display: block; }
         .lesson-card:hover { background-color: #e2e8f0; }
         .fr { font-weight: bold; color: #e74c3c; font-size: 16px; }
@@ -52,25 +50,21 @@
         <div id="app-content">
             <p style="color: #27ae60; font-weight: bold; margin-bottom: 20px;">🎉 Alhamdouliilah! Léegi nga ngi ci biir sa Jàngale App.</p>
             
-            <!-- LESSON 1 -->
             <div class="lesson-card" onclick="goToLesson('ecole.html')">
                 <div class="fr">Français: L'école</div>
                 <div class="wo">Wolof: Écool bi / Jàngu jé</div>
             </div>
 
-            <!-- LESSON 2 -->
             <div class="lesson-card" onclick="goToLesson('livre.html')">
                 <div class="fr">Français: Le livre</div>
                 <div class="wo">Wolof: Téere bi</div>
             </div>
 
-            <!-- LESSON 3 -->
             <div class="lesson-card" onclick="goToLesson('eleve.html')">
                 <div class="fr">Français: L'élève apprend sa leçon.</div>
                 <div class="wo">Wolof: Ndongo bi mu ngiy jàng lësonam.</div>
             </div>
 
-            <!-- LESSON 4 BU BEES BI (INFORMATIQUE) -->
             <div class="lesson-card" onclick="goToLesson('informatique.html')" style="border-left-color: #a855f7;">
                 <div class="fr">Français: L'informatique</div>
                 <div class="wo">Wolof: Jumtukaayub Jamono / Érdi bi</div>
@@ -78,18 +72,38 @@
         </div>
     </div>
 
-    <!-- CODE JAVASCRIPT -->
+    <!-- CODE JAVASCRIPT BU AM XEL NGIR 10 MINUTES BI -->
     <script>
+        var correctPin = "2026"; 
+
+        // Lii day seet dritto bu ñu ubbée site bi ndax feyoon nañu ba pare te 10 mins matul
+        window.onload = function() {
+            var pinSavedTime = localStorage.getItem("pinSavedTime");
+            var now = new Date().getTime();
+
+            // 10 minutes = 10 * 60 * 1000 = 600000 millisecondes
+            if (pinSavedTime && (now - pinSavedTime < 600000)) {
+                showContent();
+            }
+        };
+
         function checkPin() {
             var userInput = document.getElementById("pinInput").value;
-            var correctPin = "2026"; 
 
             if (userInput === correctPin) {
-                document.getElementById("pay-screen").style.display = "none";
-                document.getElementById("app-content").style.display = "block";
+                // Lii day denc wattub jamono jii ci télefon bi
+                var now = new Date().getTime();
+                localStorage.setItem("pinSavedTime", now);
+                
+                showContent();
             } else {
                 alert("Code PIN bi duggal nga baaxul! Seetlaat ko bu baax.");
             }
+        }
+
+        function showContent() {
+            document.getElementById("pay-screen").style.display = "none";
+            document.getElementById("app-content").style.display = "block";
         }
 
         function goToLesson(pageUrl) {
