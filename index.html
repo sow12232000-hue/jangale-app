@@ -3,66 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jàngale App — Faransé / Wolof</title>
+    <title>Jàngale App - Faransé / Wolof</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #f4f7f6;
             margin: 0;
             padding: 20px;
             text-align: center;
         }
-        h1 {
-            color: #2c3e50;
-        }
         .container {
             max-width: 500px;
             margin: auto;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+        h1 { color: #2c3e50; font-size: 24px; margin-bottom: 5px; }
+        .subtitle { color: #7f8c8d; margin-bottom: 25px; font-size: 14px; }
+        
+        /* Mbaar u Payement */
+        #pay-screen { display: block; }
+        .wave-box {
+            background-color: #f0f7ff;
+            border: 2px dashed #00a4e4;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .wave-box p { margin: 5px 0; font-size: 15px; }
+        .bold { font-weight: bold; color: #00a4e4; }
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 85%;
+        }
+        .btn-wa {
+            background-color: #25D366;
+            margin-top: 10px;
+        }
+        
+        /* App Content (Lëson yi) */
+        #app-content { display: none; }
         .lesson-card {
             background: #ecf0f1;
             padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border-left: 5px solid #3498db;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 6px solid #3498db;
             text-align: left;
+            cursor: pointer;
+            transition: 0.2s;
         }
-        .fr {
-            font-weight: bold;
-            color: #e74c3c;
-        }
-        .wo {
-            font-weight: bold;
-            color: #27ae60;
-            margin-top: 5px;
-        }
+        .lesson-card:hover { transform: scale(1.02); }
+        .fr { font-weight: bold; color: #e74c3c; font-size: 16px; }
+        .wo { font-weight: bold; color: #27ae60; margin-top: 5px; font-size: 16px; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>📚 JÀNGALE APP</h1>
-        <p>Faransé — Wolof ngir Écool yi</p>
+        <h1>JÀNGALE APP</h1>
+        <p class="subtitle">Faransé – Wolof ngir Écool yi & Jangkat yi</p>
 
-        <div class="lesson-card">
-            <div class="fr">Français: L'école</div>
-            <div class="wo">Wolof: Écool bi / Jàngu jé</div>
+        <!-- 1. PAGE LAAL BI: PAIEMENT AK CODE PIN -->
+        <div id="pay-screen">
+            <div class="wave-box">
+                <p>⚠️ <b>Application bi fey la buy laaj.</b></p>
+                <p>Yoolal <b>1000 F CFA</b> ci Wave ci nimero bi:</p>
+                <p class="bold" style="font-size: 20px;">76 359 08 77</p>
+                <p style="font-size: 12px; color: #555;">Boo feyé pare, yonnee bindeel "Wave" ci WhatsApp ngir ñu jox la sa Code PIN.</p>
+            </div>
+            
+            <input type="text" id="pinInput" placeholder="Duggalal sa Code PIN fii">
+            <button class="btn" onclick="checkPin()">Dugg ci Application bi</button>
+            
+            <a href="https://wa.me" target="_blank" style="text-decoration: none;">
+                <button class="btn btn-wa">💬 Yonnee mbind ci WhatsApp</button>
+            </a>
         </div>
 
-        <div class="lesson-card">
-            <div class="fr">Français: Le livre</div>
-            <div class="wo">Wolof: Téere bi</div>
-        </div>
+        <!-- 2. APPU CONTENT: LËSON YI (DAY FÉEÑ BOO DUGGALÉ PIN BU BAAX) -->
+        <div id="app-content">
+            <p style="color: #27ae60; font-weight: bold;">🎉 Alhamdoulilah! Léegi nga ngi ci biir sa Jàngale App.</p>
+            
+            <div class="lesson-card" onclick="alert('Lëson 1: Écool bi')">
+                <div class="fr">Français: L'école</div>
+                <div class="wo">Wolof: Écool bi / Jàngu jé</div>
+            </div>
 
-        <div class="lesson-card">
-            <div class="fr">Français: L'élève apprend sa leçon.</div>
-            <div class="wo">Wolof: Ndongo bi mu ngiy jàng lësonam.</div>
+            <div class="lesson-card" onclick="alert('Lëson 2: Le livre')">
+                <div class="fr">Français: Le livre</div>
+                <div class="wo">Wolof: Téere bi</div>
+            </div>
+
+            <div class="lesson-card" onclick="alert('Lëson 3: L\'élève')">
+                <div class="fr">Français: L'élève apprend sa leçon.</div>
+                <div class="wo">Wolof: Ndongo bi mu ngiy jàng lësonam.</div>
+            </div>
         </div>
     </div>
 
+    <script>
+        // Fii nga mën a soppi Code PIN bi (ci misal def naa ko "2026")
+        const CODE_PIN_CORRECT = "2026"; 
+
+        function checkPin() {
+            var userInput = document.getElementById("pinInput").value;
+            if(userInput === CODE_PIN_CORRECT) {
+                document.getElementById("pay-screen").style.display = "none";
+                document.getElementById("app-content").style.display = "block";
+            } else {
+                alert("🔴 Code PIN bi nga duggal baaxul! Feyal 1000F walla nga laaj ko ci WhatsApp.");
+            }
+        }
+    </script>
 </body>
 </html>
