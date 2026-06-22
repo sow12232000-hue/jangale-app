@@ -13,16 +13,15 @@
         .wave-box { background-color: #f0f7ff; border: 2px dashed #00a4e4; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
         .bold { font-weight: bold; color: #00a4e4; }
         input[type="text"] { width: 80%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
-        .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; cursor: pointer; }
+        .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; }
         .btn-wa { background-color: #25d366; margin-top: 10px; }
         
-        /* Contenu de l'application (Affiché directement pour débloquer la navigation) */
-        #app-content { display: block; }
+        /* Contenu de l'application (Masqué au début) */
+        #app-content { display: none; }
         
         /* Style des liens et des cartes */
-        .lesson-link { text-decoration: none; color: inherit; display: block; margin-bottom: 15px; }
-        .lesson-card { background-color: #ecf0f1; padding: 15px; border-radius: 8px; border-left: 6px solid #3498db; text-align: left; transition: transform 0.2s; }
-        .lesson-card:hover { transform: scale(1.02); }
+        .lesson-link { text-decoration: none; color: inherit; display: block; }
+        .lesson-card { background-color: #ecf0f1; padding: 15px; margin: 15px 0; border-radius: 8px; border-left: 6px solid #3498db; }
         .fr { font-weight: bold; color: #e74c3c; font-size: 16px; }
         .wo { font-weight: bold; color: #27ae60; margin-top: 5px; font-size: 16px; }
     </style>
@@ -32,11 +31,25 @@
         <h1>JÀNGALE APP</h1>
         <p class="subtitle">Faransé – Wolof ngir Écool yi & Jangkat yi</p>
 
-        <!-- CONTENT DE L'APPLICATION -->
+        <!-- 1. ÉCRAN DE PAIEMENT -->
+        <div id="pay-screen">
+            <div class="wave-box">
+                <p>⚠️ <b>Application bi fey la buy laaj.</b></p>
+                <p><b>Yoolal #1000 F CFA</b> ci Wave ci nimero bi :</p>
+                <p class="bold" style="font-size: 20px;">76 359 08 77</p>
+                <p style="font-size: 12px; color: #555;">Buo feyé pare, yonnee mbind ci WhatsApp ngir ñu jox la sa Code PIN</p>
+            </div>
+            <input type="text" id="pinInput" placeholder="Duggalal sa Code PIN fii">
+            <button class="btn" onclick="checkPin()">Dugg ci Application bi</button>
+            <a href="https://wa.me" target="_blank" style="text-decoration: none;">
+                <button class="btn btn-wa">Yonnee mbind ci WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- 2. CONTENU DE L'APPLICATION -->
         <div id="app-content">
             <p style="color: #27ae60; font-weight: bold;">🎉 Alhamdouliilah! Léegi nga ngi ci biir sa Jàngale App.</p>
             
-            <!-- CARTE 1: ÉCOLE -->
             <a href="ecole.html" class="lesson-link">
                 <div class="lesson-card">
                     <div class="fr">Français: L'école</div>
@@ -44,7 +57,6 @@
                 </div>
             </a>
 
-            <!-- CARTE 2: LIVRE -->
             <a href="livre.html" class="lesson-link">
                 <div class="lesson-card">
                     <div class="fr">Français: Le livre</div>
@@ -52,7 +64,6 @@
                 </div>
             </a>
 
-            <!-- CARTE 3: ÉLÈVE -->
             <a href="eleve.html" class="lesson-link">
                 <div class="lesson-card">
                     <div class="fr">Français: L'élève apprend sa leçon.</div>
