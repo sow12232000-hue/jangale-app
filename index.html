@@ -81,7 +81,7 @@
             var pinSavedTime = localStorage.getItem("pinSavedTime");
             var now = new Date().getTime();
 
-            // 10 minutes = 10 * 60 * 1000 = 600000 millisecondes
+            // 30 jur = 30 * 60 * 1000 = 600000 millisecondes
             if (pinSavedTime && (now - pinSavedTime < 600000)) {
                 showContent();
             }
