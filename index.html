@@ -3,52 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jàngale App - Faransé / Wolof</title>
+    <title>jangaleapp</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; font-size: 24px; margin-bottom: 5px; }
-        .subtitle { color: #7f8c8d; margin-bottom: 25px; font-size: 14px; }
-        
-        #pay-screen { display: block; }
-        .wave-box { background-color: #f0f7ff; border: 2px dashed #00a4e4; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-        .bold { font-weight: bold; color: #00a4e4; }
-        input[type="text"] { width: 80%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; text-align: center; }
-        .btn { background-color: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; cursor: pointer; width: 85%; }
-        .btn-wa { background-color: #25d366; margin-top: 10px; }
-        
-        #app-content { display: none; }
-        
-        .lesson-card { background-color: #ecf0f1; padding: 15px; border-radius: 8px; border-left: 6px solid #3498db; text-align: left; cursor: pointer; margin-bottom: 15px; display: block; }
-        .lesson-card:hover { background-color: #e2e8f0; }
-        .fr { font-weight: bold; color: #e74c3c; font-size: 16px; }
-        .wo { font-weight: bold; color: #27ae60; margin-top: 5px; font-size: 16px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #111;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .app-title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        /* KÀDDU WHATSAPP BI */
+        .whatsapp-box {
+            background-color: white;
+            border: 2px dashed #25D366;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .whatsapp-box h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 18px;
+        }
+        .whatsapp-link {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        /* LËSON YI */
+        .lesson-card {
+            background-color: white;
+            border-left: 5px solid #2980b9;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .lesson-card:last-child {
+            border-left-color: #9b59b6;
+        }
+        .fr {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .wo {
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>JÀNGALE APP</h1>
-        <p class="subtitle">Faransé – Wolof ngir Écool yi & Jangkat yi</p>
 
-        <!-- 1. BUNTU FEY BI -->
-        <div id="pay-screen">
-            <div class="wave-box">
-                <p>⚠️ <b>Application bi fey la buy laaj.</b></p>
-                <p><b>Yoolal #1000 F CFA</b> ci Wave ci nimero bi :</p>
-                <p class="bold" style="font-size: 20px;">76 359 08 77</p>
-                <p style="font-size: 12px; color: #555;">Buo feyé pare, yonnee mbind ci WhatsApp ngir ñu jox la sa Code PIN</p>
-            </div>
-            <input type="text" id="pinInput" placeholder=duggalci application njgmi directement ciludul cod pin>
-            <button class="btn" onclick="checkPin()">Dugg ci Application bi</button>
-            
-            <a href="https://wa.me" target="_blank" style="text-decoration: none;">
-                <button class="btn btn-wa">Yonnee mbind ci WhatsApp</button>
+    <div class="header">jangaleapp</div>
+
+    <div class="container">
+        <div class="app-title">JÀNGALE APP</div>
+        <div class="subtitle">Faransé – Wolof ngir Écool yi & Jangkat yi</div>
+
+        <!-- ENCADRÉ WHATSAPP BI REKK MOY FEEÑ CI KAW -->
+        <div class="whatsapp-box">
+            <h3>Ngir am yeneen lëson walla dimbali, bësal fii:</h3>
+            <a href="https://wa.me" target="_blank" class="whatsapp-link">
+                Contactez-nous sur WhatsApp
             </a>
         </div>
 
-        <!-- 2. LËSON YI -->
+        <!-- FI LA LËSON YI DORE LÉEGI - DAÑUY FEEÑ DËRET -->
         <div id="app-content">
-            <p style="color: #27ae60; font-weight: bold; margin-bottom: 20px;">🎉 Alhamdouliilah! Léegi nga ngi ci biir sa Jàngale App.</p>
             
             <div class="lesson-card" onclick="goToLesson('ecole.html')">
                 <div class="fr">Français: L'école</div>
@@ -65,56 +122,22 @@
                 <div class="wo">Wolof: Ndongo bi mu ngiy jàng lësonam.</div>
             </div>
 
-            <div class="lesson-card" onclick="goToLesson('informatique.html')" style="border-left-color: #a855f7;">
+            <div class="lesson-card" onclick="goToLesson('informatique.html')">
                 <div class="fr">Français: L'informatique</div>
-                <div class="wo">Wolof: Jumtukaayub Jamono / Érdi bi</div>Érdi bi</div>
-</div>
-
-<div class="lesson-card" onclick="goToLesson('arabe.html')">
-  <div class="fr">Français: L'arabe</div>
-  <div class="wo">Wolof: Araabi bi</div>
-</div>
-
+                <div class="wo">Wolof: Jumtukaayub Jamono / Édi bi</div>
             </div>
+
+            <div class="lesson-card" onclick="goToLesson('arabe.html')">
+                <div class="fr">Français: L'arabe</div>
+                <div class="wo">Wolof: Araabi bi</div>
+            </div>
+
         </div>
     </div>
 
-    <!-- CODE JAVASCRIPT BU AM XEL NGIR 10 MINUTES BI -->
     <script>
-        var correctPin = "2026"; 
-
-        // Lii day seet dritto bu ñu ubbée site bi ndax feyoon nañu ba pare te 10 mins matul
-        window.onload = function() {
-            var pinSavedTime = localStorage.getItem("pinSavedTime");
-            var now = new Date().getTime();
-
-            // 30 jur = 30 * 60 * 1000 = 600000 millisecondes
-            if (pinSavedTime && (now - pinSavedTime < 600000)) {
-                showContent();
-            }
-        };
-
-        function checkPin() {
-            var userInput = document.getElementById("pinInput").value;
-
-            if (userInput === correctPin) {
-                // Lii day denc wattub jamono jii ci télefon bi
-                var now = new Date().getTime();
-                localStorage.setItem("pinSavedTime", now);
-                
-                showContent();
-            } else {
-                alert("Code PIN bi duggal nga baaxul! Seetlaat ko bu baax.");
-            }
-        }
-
-        function showContent() {
-            document.getElementById("pay-screen").style.display = "none";
-            document.getElementById("app-content").style.display = "block";
-        }
-
-        function goToLesson(pageUrl) {
-            window.location.href = pageUrl;
+        function goToLesson(page) {
+            window.location.href = page;
         }
     </script>
 </body>
