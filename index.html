@@ -35,56 +35,70 @@
             text-align: center;
             color: #7f8c8d;
             font-size: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
-        /* KÀDDU WHATSAPP BI */
+        /* ENCADRÉ WHATSAPP BI */
         .whatsapp-box {
             background-color: white;
             border: 2px dashed #25D366;
             border-radius: 10px;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         .whatsapp-box h3 {
             margin: 0 0 10px 0;
             color: #333;
-            font-size: 18px;
+            font-size: 16px;
         }
         .whatsapp-link {
             display: inline-block;
             background-color: #25D366;
             color: white;
             text-decoration: none;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-weight: bold;
-            font-size: 18px;
-            margin-top: 10px;
-        }
-        /* LËSON YI */
-        .lesson-card {
-            background-color: white;
-            border-left: 5px solid #2980b9;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            cursor: pointer;
-        }
-        .lesson-card:last-child {
-            border-left-color: #9b59b6;
-        }
-        .fr {
-            color: #e74c3c;
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        .wo {
-            color: #27ae60;
             font-weight: bold;
             font-size: 16px;
+        }
+        /* SECTION TITLES */
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+        }
+        /* PROGRAM CARDS */
+        .program-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: 0.2s;
+            border-left: 6px solid #2980b9;
+        }
+        .program-card:active {
+            transform: scale(0.98);
+        }
+        /* KULËËR YI NGIR ÑATTI PROGRAM YI */
+        .card-nahwu { border-left-color: #e67e22; }
+        .card-french { border-left-color: #2980b9; }
+        .card-arabe { border-left-color: #27ae60; }
+
+        .card-title-main {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .card-desc {
+            font-size: 15px;
+            color: #7f8c8d;
         }
     </style>
 </head>
@@ -94,9 +108,9 @@
 
     <div class="container">
         <div class="app-title">JÀNGALE APP</div>
-        <div class="subtitle">Faransé – Wolof ngir Écool yi & Jangkat yi</div>
+        <div class="subtitle">Mbalum Njangum Araab, Faransé ak Wolof</div>
 
-        <!-- ENCADRÉ WHATSAPP BI REKK MOY FEEÑ CI KAW -->
+        <!-- WHATSAPP CONTACT -->
         <div class="whatsapp-box">
             <h3>Ngir am yeneen lëson walla dimbali, bësal fii:</h3>
             <a href="https://wa.me" target="_blank" class="whatsapp-link">
@@ -104,35 +118,26 @@
             </a>
         </div>
 
-        <!-- FI LA LËSON YI DORE LÉEGI - DAÑUY FEEÑ DËRET -->
-        <div id="app-content">
-            
-            <div class="lesson-card" onclick="goToLesson('ecole.html')">
-                <div class="fr">Français: L'école</div>
-                <div class="wo">Wolof: Écool bi / Jàngu jé</div>
-            </div>
+        <div class="section-title">SUJÉ YIY JÀNGALE (PROGRAMMES)</div>
 
-            <div class="lesson-card" onclick="goToLesson('livre.html')">
-                <div class="fr">Français: Le livre</div>
-                <div class="wo">Wolof: Téere bi</div>
-            </div>
-
-            <div class="lesson-card" onclick="goToLesson('eleve.html')">
-                <div class="fr">Français: L'élève apprend sa leçon.</div>
-                <div class="wo">Wolof: Ndongo bi mu ngiy jàng lësonam.</div>
-            </div>
-
-            <div class="lesson-card" onclick="goToLesson('informatique.html')">
-                <div class="fr">Français: L'informatique</div>
-                <div class="wo">Wolof: Jumtukaayub Jamono / Édi bi</div>
-            </div>
-
-            <div class="lesson-card" onclick="goToLesson('arabe.html')">
-                <div class="fr">Français: L'arabe</div>
-                <div class="wo">Wolof: Araabi bi</div>
-            </div>
-
+        <!-- 1. PROGRAMME NAHWU -->
+        <div class="program-card card-nahwu" onclick="goToLesson('nahwu.html')">
+            <div class="card-title-main">橙 النحو الواضح (Grammaire)</div>
+            <div class="card-desc">Wolof: Sàrtu Mbindu Araab ak Ay Misal yu yaatu</div>
         </div>
+
+        <!-- 2. PROGRAMME FRANÇAIS CI WOLOF -->
+        <div class="program-card card-french" onclick="goToLesson('ecole.html')">
+            <div class="card-title-main">📘 Français ci Wolof</div>
+            <div class="card-desc">Français ngir Écool yi, jangkat yi ak jàng buntu kàddu yi</div>
+        </div>
+
+        <!-- 3. PROGRAMME ARABE CI WOLOF -->
+        <div class="program-card card-arabe" onclick="goToLesson('arabe.html')">
+            <div class="card-title-main">🟢 اللغة العربية (L'Arabe)</div>
+            <div class="card-desc">Wolof: Lësonu Araabi, kàddu yu am solo ak nuyoo yi</div>
+        </div>
+
     </div>
 
     <script>
