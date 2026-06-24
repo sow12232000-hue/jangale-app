@@ -89,7 +89,7 @@
             color: #b0b3b8;
         }
 
-        /* WAXTANU WHATSAPP BI */
+        /* WAXTANU WHATSAPP BI (BU DOX TE DOXALUL ERROR) */
         .whatsapp-box {
             border: 2px dashed var(--primary-green);
             padding: 15px;
@@ -187,10 +187,10 @@
         <p>Mbalum Njangum Araab, Faransé ak Lihraab</p>
     </div>
 
-    <!-- BUNTU WHATSAPP BI AND AK SA NIMERO -->
+    <!-- LIEN WHATSAPP BU LEER TE DOX (763590877) -->
     <div class="whatsapp-box">
         <p style="margin-top:0; font-weight:bold; font-size:16px;">Ngir am yeneen lëson walla dimbali, bësal fii:</p>
-        <a href="https://wa.me." target="_blank" style="text-decoration: none;">
+        <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
             <button class="whatsapp-btn">Contactez-nous sur WhatsApp</button>
         </a>
     </div>
@@ -218,14 +218,11 @@
 
     <!-- JAVASCRIPT NGIR PARAMETRE YI LIGGÉEY DIAL-DIAL -->
     <script>
-        // Liggéeyu Mode Nuit
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
 
-        // Liggéeyu rëyal walla tuuttal mbind mi
         let currentSize = 16;
-
         function changeFontSize(direction) {
             if (direction === 'up' && currentSize < 24) {
                 currentSize += 1;
