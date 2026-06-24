@@ -44,6 +44,7 @@
             margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             border: 1px solid var(--border-light);
+            align-items: center;
         }
 
         .settings-btn {
@@ -53,7 +54,7 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            color: #3c4043;
+            font-size: 18px;
         }
 
         .dark-mode .settings-btn {
@@ -61,10 +62,63 @@
             color: #fff;
         }
 
-        /* URREU BI */
-        .header {
-            text-align: center;
+        /* 3. REKLE BOTONG WHATSAPP BI */
+        .whatsapp-link {
+            text-decoration: none;
+            display: block;
             margin-bottom: 25px;
+        }
+
+        .whatsapp-section {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 18px;
+            border-radius: var(--btn-radius);
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            border: 2px dashed #ffffff;
+            box-shadow: 0 4px 12px rgba(30, 189, 91, 0.2);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        /* 4. REKLE CARDS YI NGIR ÑU DOON LIENS YUY UBBIKU */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--btn-radius);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-light);
+            transition: transform 0.2s ease;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin: 5px 0 0 0;
+            font-size: 15px;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -72,40 +126,52 @@
 
     <!-- Barre Paramètre -->
     <div class="settings-bar">
-        <span>jangaleapp</span>
-        <button class="settings-btn">⭐</button>
+        <span style="font-weight: bold; font-size: 18px;">jangaleapp</span>
+        <button class="settings-btn" onclick="toggleDarkMode()">⭐</button>
     </div>
 
-    <!-- Botong WhatsApp bu jëkk bi -->
-    <div class="header">
-        <a href="https://wa.me" style="text-decoration: none;">
-            <div style="background-color: var(--primary-green); color: white; padding: 15px; border-radius: var(--btn-radius); font-weight: bold; font-size: 20px; border: 2px dashed #ffffff;">
-                Contactez-nous sur WhatsApp
-            </div>
-        </a>
-    </div>
+    <!-- Botong WhatsApp -->
+    <a href="https://wa.me" class="whatsapp-link" target="_blank">
+        <div class="whatsapp-section">
+            Contactez-nous sur WhatsApp
+        </div>
+    </a>
 
-    <div style="font-weight: bold; font-size: 20px; margin-bottom: 15px;">
+    <div class="section-title">
         SUJÉ YIY JÀNGALE<br>(PROGRAMMES)
     </div>
 
-    <!-- SUJÉ 1: Sa'adatut Tullab -->
-    <div style="background: var(--card-bg); border-radius: var(--btn-radius); padding: 20px; margin-bottom: 20px; border: 1px solid var(--border-light); border-left: 5px solid #ff9800;">
-        <h2 style="margin-top: 0;">🍊 سَعَادَةُ الطُّلَّابِ</h2>
-        <p style="color: var(--text-color);">Wolof: Sa'adatut Tullab bu Serigne Touba - Lihraab ak Leeral gu yaatu</p>
-    </div>
+    <!-- SUJÉ 1: Sa'adatut Tullab - LËKKALÉ AK saadatut-tullab.html -->
+    <a href="saadatut-tullab.html" class="card-link">
+        <div class="card" style="border-left: 6px solid #ff9800;">
+            <h2>🍊 سَعَادَةُ الطُّلَّابِ</h2>
+            <p>Wolof: Sa'adatut Tullab bu Serigne Touba - Lihraab ak Leeral gu yaatu</p>
+            <p style="color: var(--primary-green); font-weight: bold; margin-top: 8px;">👉 Bësal fii ngir ubbi lëson yi</p>
+        </div>
+    </a>
 
-    <!-- SUJÉ 2: Français ci Wolof -->
-    <div style="background: var(--card-bg); border-radius: var(--btn-radius); padding: 20px; margin-bottom: 20px; border: 1px solid var(--border-light); border-left: 5px solid #2196f3;">
-        <h2 style="margin-top: 0;">📘 Français ci Wolof</h2>
-        <p style="color: var(--text-color);">Français ngir Écool yi, jangkat yi ak jàng buntu kàddu yi</p>
-    </div>
+    <!-- SUJÉ 2: Français ci Wolof - LËKKALÉ AK french.html -->
+    <a href="french.html" class="card-link">
+        <div class="card" style="border-left: 6px solid #2196f3;">
+            <h2>📘 Français ci Wolof</h2>
+            <p>Français ngir Écool yi, jangkat yi ak jàng buntu kàddu yi</p>
+            <p style="color: var(--primary-green); font-weight: bold; margin-top: 8px;">👉 Bësal fii ngir ubbi lëson yi</p>
+        </div>
+    </a>
 
-    <!-- SUJÉ 3: L'Arabe -->
-    <div style="background: var(--card-bg); border-radius: var(--btn-radius); padding: 20px; margin-bottom: 20px; border: 1px solid var(--border-light); border-left: 5px solid #4caf50;">
-        <h2 style="margin-top: 0;">🟢 (L'Arabe) اللغة العربية</h2>
-        <p style="color: var(--text-color);">Wolof: Lësonu Araabi, kàddu yu am solo ak waxtaan</p>
-    </div>
+    <!-- SUJÉ 3: L'Arabe - LËKKALÉ AK arabe.html -->
+    <a href="arabe.html" class="card-link">
+        <div class="card" style="border-left: 6px solid #4caf50;">
+            <h2>🟢 (L'Arabe) اللغة العربية</h2>
+            <p>Wolof: Lësonu Araabi, kàddu yu am solo ak waxtaan</p>
+            <p style="color: var(--primary-green); font-weight: bold; margin-top: 8px;">👉 Bësal fii ngir ubbi lëson yi</p>
+        </div>
+    </a>
 
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 </html>
