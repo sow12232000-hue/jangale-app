@@ -44,6 +44,7 @@
             margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             border: 1px solid var(--border-light);
+            align-items: center;
         }
 
         .settings-btn {
@@ -53,7 +54,7 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            color: #3c4043;
+            font-size: 18px;
         }
 
         .dark-mode .settings-btn {
@@ -61,64 +62,55 @@
             color: #fff;
         }
 
-        /* URREU BI */
-        .header {
-            text-align: center;
+        /* 3. REKLE BOTONG WHATSAPP BI */
+        .whatsapp-link {
+            text-decoration: none;
+            display: block;
             margin-bottom: 25px;
         }
 
-        .app-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        /* 3. REKLE WAALU CARD AK BOTONG WHATSAPP */
         .whatsapp-section {
             background-color: var(--primary-green);
             color: white;
-            padding: 20px;
+            padding: 18px;
             border-radius: var(--btn-radius);
             text-align: center;
             font-weight: bold;
             font-size: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(30, 189, 91, 0.2);
+            border: 2px dashed #ffffff;
+            box-shadow: 0 4px 12 rgba(30, 189, 91, 0.2);
         }
 
         .section-title {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 15px;
-            text-transform: uppercase;
+            line-height: 1.3;
         }
 
+        /* 4. REKLE REK CARDS YI */
         .card {
             background: var(--card-bg);
             border-radius: var(--btn-radius);
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
             border: 1px solid var(--border-light);
         }
 
         .card h2 {
-            font-size: 24px;
+            font-size: 22px;
             margin-top: 0;
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .card p {
-            color: #666;
             margin: 5px 0 0 0;
             font-size: 15px;
             line-height: 1.4;
         }
 
-        /* 4. REKLE WAALU BOTONG AUDIO GI */
+        /* 5. BOTONG AUDIO GI */
         .audio-btn {
             background-color: var(--primary-green);
             color: #ffffff;
@@ -134,29 +126,26 @@
             gap: 10px;
             width: 100%;
             justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.1s ease;
-        }
-
-        .audio-btn:active {
-            transform: scale(0.98);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
     </style>
 </head>
 <body>
 
-    <!-- Barre Paramètre (Mode Nuit) -->
+    <!-- Barre Paramètre -->
     <div class="settings-bar">
-        <span>jangaleapp</span>
-        <button class="settings-btn" onclick="toggleDarkMode()">🌙</button>
+        <span style="font-weight: bold; font-size: 18px;">jangaleapp</span>
+        <button class="settings-btn" onclick="toggleDarkMode()">⭐</button>
     </div>
 
-    <!-- Botong Contact WhatsApp -->
-    <div class="whatsapp-section">
-        Contactez-nous sur WhatsApp
-    </div>
+    <!-- Botong WhatsApp buy ubi ligéey bi direct -->
+    <a href="https://wa.me" class="whatsapp-link" target="_blank">
+        <div class="whatsapp-section">
+            Contactez-nous sur WhatsApp
+        </div>
+    </a>
 
-    <!-- Titre Programme -->
+    <!-- Titre bi -->
     <div class="section-title">
         SUJÉ YIY JÀNGALE<br>(PROGRAMMES)
     </div>
@@ -164,9 +153,8 @@
     <!-- SUJÉ 1: Sa'adatut Tullab -->
     <div class="card" style="border-left: 6px solid #ff9800;">
         <h2>🍊 سَعَادَةُ الطُّلَّابِ</h2>
-        <p><strong>Wolof:</strong> Sa'adatut Tullab bu Serigne Touba - Lihraab ak Leeral gu yaatu</p>
+        <p>Wolof: Sa'adatut Tullab bu Serigne Touba - Lihraab ak Leeral gu yaatu</p>
         
-        <!-- Audio ak Botong bi -->
         <audio id="audio-suje1" src="audios/saadatut_tullab.mp3"></audio>
         <button class="audio-btn" onclick="gererAudio('audio-suje1', this)">
             <span class="icon">🔊</span> <span class="text-btn">Deglu kaddou gi</span>
@@ -178,7 +166,6 @@
         <h2>📘 Français ci Wolof</h2>
         <p>Français ngir Écool yi, jangkat yi ak jàng buntu kàddu yi</p>
         
-        <!-- Audio ak Botong bi -->
         <audio id="audio-suje2" src="audios/francais_ci_wolof.mp3"></audio>
         <button class="audio-btn" onclick="gererAudio('audio-suje2', this)">
             <span class="icon">🔊</span> <span class="text-btn">Deglu kaddou gi</span>
@@ -188,23 +175,20 @@
     <!-- SUJÉ 3: L'Arabe -->
     <div class="card" style="border-left: 6px solid #4caf50;">
         <h2>🟢 (L'Arabe) اللغة العربية</h2>
-        <p><strong>Wolof:</strong> Lësonu Araabi, kàddu yu am solo ak waxtaan</p>
+        <p>Wolof: Lësonu Araabi, kàddu yu am solo ak waxtaan</p>
         
-        <!-- Audio ak Botong bi -->
         <audio id="audio-suje3" src="audios/l_arabe.mp3"></audio>
         <button class="audio-btn" onclick="gererAudio('audio-suje3', this)">
             <span class="icon">🔊</span> <span class="text-btn">Deglu kaddou gi</span>
         </button>
     </div>
 
-    <!-- JAVASCRIPT: Doxalin bu Mode Nuit ak Audio yi -->
+    <!-- JAVASCRIPT NGIR MODE NUIT AK AUDIO -->
     <script>
-        // Fonction ngir mode nuit bi
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
 
-        // Fonction ngir gérer audio yi
         function gererAudio(idAudio, bouton) {
             var audio = document.getElementById(idAudio);
             var iconSpan = bouton.querySelector('.icon');
@@ -215,7 +199,6 @@
                 iconSpan.textContent = "🔊";
                 textSpan.textContent = "Deglu kaddou gi";
             } else {
-                // Taxawal audio yu jëkk yi ba paré
                 var tousLesAudios = document.querySelectorAll('audio');
                 var tousLesBoutons = document.querySelectorAll('.audio-btn');
                 
@@ -225,13 +208,12 @@
                     btn.querySelector('.text-btn').textContent = "Deglu kaddou gi";
                 });
                 
-                // Play audio bi ñu bës
-                audio.play();
+                audio.play().catch(function(error) {
+                    console.log("Faysal audio bi mu ngi manqué ci dossier bi.");
+                });
                 iconSpan.textContent = "⏸️";
                 textSpan.textContent = "Taxawal kaddou gi";
             }
-
-            // Su audio bi jeexé mu dellu ci njiit li boppam
             audio.onended = function() {
                 iconSpan.textContent = "🔊";
                 textSpan.textContent = "Deglu kaddou gi";
