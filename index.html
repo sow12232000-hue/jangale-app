@@ -44,7 +44,6 @@
             margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             border: 1px solid var(--border-light);
-            align-items: center;
         }
 
         .settings-btn {
@@ -54,7 +53,7 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 18px;
+            color: #3c4043;
         }
 
         .dark-mode .settings-btn {
@@ -62,71 +61,10 @@
             color: #fff;
         }
 
-        /* 3. REKLE BOTONG WHATSAPP BI */
-        .whatsapp-link {
-            text-decoration: none;
-            display: block;
-            margin-bottom: 25px;
-        }
-
-        .whatsapp-section {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 18px;
-            border-radius: var(--btn-radius);
+        /* URREU BI */
+        .header {
             text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            border: 2px dashed #ffffff;
-            box-shadow: 0 4px 12 rgba(30, 189, 91, 0.2);
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        /* 4. REKLE REK CARDS YI */
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--btn-radius);
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            border: 1px solid var(--border-light);
-        }
-
-        .card h2 {
-            font-size: 22px;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            margin: 5px 0 0 0;
-            font-size: 15px;
-            line-height: 1.4;
-        }
-
-        /* 5. BOTONG AUDIO GI */
-        .audio-btn {
-            background-color: var(--primary-green);
-            color: #ffffff;
-            border: none;
-            padding: 14px 24px;
-            border-radius: var(--btn-radius);
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
         }
     </style>
 </head>
@@ -134,91 +72,40 @@
 
     <!-- Barre Paramètre -->
     <div class="settings-bar">
-        <span style="font-weight: bold; font-size: 18px;">jangaleapp</span>
-        <button class="settings-btn" onclick="toggleDarkMode()">⭐</button>
+        <span>jangaleapp</span>
+        <button class="settings-btn">⭐</button>
     </div>
 
-    <!-- Botong WhatsApp buy ubi ligéey bi direct -->
-    <a href="https://wa.me" class="whatsapp-link" target="_blank">
-        <div class="whatsapp-section">
-            Contactez-nous sur WhatsApp
-        </div>
-    </a>
+    <!-- Botong WhatsApp bu jëkk bi -->
+    <div class="header">
+        <a href="https://wa.me" style="text-decoration: none;">
+            <div style="background-color: var(--primary-green); color: white; padding: 15px; border-radius: var(--btn-radius); font-weight: bold; font-size: 20px; border: 2px dashed #ffffff;">
+                Contactez-nous sur WhatsApp
+            </div>
+        </a>
+    </div>
 
-    <!-- Titre bi -->
-    <div class="section-title">
+    <div style="font-weight: bold; font-size: 20px; margin-bottom: 15px;">
         SUJÉ YIY JÀNGALE<br>(PROGRAMMES)
     </div>
 
     <!-- SUJÉ 1: Sa'adatut Tullab -->
-    <div class="card" style="border-left: 6px solid #ff9800;">
-        <h2>🍊 سَعَادَةُ الطُّلَّابِ</h2>
-        <p>Wolof: Sa'adatut Tullab bu Serigne Touba - Lihraab ak Leeral gu yaatu</p>
-        
-        <audio id="audio-suje1" src="audios/saadatut_tullab.mp3"></audio>
-        <button class="audio-btn" onclick="gererAudio('audio-suje1', this)">
-            <span class="icon">🔊</span> <span class="text-btn">Deglu kaddou gi</span>
-        </button>
+    <div style="background: var(--card-bg); border-radius: var(--btn-radius); padding: 20px; margin-bottom: 20px; border: 1px solid var(--border-light); border-left: 5px solid #ff9800;">
+        <h2 style="margin-top: 0;">🍊 سَعَادَةُ الطُّلَّابِ</h2>
+        <p style="color: var(--text-color);">Wolof: Sa'adatut Tullab bu Serigne Touba - Lihraab ak Leeral gu yaatu</p>
     </div>
 
     <!-- SUJÉ 2: Français ci Wolof -->
-    <div class="card" style="border-left: 6px solid #2196f3;">
-        <h2>📘 Français ci Wolof</h2>
-        <p>Français ngir Écool yi, jangkat yi ak jàng buntu kàddu yi</p>
-        
-        <audio id="audio-suje2" src="audios/francais_ci_wolof.mp3"></audio>
-        <button class="audio-btn" onclick="gererAudio('audio-suje2', this)">
-            <span class="icon">🔊</span> <span class="text-btn">Deglu kaddou gi</span>
-        </button>
+    <div style="background: var(--card-bg); border-radius: var(--btn-radius); padding: 20px; margin-bottom: 20px; border: 1px solid var(--border-light); border-left: 5px solid #2196f3;">
+        <h2 style="margin-top: 0;">📘 Français ci Wolof</h2>
+        <p style="color: var(--text-color);">Français ngir Écool yi, jangkat yi ak jàng buntu kàddu yi</p>
     </div>
 
     <!-- SUJÉ 3: L'Arabe -->
-    <div class="card" style="border-left: 6px solid #4caf50;">
-        <h2>🟢 (L'Arabe) اللغة العربية</h2>
-        <p>Wolof: Lësonu Araabi, kàddu yu am solo ak waxtaan</p>
-        
-        <audio id="audio-suje3" src="audios/l_arabe.mp3"></audio>
-        <button class="audio-btn" onclick="gererAudio('audio-suje3', this)">
-            <span class="icon">🔊</span> <span class="text-btn">Deglu kaddou gi</span>
-        </button>
+    <div style="background: var(--card-bg); border-radius: var(--btn-radius); padding: 20px; margin-bottom: 20px; border: 1px solid var(--border-light); border-left: 5px solid #4caf50;">
+        <h2 style="margin-top: 0;">🟢 (L'Arabe) اللغة العربية</h2>
+        <p style="color: var(--text-color);">Wolof: Lësonu Araabi, kàddu yu am solo ak waxtaan</p>
     </div>
 
-    <!-- JAVASCRIPT NGIR MODE NUIT AK AUDIO -->
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-
-        function gererAudio(idAudio, bouton) {
-            var audio = document.getElementById(idAudio);
-            var iconSpan = bouton.querySelector('.icon');
-            var textSpan = bouton.querySelector('.text-btn');
-            
-            if (!audio.paused) {
-                audio.pause();
-                iconSpan.textContent = "🔊";
-                textSpan.textContent = "Deglu kaddou gi";
-            } else {
-                var tousLesAudios = document.querySelectorAll('audio');
-                var tousLesBoutons = document.querySelectorAll('.audio-btn');
-                
-                tousLesAudios.forEach(function(aud) { aud.pause(); });
-                tousLesBoutons.forEach(function(btn) {
-                    btn.querySelector('.icon').textContent = "🔊";
-                    btn.querySelector('.text-btn').textContent = "Deglu kaddou gi";
-                });
-                
-                audio.play().catch(function(error) {
-                    console.log("Faysal audio bi mu ngi manqué ci dossier bi.");
-                });
-                iconSpan.textContent = "⏸️";
-                textSpan.textContent = "Taxawal kaddou gi";
-            }
-            audio.onended = function() {
-                iconSpan.textContent = "🔊";
-                textSpan.textContent = "Deglu kaddou gi";
-            };
-        }
-    </script>
 </body>
 </html>
