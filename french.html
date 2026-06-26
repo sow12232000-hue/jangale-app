@@ -3,157 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jangale App - Alfaabee bu mat seuk</title>
+    <title>Jàngale App - Alfaabee bu mat sekk</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding-bottom: 40px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
         h1 { color: #2c3e50; font-size: 22px; margin-bottom: 5px; }
-        h2 { color: #16a085; font-size: 18px; margin-top: 25px; margin-bottom: 10px; text-align: left; border-bottom: 2px solid #16a085; padding-bottom: 5px; }
-        .vocab-box { background: #f0fdf4; padding: 15px; margin: 15px 0; border-radius: 8px; text-align: left; border-left: 5px solid #22c55e; }
-        .vocab-box.special { background: #fff3cd; border-left: 5px solid #ffc107; }
-        .vocab-box.voyelle { background: #e0f2fe; border-left: 5px solid #3498db; }
-        .vocab-box.hard { background: #f1f5f9; border-left: 5px solid #64748b; }
+        p { color: #7f8c8d; font-size: 14px; margin-bottom: 20px; }
+        h2 {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            text-align: left;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+        }
+        .vocab-box {
+            background: #fdfdfd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: left;
+            border-left: 5px solid #ffc107;
+        }
+        .vocab-box.voyelle { border-left: 5px solid #3498db; }
+        .vocab-box.nasale { border-left: 5px solid #9b59b6; }
+        .vocab-box.jafee { border-left: 5px solid #e74c3c; }
+        
         .fr { font-weight: bold; color: #e74c3c; font-size: 18px; }
         .wo { font-weight: bold; color: #27ae60; font-size: 16px; margin-top: 5px; }
-        .back-btn { display: inline-block; margin-top: 30px; padding: 12px 25px; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin-bottom: 20px; }
+        .misal-line { margin-top: 10px; font-size: 14px; line-height: 1.5; color: #333; }
+        .bold-word { font-weight: bold; color: #2c3e50; }
+        .pronounce { color: #27ae60; font-weight: bold; }
+        
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 25px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
- <a href="index.html" class="back-btn">← Dellu ginnaw</a>
-   <h1>Lëson 1: Sartu Lire bu mat seuk</h1>
-    <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 20px;">Mbooleem bindeen yi ak ni ñuy waxee baat yu nekk ci Wolof</p>
+    <a href="index.html" class="back-btn">⬅️ Delu Guinnaw</a>
+    <h1>Lëson 1: Sartu Lire bu mat sekk</h1>
+    <p>Mbooleem bindeen yi ak ni ñuy waxee baat yu nekk ci Faransé</p>
 
-    <!-- 1. VOYELLES YI YEPP -->
-    <h2>🗣️ 1. Voyelles yi (6 lañu)</h2>
-    <p style="font-size: 14px; color: #555; text-align: left;">Araf yiy ubbi kàddu gi, and ak seen léral waxiinu :</p>
-
+    <!-- 1. VOYELLES YI -->
+    <h2>1. Voyelles yi (6 lañu)</h2>
+    <p style="text-align: left;">Araf yiy ubbi kàddu gi, ak an seen léral waxiinu :</p>
+    
     <div class="vocab-box voyelle">
         <div class="fr">A - E - I - O</div>
         <div class="wo">Léral waxiinu: (a) - (e) - (i) - (o)</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Misal 1:</i> <b>A</b>nanas <span style="color: #16a085; font-weight: bold;">(Yomb na: ananas rekk)</span><br>
-            <i>Misal 2:</i> <b>E</b>scargot <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: eskargo)</span> -> Firi: Elax mi<br>
-            <i>Misal 3:</i> <b>I</b>gloo <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: iglu)</span> -> Firi: Këru garaf bi<br>
-            <i>Misal 4:</i> <b>O</b>live <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: oliv)</span> -> Firi: Garabu oliw
-        </div>
+        <div class="misal-line">Misal 1: <span class="bold-word">Ananas</span> <span class="pronounce">(ananas rekk)</span> -> Yomb na.</div>
+        <div class="misal-line">Misal 2: <span class="bold-word">Escargot</span> <span class="pronounce">(es kargo)</span> -> Firi: Elax mi.</div>
+        <div class="misal-line">Misal 3: <span class="bold-word">Igloo</span> <span class="pronounce">(iglu)</span> -> Firi: Këru garaf bi.</div>
+        <div class="misal-line">Misal 4: <span class="bold-word">Olive</span> <span class="pronounce">(oliv)</span> -> Firi: Garabu oliv.</div>
     </div>
 
     <div class="vocab-box voyelle">
         <div class="fr">U - Y</div>
         <div class="wo">Léral waxiinu: (u) - (igrek)</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Misal 1:</i> <b>U</b>sine <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: üsinn)</span> -> Firi: Usin bi ñuy liggéeyé<br>
-            <i>Misal 2:</i> <b>Y</b>eux <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: yë)</span> -> Firi: Gët yi ñuy gissé
-        </div>
+        <div class="misal-line">Misal 1: <span class="bold-word">Usine</span> <span class="pronounce">(üsinn)</span> -> Firi: Usin bi ñuy liggéeyé.</div>
+        <div class="misal-line">Misal 2: <span class="bold-word">Yeux</span> <span class="pronounce">(yë)</span> -> Firi: Gët yi.</div>
     </div>
 
-    <div class="vocab-box voyelle" style="background-color: #fae8ff; border-left: 5px solid #c084fc;">
-        <div class="fr">✍️ Màndarga yu Voyelles (Accents)</div>
-        <div class="wo">Dañuy soppi waxiinu araf bi :</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <b>É</b> melni <i>café</i> <span style="color: #16a085; font-weight: bold;">(kafé)</span> / <b>È</b> melni <i>père</i> <span style="color: #16a085; font-weight: bold;">(pèr)</span><br>
-            <b>Ê</b> melni <i>fête</i> <span style="color: #16a085; font-weight: bold;">(fèt)</span> / <b>Ë</b> melni <i>noël</i> <span style="color: #16a085; font-weight: bold;">(noèl)</span>
-        </div>
+    <!-- 2. VOYELLES NASALES (BAKKAN) -->
+    <h2>2. Voyelles Nasales (Yi ñuy waxee ci bakkan)</h2>
+    <p style="text-align: left;">Yii dañu jafee lire lool ndax daway soppi waxiinu araf yi :</p>
+
+    <div class="vocab-box nasale">
+        <div class="fr">AN / AM / EN / EM</div>
+        <div class="wo">Léral waxiinu: Melni "an" ci Wolof bu jaxasoo ak "on"</div>
+        <div class="misal-line">Misal 1: <span class="bold-word">Enfant</span> <span class="pronounce">(an fan)</span> -> Firi: Xale.</div>
+        <div class="misal-line">Misal 2: <span class="bold-word">Chambre</span> <span class="pronounce">(canbër)</span> -> Firi: Néeg.</div>
     </div>
 
-    <!-- 2. CONSONNES YU YOMB YI -->
-    <h2>🔤 2. Consonnes yu yomb yi</h2>
-
-    <div class="vocab-box">
-        <div class="fr">B - D - F - J</div>
-        <div class="wo">Léral waxiinu: (bë) - (dë) - (fë) - (jë)</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Misal 1:</i> <b>B</b>anane <span style="color: #16a085; font-weight: bold;">(Yomb na: banann rekk)</span> / <i>Misal 2:</i> <b>D</b>ate <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: datt)</span><br>
-            <i>Misal 3:</i> <b>F</b>ilm <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: film)</span> / <i>Misal 4:</i> <b>J</b>upe <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: jüp)</span>
-        </div>
+    <div class="vocab-box nasale">
+        <div class="fr">IN / IM / AIN / EIN</div>
+        <div class="wo">Léral waxiinu: Melni "in" walla "en" bu dakk ci bakkan</div>
+        <div class="misal-line">Misal 1: <span class="bold-word">Lapin</span> <span class="pronounce">(la pen)</span> -> Firi: Njombbor.</div>
+        <div class="misal-line">Misal 2: <span class="bold-word">Pain</span> <span class="pronounce">(pen)</span> -> Firi: Mburu.</div>
     </div>
 
-    <div class="vocab-box">
-        <div class="fr">K - L - M - N</div>
-        <div class="wo">Léral waxiinu: (kë) - (lë) - (më) - (në)</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Misal 1:</i> <b>K</b>ilo <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: kilo)</span> / <i>Misal 2:</i> <b>L</b>it <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: li)</span><br>
-            <i>Misal 3:</i> <b>M</b>aman <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: mamañ)</span> / <i>Misal 4:</i> <b>N</b>ature <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: natür)</span>
-        </div>
+    <div class="vocab-box nasale">
+        <div class="fr">ON / OM</div>
+        <div class="wo">Léral waxiinu: Melni "on" ci Wolof (bu dakk)</div>
+        <div class="misal-line">Misal 1: <span class="bold-word">Ballon</span> <span class="pronounce">(balon)</span> -> Firi: Paas / Lopo dënn.</div>
+        <div class="misal-line">Misal 2: <span class="bold-word">Pompier</span> <span class="pronounce">(ponpyé)</span> -> Firi: Fay-it / Lakk-it.</div>
     </div>
 
-    <div class="vocab-box">
-        <div class="fr">P - Q - R - T</div>
-        <div class="wo">Léral waxiinu: (pë) - (kë) - (rë) - (të)</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Misal 1:</i> <b>P</b>apa <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: papa)</span> / <i>Misal 2:</i> <b>Q</b>uatre <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: katrë)</span><br>
-            <i>Misal 3:</i> <b>R</b>at <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: ra)</span> / <i>Misal 4:</i> <b>T</b>able <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: tablë)</span>
-        </div>
+    <!-- 3. BINDEEN YI GËNA JAFEE LIRE -->
+    <h2>3. Bindeen yi gëna jafee lire</h2>
+    <p style="text-align: left;">Booleem araf yi buy jaxasoo di am beneen waxiin wu bees :</p>
+
+    <div class="vocab-box jafee">
+        <div class="fr">CH</div>
+        <div class="wo">Léral waxiinu: Day nekk "C" (mélni "sh" ci angale)</div>
+        <div class="misal-line">Misal: <span class="bold-word">Chat</span> <span class="pronounce">(ca)</span> -> Firi: Muus.</div>
     </div>
 
-    <div class="vocab-box">
-        <div class="fr">V - W - X - Z</div>
-        <div class="wo">Léral waxiinu: (vë) - (vë/wë) - (ksë) - (zë)</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Misal 1:</i> <b>V</b>élo <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: vélo)</span> / <i>Misal 2:</i> <b>W</b>agon <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: vagoñ)</span><br>
-            <i>Misal 3:</i> Ta<b>x</b>i <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: taksi)</span> / <i>Misal 4:</i> <b>Z</b>èbre <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: zèbrë)</span>
-        </div>
-    </div>
-
-    <!-- 3. CONSONNES YU AM SART YI -->
-    <h2>⚠️ 3. Consonnes yu am sàrt yu soppiku</h2>
-
-    <div class="vocab-box special">
-        <div class="fr">Bindeen bu (C)</div>
-        <div class="wo">Mën na doon <b>(së)</b> walla <b>(kë)</b></div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Sart 1:</i> <b>Së</b> wetu (E,I,Y) -> <span style="color: #16a085; font-weight: bold;">ni ñuy waxee cerise: seris</span><br>
-            <i>Sart 2:</i> <b>Kë</b> wetu (A,O,U) -> <span style="color: #16a085; font-weight: bold;">ni ñuy waxee café: kafé</span>
-        </div>
-    </div>
-
-    <div class="vocab-box special">
-        <div class="fr">Bindeen bu (G)</div>
-        <div class="wo">Mën na doon <b>(jë)</b> walla <b>(gë)</b></div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Sart 1:</i> <b>Jë</b> wetu (E,I,Y) -> <span style="color: #16a085; font-weight: bold;">ni ñuy waxee girafe: jiraf</span><br>
-            <i>Sart 2:</i> <b>Gë</b> wetu (A,O,U) -> <span style="color: #16a085; font-weight: bold;">ni ñuy waxee gare: gar</span>
-        </div>
-    </div>
-
-    <div class="vocab-box special">
-        <div class="fr">Bindeen bu (H)</div>
-        <div class="wo">Duñu koy wax rekk (mu ngi ni mu nekkul fofu)</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Sart:</i> <span style="color: #16a085; font-weight: bold;">ni ñuy waxee hôtel: otel</span> / <span style="color: #16a085; font-weight: bold;">ni ñuy waxee homme: om</span>
-        </div>
-    </div>
-
-    <div class="vocab-box special">
-        <div class="fr">Bindeen bu (S)</div>
-        <div class="wo">Mën na doon <b>(së)</b> walla <b>(zë)</b></div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;">
-            <i>Sart:</i> Dafay doon <b>Zë</b> su fekkee dafa nekk digg 2 voyelles -> <span style="color: #16a085; font-weight: bold;">ni ñuy waxee maison: mèzoñ</span>
-        </div>
-    </div>
-
-    <!-- 4. VOYELLES YU DENNDEE YI -->
-    <h2>🗣️ 4. Voyelles yu denndee yi (Suñu àndee)</h2>
-
-    <div class="vocab-box voyelle">
+    <div class="vocab-box jafee">
         <div class="fr">OI</div>
-        <div class="wo">Ni ñuy waxee: <b>wa</b></div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;"><i>Misal:</i> Le r<b>oi</b> <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: rwa)</span> -> Firi: Buur bi</div>
+        <div class="wo">Léral waxiinu: Day nekk "wa" tàllal</div>
+        <div class="misal-line">Misal: <span class="bold-word">Oiseau</span> <span class="pronounce">(wazo)</span> -> Firi: Picc.</div>
     </div>
 
-    <div class="vocab-box voyelle">
-        <div class="fr">IO</div>
-        <div class="wo">Ni ñuy waxee: <b>yo</b></div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;"><i>Misal:</i> Le l<b>io</b>n <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: lyoñ)</span> -> Firi: Gainde gi</div>
+    <div class="vocab-box jafee">
+        <div class="fr">GN</div>
+        <div class="wo">Léral waxiinu: Day nekk "Ñ" ci Wolof</div>
+        <div class="misal-line">Misal: <span class="bold-word">Agneau</span> <span class="pronounce">（año)</span> -> Firi: Domu xar.</div>
     </div>
 
-    <div class="vocab-box voyelle">
-        <div class="fr">EA</div>
-        <div class="wo">Ni ñuy waxee: <b>ya</b> walla <b>a</b> rekk</div>
-        <div style="font-size: 14px; color: #555; margin-top: 5px;"><i>Misal:</i> L<b>éa</b> <span style="color: #16a085; font-weight: bold;">(ni ñuy waxee: lya)</span> -> Firi: Turu jigéen</div>
+    <div class="vocab-box jafee">
+        <div class="fr">OU</div>
+        <div class="wo">Léral waxiinu: Day nekk "U" tàllal (mélni ndoxmu taye)</div>
+        <div class="misal-line">Misal: <span class="bold-word">Souris</span> <span class="pronounce">(suri)</span> -> Firi: Kanaaj / Kanaas.</div>
     </div>
 
-    <!-- 5. SART YU JAFE YI -->
-    <h2>🧩 5. Sàrt yu jafe yi (EIL, AIL, OU, CH, GN)</h2>
+    <div class="vocab-box jafee">
+        <div class="fr">AU / EAU</div>
+        <div class="wo">Léral waxiinu: Day nekk "O" rekk</div>
+        <div class="misal-line">Misal: <span class="bold-word">Eau</span> <span class="pronounce">(o)</span> -> Firi: Ndox.</div>
+    </div>
+
+</div>
+
+</body>
+</html>
