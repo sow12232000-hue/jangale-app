@@ -168,7 +168,20 @@
         .dark-mode .card-desc {
             color: #b0b3b8;
         }
-    </style>
+</style>
+  <script>
+    window.addEventListener('load', function() {
+        history.pushState({page: "home"}, "", "");
+    });
+    window.addEventListener('popstate', function(event) {
+        if (document.referrer !== "") {
+            window.history.back();
+        } else {
+            window.location.href = "index.html";
+        }
+    });
+</script>
+  
 </head>
 <body>
 
