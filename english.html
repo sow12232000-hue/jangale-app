@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jàngale App - Anglais</title>
+    <title>Jàngale App - Alphabet Anglais</title>
     <style>
         :root {
             --bg-color: #f8f9fa;
@@ -49,28 +49,55 @@
             margin-bottom: 15px;
         }
         .title-card {
-            color: #e74c3c;
+            color: #9b59b6;
             font-weight: bold;
             font-size: 22px;
             margin-top: 0;
             margin-bottom: 10px;
+            border-bottom: 2px solid #9b59b6;
+            padding-bottom: 5px;
         }
-        .explain-text {
-            color: #27ae60;
-            font-weight: bold;
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
             margin-bottom: 15px;
         }
+        .letter-box {
+            background: #f1f2f6;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .letter-main {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .pronounce-main {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .example-section {
+            margin-top: 15px;
+            border-top: 1px dashed var(--border-light);
+            padding-top: 10px;
+        }
         .example-line {
-            margin-bottom: 10px;
-            line-height: 1.5;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 15px;
         }
         .bold-word {
             font-weight: bold;
             color: var(--primary-purple);
+            font-size: 17px;
         }
         .pronounce {
             color: #27ae60;
             font-weight: bold;
+        }
+        .firi {
+            color: #1a2530;
         }
     </style>
 </head>
@@ -79,39 +106,78 @@
     <a href="index.html" class="back-btn">⬅️ Delu Guinnaw</a>
 
     <div class="header">
-        <h1>Anglais ci Wolof 🇬🇧</h1>
-        <p>Tàmbalee jàng Angale ak mbindu Wolof</p>
+        <h1>Alphabet Anglais ci Wolof 🇬🇧</h1>
+        <p>Araf par araf, ni ñuy waxee turam ak ay baatam</p>
     </div>
 
-    <!-- CARD 1 -->
+    <!-- REKK-REKK ALPHABET BI AK WAXIINU ARAF YI -->
     <div class="lesson-card">
-        <div class="title-card">A - E - I - O</div>
-        <div class="explain-text">Léral waxiinu araf yi: (ey) - (ii) - (ay) - (ow)</div>
-        
-        <div class="example-line">
-            Misal 1: <span class="bold-word">Apple</span> <span class="pronounce">(ni ñuy waxee: epël)</span> -> Firi: Pomme (Garabu prut bu siiw bi)
-        </div>
-        <div class="example-line">
-            Misal 2: <span class="bold-word">Egg</span> <span class="pronounce">(ni ñuy waxee: eg)</span> -> Firi: Nen
-        </div>
-        <div class="example-line">
-            Misal 3: <span class="bold-word">Ice</span> <span class="pronounce">(ni ñuy waxee: ays)</span> -> Firi: Galaas (Ndox mu taye te am garaf)
-        </div>
-        <div class="example-line">
-            Misal 4: <span class="bold-word">Open</span> <span class="pronounce">(ni ñuy waxee: owpën)</span> -> Firi: Ujji walla Ubbi
+        <div class="title-card">Mbooleem Araf yi (A ba Z)</div>
+        <div class="alphabet-grid">
+            <div class="letter-box"><span class="letter-main">A</span> -> <span class="pronounce-main">(ey)</span></div>
+            <div class="letter-box"><span class="letter-main">B</span> -> <span class="pronounce-main">(bii)</span></div>
+            <div class="letter-box"><span class="letter-main">C</span> -> <span class="pronounce-main">(sii)</span></div>
+            <div class="letter-box"><span class="letter-main">D</span> -> <span class="pronounce-main">(dii)</span></div>
+            <div class="letter-box"><span class="letter-main">E</span> -> <span class="pronounce-main">(ii)</span></div>
+            <div class="letter-box"><span class="letter-main">F</span> -> <span class="pronounce-main">(ef)</span></div>
+            <div class="letter-box"><span class="letter-main">G</span> -> <span class="pronounce-main">(jii)</span></div>
+            <div class="letter-box"><span class="letter-main">H</span> -> <span class="pronounce-main">(eyc)</span></div>
+            <div class="letter-box"><span class="letter-main">I</span> -> <span class="pronounce-main">(ay)</span></div>
+            <div class="letter-box"><span class="letter-main">J</span> -> <span class="pronounce-main">(jey)</span></div>
+            <div class="letter-box"><span class="letter-main">K</span> -> <span class="pronounce-main">(key)</span></div>
+            <div class="letter-box"><span class="letter-main">L</span> -> <span class="pronounce-main">(el)</span></div>
+            <div class="letter-box"><span class="letter-main">M</span> -> <span class="pronounce-main">(em)</span></div>
+            <div class="letter-box"><span class="letter-main">N</span> -> <span class="pronounce-main">(en)</span></div>
+            <div class="letter-box"><span class="letter-main">O</span> -> <span class="pronounce-main">(ow)</span></div>
+            <div class="letter-box"><span class="letter-main">P</span> -> <span class="pronounce-main">(pii)</span></div>
+            <div class="letter-box"><span class="letter-main">Q</span> -> <span class="pronounce-main">(kyuu)</span></div>
+            <div class="letter-box"><span class="letter-main">R</span> -> <span class="pronounce-main">(aar)</span></div>
+            <div class="letter-box"><span class="letter-main">S</span> -> <span class="pronounce-main">(es)</span></div>
+            <div class="letter-box"><span class="letter-main">T</span> -> <span class="pronounce-main">(tii)</span></div>
+            <div class="letter-box"><span class="letter-main">U</span> -> <span class="pronounce-main">(yuu)</span></div>
+            <div class="letter-box"><span class="letter-main">V</span> -> <span class="pronounce-main">(vii)</span></div>
+            <div class="letter-box"><span class="letter-main">W</span> -> <span class="pronounce-main">(dabal-yuu)</span></div>
+            <div class="letter-box"><span class="letter-main">X</span> -> <span class="pronounce-main">(eks)</span></div>
+            <div class="letter-box"><span class="letter-main">Y</span> -> <span class="pronounce-main">(way)</span></div>
+            <div class="letter-box"><span class="letter-main">Z</span> -> <span class="pronounce-main">(zed / kënë zi)</span></div>
         </div>
     </div>
 
-    <!-- CARD 2 -->
+    <!-- MISALU BAAT YI AK LIRAL BI -->
     <div class="lesson-card">
-        <div class="title-card">U - Y</div>
-        <div class="explain-text">Léral waxiinu araf yi: (yuu) - (way)</div>
+        <div class="title-card">Ay Misal ak Lirinu baat yi</div>
         
-        <div class="example-line">
-            Misal 1: <span class="bold-word">University</span> <span class="pronounce">(ni ñuy waxee: yuunivërsiti)</span> -> Firi: Daara jolliti (Daara ju mag ju kawe ji)
-        </div>
-        <div class="example-line">
-            Misal 2: <span class="bold-word">Yellow</span> <span class="pronounce">(ni ñuy waxee: yelow)</span> -> Firi: Kalar bu mboq
+        <div class="example-section">
+            <div class="example-line">
+                Araf gi <span class="letter-main">A</span>: <span class="bold-word">Book</span> <span class="pronounce">(ni ñuy liree: buk)</span> -> <span class="firi">Firi: Teere</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">C</span>: <span class="bold-word">Cat</span> <span class="pronounce">(ni ñuy liree: kat)</span> -> <span class="firi">Firi: Muus</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">D</span>: <span class="bold-word">Door</span> <span class="pronounce">(ni ñuy liree: door)</span> -> <span class="firi">Firi: Bunt</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">F</span>: <span class="bold-word">Fish</span> <span class="pronounce">(ni ñuy liree: fic)</span> -> <span class="firi">Firi: Jën</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">H</span>: <span class="bold-word">House</span> <span class="pronounce">(ni ñuy liree: haws)</span> -> <span class="firi">Firi: Kër</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">M</span>: <span class="bold-word">Man</span> <span class="pronounce">(ni ñuy liree: man)</span> -> <span class="firi">Firi: Góor (Góor gu ràññéeku)</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">P</span>: <span class="bold-word">Pen</span> <span class="pronounce">(ni ñuy liree: pen)</span> -> <span class="firi">Firi: Bik ngir mbind</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">R</span>: <span class="bold-word">Rice</span> <span class="pronounce">(ni ñuy liree: rays)</span> -> <span class="firi">Firi: Ceeb</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">S</span>: <span class="bold-word">Sun</span> <span class="pronounce">(ni ñuy liree: sën)</span> -> <span class="firi">Firi: Jant bi</span>
+            </div>
+            <div class="example-line">
+                Araf gi <span class="letter-main">W</span>: <span class="bold-word">Water</span> <span class="pronounce">(ni ñuy liree: woottër)</span> -> <span class="firi">Firi: Ndox</span>
+            </div>
         </div>
     </div>
 
