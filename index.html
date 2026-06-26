@@ -11,37 +11,41 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
+
         body {
-            background-color: #f4f6f9;
+            background-color: #f5f5f5;
             padding: 16px;
         }
+
         .header {
             background-color: #1E2746;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 16px;
             font-weight: bold;
             font-size: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
         }
+
         .section-title {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: bold;
             color: #1E2746;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
-        /* Fi la 4 karee jàngale yi di fete (Grid 2x2) */
+
         .grid-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 16px;
             margin-bottom: 30px;
         }
-        .grid-box {
+
+        .grid-item {
             background-color: white;
+            padding: 16px;
             border-radius: 12px;
-            padding: 15px;
             text-align: center;
             text-decoration: none;
             color: black;
@@ -51,7 +55,8 @@
             align-items: center;
             justify-content: center;
         }
-        .icon-circle {
+
+        .circle-icon {
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -59,49 +64,52 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
-        .box-title {
+
+        .item-title {
+            font-weight: bold;
             font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
-        .box-desc {
+
+        .item-subtitle {
             font-size: 11px;
-            color: #777;
+            color: grey;
         }
-        .divider {
-            height: 1px;
-            background-color: #ddd;
-            margin-bottom: 20px;
-        }
-        /* Wàllu Paaymant ak Waxtaan */
+
         .contact-title {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
-            color: #777;
-            margin-bottom: 10px;
+            color: grey;
+            margin-bottom: 12px;
         }
-        .btn-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+        .button-container {
+            display: flex;
             gap: 12px;
         }
+
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-            border-radius: 8px;
+            flex: 1;
+            padding: 14px;
+            border-radius: 12px;
+            text-align: center;
             text-decoration: none;
             color: white;
             font-weight: bold;
-            font-size: 13px;
-            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
+
         .btn-wave {
             background-color: #19B4E5;
         }
+
         .btn-whatsapp {
             background-color: #25D366;
         }
@@ -110,48 +118,44 @@
 <body>
 
     <div class="header">JÀNGALE APP</div>
-    
+
     <div class="section-title">SUJÉ YIY JÀNGALE (PROGRAMMES)</div>
 
-    <!-- 4 Karee yi dëppoo ak sa yeneen fail yi -->
     <div class="grid-container">
-        <a href="english.html" class="grid-box">
-            <div class="icon-circle" style="background-color: #d0e8ff; color: #007bff;">📘</div>
-            <div class="box-title">Anglais ci Wolof</div>
-            <div class="box-desc">Lësonu Angale, kàddu yu am solo</div>
+        <a href="english.html" class="grid-item">
+            <div class="circle-icon" style="background-color: #E3F2FD; color: #1E88E5;">📘</div>
+            <div class="item-title">Anglais ci Wolof</div>
+            <div class="item-subtitle">Lësonu Angale, kàddu yu am solo</div>
         </a>
 
-        <a href="saadatut-tullab.html" class="grid-box">
-            <div class="icon-circle" style="background-color: #ffe8cc; color: #ff9200;">🍊</div>
-            <div class="box-title">سَعَادَةُ الطُّلَّابِ</div>
-            <div class="box-desc">Sa'adatut Tullab bu Serigne Touba</div>
+        <a href="saadatut-tullab.html" class="grid-item">
+            <div class="circle-icon" style="background-color: #FFF3E0; color: #FB8C00;">🍊</div>
+            <div class="item-title">سَعَادَةُ الطُّلَّابِ</div>
+            <div class="item-subtitle">Sa'adatut bu Serigne Touba</div>
         </a>
 
-        <a href="french.html" class="grid-box">
-            <div class="icon-circle" style="background-color: #e3f9ff; color: #00a3cc;">📖</div>
-            <div class="box-title">Français ci Wolof</div>
-            <div class="box-desc">Français ngir Écool yi, jangkat yi</div>
+        <a href="french.html" class="grid-item">
+            <div class="circle-icon" style="background-color: #E1F5FE; color: #039BE5;">📖</div>
+            <div class="item-title">Français ci Wolof</div>
+            <div class="item-subtitle">Français ngir Écool yi...</div>
         </a>
 
-        <a href="arabe.html" class="grid-box">
-            <div class="icon-circle" style="background-color: #d4edda; color: #28a745;">🟢</div>
-            <div class="box-title">اللغة العربية (L'Arabe)</div>
-            <div class="box-desc">Jàng kàddu yu am solo</div>
+        <a href="arabe.html" class="grid-item">
+            <div class="circle-icon" style="background-color: #E8F5E9; color: #43A047;">🟢</div>
+            <div class="item-title">اللغة العربية (L'Arabe)</div>
+            <div class="item-subtitle">Jàng kàddu yu am solo</div>
         </a>
     </div>
 
-    <div class="divider"></div>
+    <hr style="border: 0; border-top: 1px solid #ccc; margin-bottom: 20px;">
 
     <div class="contact-title">CONTACT & PAIEMENT</div>
-    
-    <!-- Bouton Wave ak WhatsApp yu lay fay walla di la jotoog -->
-    <div class="btn-container">
-        <a href="https://wave.com" class="btn btn-wave" target="_blank">
-            💰 Fay ci Wave
-        </a>
-        <a href="https://wa.me" class="btn btn-whatsapp" target="_blank">
-            💬 WhatsApp
-        </a>
+
+    <div class="button-container">
+        <!-- Fii la lien Wave bu dëggëër bi nekk ak ?amount=0 -->
+        <a href="https://wave.com" class="btn btn-wave" target="_blank">💰 Fay ci Wave</a>
+        
+        <a href="https://wa.me" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
     </div>
 
 </body>
