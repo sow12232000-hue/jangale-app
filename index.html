@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jàngale App - Faransé bu mat sekk</title>
+    <title>Jàngale App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,166 +20,95 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        h1 { color: #2c3e50; font-size: 22px; margin-bottom: 5px; }
-        p { color: #7f8c8d; font-size: 14px; margin-bottom: 20px; }
-        h2 {
-            font-size: 18px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            text-align: left;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 5px;
-        }
-        .vocab-box {
-            background: #fdfdfd;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            text-align: left;
-            border-left: 5px solid #ffc107;
-        }
-        .vocab-box.alphabet { border-left: 5px solid #27ae60; }
-        .vocab-box.boole { border-left: 5px solid #e67e22; }
-        .vocab-box.nasale { border-left: 5px solid #9b59b6; }
-        .vocab-box.jafee { border-left: 5px solid #e74c3c; }
-        .vocab-box.niroo { border-left: 5px solid #3498db; }
-        .vocab-box.guddu { border-left: 5px solid #2c3e50; }
-        
-        .alphabet-grid {
+        h1 { color: #2c3e50; font-size: 24px; margin-bottom: 5px; text-transform: uppercase; }
+        h2 { font-size: 18px; margin-top: 25px; margin-bottom: 20px; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .letter-box {
-            background: #f1f2f6;
-            padding: 8px;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        .letter-main { font-weight: bold; color: #e74c3c; }
-        .pronounce-main { color: #27ae60; font-weight: bold; }
-        
-        .fr { font-weight: bold; color: #e74c3c; font-size: 18px; }
-        .wo { font-weight: bold; color: #27ae60; font-size: 16px; margin-top: 5px; }
-        .misal-line { margin-top: 10px; font-size: 14px; line-height: 1.5; color: #333; }
-        .bold-word { font-weight: bold; color: #2c3e50; }
-        .pronounce { color: #27ae60; font-weight: bold; }
-        
-        /* STYLE NGIR NAVIGATION AK WAVE BUTTON */
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
+            gap: 15px;
             margin-bottom: 30px;
         }
-        .back-btn {
+        .card {
+            background: white;
+            padding: 20px 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+            text-decoration: none;
+            color: #1a2530;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card img { width: 40px; height: 40px; margin-bottom: 10px; }
+        .card h3 { font-size: 16px; margin: 5px 0; font-weight: bold; }
+        .card p { font-size: 12px; color: #7f8c8d; margin: 0; }
+        
+        .contact-section { margin-top: 30px; border-top: 1px solid #e0e0e0; padding-top: 20px; text-align: left; }
+        .contact-title { font-size: 14px; color: #7f8c8d; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
+        .btn-container { display: flex; gap: 10px; }
+        .btn-contact {
             flex: 1;
             padding: 12px;
-            background-color: #2c3e50;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-weight: bold;
             font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        .wave-btn {
-            flex: 1;
-            padding: 12px;
-            background-color: #1ebd5b;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 14px;
-            box-shadow: 0 2px 4px rgba(30,189,91,0.3);
-        }
+        .btn-wave { background-color: #00a4e4; }
+        .btn-whatsapp { background-color: #25d366; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    
-    <!-- BUTTONS YI: DELU GUINNAW AK WAVE FEYEKAAY -->
-    <div class="nav-buttons">
-        <a href="index.html" class="back-btn">⬅️ Delu Guinnaw</a>
-        <a href="https://wave.com" target="_blank" class="wave-btn">💳 Fey 1.000F ci Wave</a>
+    <h1>Jàngale App</h1>
+    <h2>Sujé yiy jàngale (Programmes)</h2>
+
+    <div class="grid-container">
+        <!-- 1. ANGLAIS -->
+        <a href="english.html" class="card">
+            📘
+            <h3>Anglais ci Wolof</h3>
+            <p>Lësonu Angale, kàddu yu am solo</p>
+        </a>
+
+        <!-- 2. SA'ADATUT -->
+        <a href="#" class="card">
+            🍊
+            <h3>سَعَادَةُ الطُّلَّابِ</h3>
+            <p>Sa'adatut bu Serigne Touba</p>
+        </a>
+
+        <!-- 3. FRANÇAIS -->
+        <a href="french.html" class="card">
+            📖
+            <h3>Français ci Wolof</h3>
+            <p>Français ngir Écool yi...</p>
+        </a>
+
+        <!-- 4. L'ARABE -->
+        <a href="#" class="card">
+            🟢
+            <h3>اللغة العربية</h3>
+            <p>(L'Arabe)<br>Jàng kàddu yu am solo</p>
+        </a>
     </div>
 
-    <h1>Lëson 1: Sartu Lire bu mat sekk</h1>
-    <p>Mbooleem bindeen yi ak ni ñuy waxee baat yu nekk ci Faransé</p>
-
-    <!-- 1. ALPHABET FRANÇAIS -->
-    <h2>1. Mbooleem Araf yi (A ba Z)</h2>
-    <p style="text-align: left;">Araf par araf, ni ñuy waxee turam ci Faransé :</p>
-    <div class="vocab-box alphabet">
-        <div class="alphabet-grid">
-            <div class="letter-box"><span class="letter-main">A</span> -> <span class="pronounce-main">(a)</span></div>
-            <div class="letter-box"><span class="letter-main">B</span> -> <span class="pronounce-main">(bé)</span></div>
-            <div class="letter-box"><span class="letter-main">C</span> -> <span class="pronounce-main">(sé)</span></div>
-            <div class="letter-box"><span class="letter-main">D</span> -> <span class="pronounce-main">(dé)</span></div>
-            <div class="letter-box"><span class="letter-main">E</span> -> <span class="pronounce-main">(e)</span></div>
-            <div class="letter-box"><span class="letter-main">F</span> -> <span class="pronounce-main">(ef)</span></div>
-            <div class="letter-box"><span class="letter-main">G</span> -> <span class="pronounce-main">(jé)</span></div>
-            <div class="letter-box"><span class="letter-main">H</span> -> <span class="pronounce-main">(ac)</span></div>
-            <div class="letter-box"><span class="letter-main">I</span> -> <span class="pronounce-main">(i)</span></div>
-            <div class="letter-box"><span class="letter-main">J</span> -> <span class="pronounce-main">(ji)</span></div>
-            <div class="letter-box"><span class="letter-main">K</span> -> <span class="pronounce-main">(ka)</span></div>
-            <div class="letter-box"><span class="letter-main">L</span> -> <span class="pronounce-main">(el)</span></div>
-            <div class="letter-box"><span class="letter-main">M</span> -> <span class="pronounce-main">(em)</span></div>
-            <div class="letter-box"><span class="letter-main">N</span> -> <span class="pronounce-main">(en)</span></div>
-            <div class="letter-box"><span class="letter-main">O</span> -> <span class="pronounce-main">(o)</span></div>
-            <div class="letter-box"><span class="letter-main">P</span> -> <span class="pronounce-main">(pé)</span></div>
-            <div class="letter-box"><span class="letter-main">Q</span> -> <span class="pronounce-main">(kü)</span></div>
-            <div class="letter-box"><span class="letter-main">R</span> -> <span class="pronounce-main">(er)</span></div>
-            <div class="letter-box"><span class="letter-main">S</span> -> <span class="pronounce-main">(es)</span></div>
-            <div class="letter-box"><span class="letter-main">T</span> -> <span class="pronounce-main">(té)</span></div>
-            <div class="letter-box"><span class="letter-main">U</span> -> <span class="pronounce-main">(ü)</span></div>
-            <div class="letter-box"><span class="letter-main">V</span> -> <span class="pronounce-main">(vé)</span></div>
-            <div class="letter-box"><span class="letter-main">W</span> -> <span class="pronounce-main">(dublé-vé)</span></div>
-            <div class="letter-box"><span class="letter-main">X</span> -> <span class="pronounce-main">(iks)</span></div>
-            <div class="letter-box"><span class="letter-main">Y</span> -> <span class="pronounce-main">(igrek)</span></div>
-            <div class="letter-box"><span class="letter-main">Z</span> -> <span class="pronounce-main">(zed)</span></div>
+    <div class="contact-section">
+        <div class="contact-title">Contact & Paiement</div>
+        <div class="btn-container">
+            <a href="https://wave.com" class="btn-contact btn-wave">🍊 Wave (76 359 08 77)</a>
+            <a href="https://wa.me" class="btn-contact btn-whatsapp">💬 WhatsApp</a>
         </div>
     </div>
+</div>
 
-    <!-- 2. SARTU BOOLE ARAF YI -->
-    <h2>2. Sartu boole araf yi (Syllabes)</h2>
-    <p style="text-align: left;">Jàngal ni ngay boolee consonne ak voyelle ngir rëcc kàddu yi :</p>
-    <div class="vocab-box boole">
-        <div class="misal-line"><span class="bold-word">B + A = BA</span> -> <span class="pronounce">(ba)</span> | <span class="bold-word">B + E = BE</span> -> <span class="pronounce">(be)</span> | <span class="bold-word">B + I = BI</span> -> <span class="pronounce">(bi)</span></div>
-        <div class="misal-line"><span class="bold-word">B + O = BO</span> -> <span class="pronounce">(bo)</span> | <span class="bold-word">B + U = BU</span> -> <span class="pronounce">(bü)</span></div>
-        <hr style="border: 0; border-top: 1px dashed #e0e0e0; margin: 10px 0;">
-        <div class="misal-line"><span class="bold-word">M + A = MA</span> -> <span class="pronounce">(ma)</span> | <span class="bold-word">M + E = ME</span> -> <span class="pronounce">(me)</span> | <span class="bold-word">M + I = MI</span> -> <span class="pronounce">(mi)</span></div>
-        <div class="misal-line"><span class="bold-word">M + O = MO</span> -> <span class="pronounce">(mo)</span> | <span class="bold-word">M + U = MU</span> -> <span class="pronounce">(mü)</span></div>
-    </div>
-
-    <!-- 3. VOYELLES NASALES -->
-    <h2>3. Voyelles Nasales (Yi ñuy waxee ci bakkan)</h2>
-    <p style="text-align: left;">Yii dañu dakk ci bakkan, daway soppi waxiinu araf yi :</p>
-    <div class="vocab-box nasale">
-        <div class="fr">AN / AM / EN / EM</div>
-        <div class="wo">Léral waxiinu: Melni "an" ci Wolof bu jaxasoo ak "on"</div>
-        <div class="misal-line">Misal: <span class="bold-word">Enfant</span> <span class="pronounce">(an fan)</span> -> Firi: Xale</div>
-    </div>
-    <div class="vocab-box nasale">
-        <div class="fr">IN / IM / AIN / EIN</div>
-        <div class="wo">Léral waxiinu: Melni "en" bu dakk ci bakkan</div>
-        <div class="misal-line">Misal: <span class="bold-word">Pain</span> <span class="pronounce">(pen)</span> -> Firi: Mburu</div>
-    </div>
-
-    <!-- 4. BINDEEN YI GËNA JAFEE LIRE -->
-    <h2>4. Bindeen yi gëna jafee lire</h2>
-    <p style="text-align: left;">Booleem araf yii buy jaxasoo di am beneen waxiin wu bees :</p>
-    <div class="vocab-box jafee">
-        <div class="fr">CH</div>
-        <div class="wo">Léral waxiinu: Day nekk "C" (mélni "sh" ci angale)</div>
-        <div class="misal-line">Misal: <span class="bold-word">Chat</span> <span class="pronounce">(ca)</span> -> Firi: Muus</div>
-    </div>
-    <div class="vocab-box jafee">
-        <div class="fr">OI</div>
-        <div class="wo">Léral waxiinu: Day nekk "wa" tàllal</div>
-        <div class="misal-line">Misal: <span class="bold-word">Oiseau</span> <span class="pronounce">(wazo)</span> -> Firi: Picc</div>
-    </div>
-
+</body>
+</html>
