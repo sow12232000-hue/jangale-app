@@ -96,7 +96,15 @@
             width: 70%;
             text-align: left;
         }
+ 
     </style>
+<script>
+    history.pushState({page: "subpage"}, "", "");
+    window.addEventListener('popstate', function(event) {
+        window.location.href = "index.html";
+    });
+</script>
+
 </head>
 <body>
 
