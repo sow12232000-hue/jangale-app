@@ -1,195 +1,158 @@
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+<!DOCTYPE html>
+<html lang="wo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jangale App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            padding: 16px;
+        }
+        .header {
+            background-color: #1E2746;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1E2746;
+            margin-bottom: 15px;
+        }
+        /* Fi la 4 karee jàngale yi di fete (Grid 2x2) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .grid-box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .box-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .box-desc {
+            font-size: 11px;
+            color: #777;
+        }
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin-bottom: 20px;
+        }
+        /* Wàllu Paaymant ak Waxtaan */
+        .contact-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .btn-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 13px;
+            text-align: center;
+        }
+        .btn-wave {
+            background-color: #19B4E5;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+    </style>
+</head>
+<body>
 
-void main() {
-  runApp(const JangaleApp());
-}
+    <div class="header">JÀNGALE APP</div>
+    
+    <div class="section-title">SUJÉ YIY JÀNGALE (PROGRAMMES)</div>
 
-class JangaleApp extends StatelessWidget {
-  const JangaleApp({super.key});
+    <!-- 4 Karee yi dëppoo ak sa yeneen fail yi -->
+    <div class="grid-container">
+        <a href="english.html" class="grid-box">
+            <div class="icon-circle" style="background-color: #d0e8ff; color: #007bff;">📘</div>
+            <div class="box-title">Anglais ci Wolof</div>
+            <div class="box-desc">Lësonu Angale, kàddu yu am solo</div>
+        </a>
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
-    );
-  }
-}
+        <a href="saadatut-tullab.html" class="grid-box">
+            <div class="icon-circle" style="background-color: #ffe8cc; color: #ff9200;">🍊</div>
+            <div class="box-title">سَعَادَةُ الطُّلَّابِ</div>
+            <div class="box-desc">Sa'adatut Tullab bu Serigne Touba</div>
+        </a>
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+        <a href="french.html" class="grid-box">
+            <div class="icon-circle" style="background-color: #e3f9ff; color: #00a3cc;">📖</div>
+            <div class="box-title">Français ci Wolof</div>
+            <div class="box-desc">Français ngir Écool yi, jangkat yi</div>
+        </a>
 
-  // Fonction ngir ubbi WhatsApp
-  Future<void> _ouvrirWhatsApp() async {
-    final Uri whatsappUrl = Uri.parse("https://wa.me");
-    if (!await launchUrl(whatsappUrl, mode: LaunchMode.externalApplication)) {
-      throw Exception('Mënul a ubbi WhatsApp');
-    }
-  }
+        <a href="arabe.html" class="grid-box">
+            <div class="icon-circle" style="background-color: #d4edda; color: #28a745;">🟢</div>
+            <div class="box-title">اللغة العربية (L'Arabe)</div>
+            <div class="box-desc">Jàng kàddu yu am solo</div>
+        </a>
+    </div>
 
-  // Fonction ngir ubbi Wave ak sa lien dëgg-dëgg bi
-  Future<void> _ouvrirWave() async {
-    final Uri waveUrl = Uri.parse("https://wave.com"); 
-    if (!await launchUrl(waveUrl, mode: LaunchMode.externalApplication)) {
-      throw Exception('Mënul a ubbi Wave');
-    }
-  }
+    <div class="divider"></div>
 
-  @override
-  Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> buntuYi = [
-      {
-        'title': 'Anglais ci Wolof',
-        'subtitle': 'Lësonu Angale, kàddu yu am solo',
-        'color': Colors.blue.shade100,
-        'iconColor': Colors.blue,
-      },
-      {
-        'title': 'سَعَادَةُ الطُّلَّابِ',
-        'subtitle': "Sa'adatut Tullab bu Serigne Touba",
-        'color': Colors.orange.shade100,
-        'iconColor': Colors.orange,
-      },
-      {
-        'title': 'Français ci Wolof',
-        'subtitle': 'Français ngir Écool yi, jangkat yi',
-        'color': Colors.lightBlue.shade50,
-        'iconColor': Colors.blueAccent,
-      },
-      {
-        'title': 'اللغة العربية (L\'Arabe)',
-        'subtitle': 'Jàng kàddu yu am solo',
-        'color': Colors.green.shade100,
-        'iconColor': Colors.green,
-      },
-    ];
+    <div class="contact-title">CONTACT & PAIEMENT</div>
+    
+    <!-- Bouton Wave ak WhatsApp yu lay fay walla di la jotoog -->
+    <div class="btn-container">
+        <a href="https://wave.com" class="btn btn-wave" target="_blank">
+            💰 Fay ci Wave
+        </a>
+        <a href="https://wa.me" class="btn btn-whatsapp" target="_blank">
+            💬 WhatsApp
+        </a>
+    </div>
 
-    return Scaffold(
-      backgroundColor: Colors.grey.shade100,
-      appBar: AppBar(
-        title: const Text(
-          'JÀNGALE APP',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        centerTitle: true,
-        backgroundColor: const Color(0xFF1E2746),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'SUJÉ YIY JÀNGALE (PROGRAMMES)',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF1E2746),
-              ),
-            ),
-            const SizedBox(height: 16),
-            
-            // 4 buntu yi (Grid View 2x2)
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 0.85,
-                ),
-                itemCount: buntuYi.length,
-                itemBuilder: (context, index) {
-                  final buntu = buntuYi[index];
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.1),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: buntu['color'],
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(Icons.book, color: buntu['iconColor'], size: 28),
-                          ),
-                          const SizedBox(height: 12),
-                          Text(
-                            buntu['title'],
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            buntu['subtitle'],
-                            textAlign: TextAlign.center,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontSize: 11, color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-
-            const Divider(height: 32),
-
-            // Bouton Wave ak WhatsApp
-            const Text(
-              'CONTACT & PAIEMENT',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey),
-            ),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: _ouvrirWave,
-                    icon: const Icon(Icons.account_balance_wallet, color: Colors.white),
-                    label: const Text('Fay ci Wave', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF19B4E5),
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: _ouvrirWhatsApp,
-                    icon: const Icon(Icons.chat, color: Colors.white),
-                    label: const Text('WhatsApp', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF25D366),
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+</body>
+</html>
