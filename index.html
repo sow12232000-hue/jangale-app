@@ -1,250 +1,198 @@
-<!DOCTYPE html>
-<html lang="wo">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jàngale App</title>
-    <style>
-        /* 1. PARAMÉTRAASU KULOOR AK MBIND */
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #1a2530;
-            --card-bg: #ffffff;
-            --primary-green: #1ebd5b;
-            --btn-radius: 12px;
-            --border-light: #e0e0e0;
-            --font-size-base: 16px;
-        }
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-        /* Mode Nuit 🌙 */
-        .dark-mode {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --card-bg: #1e1e1e;
-            --border-light: #333333;
-        }
+void main() {
+  runApp(const JangaleApp());
+}
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 15px;
-            font-size: var(--font-size-base);
-            transition: background 0.3s, color 0.3s;
-        }
+class JangaleApp extends StatelessWidget {
+  const JangaleApp({super.key});
 
-        /* 2. REKLE WAALU BARRE PARAMETRE */
-        .settings-bar {
-            display: flex;
-            justify-content: space-between;
-            background: var(--card-bg);
-            padding: 10px 15px;
-            border-radius: var(--btn-radius);
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            border: 1px solid var(--border-light);
-        }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const HomeScreen(),
+    );
+  }
+}
 
-        .settings-btn {
-            background: #f1f3f4;
-            border: none;
-            padding: 8px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #3c4043;
-        }
-        
-        .dark-mode .settings-btn {
-            background: #333;
-            color: #fff;
-        }
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
-        /* URREU BI */
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+  // Fonction ngir ubbi WhatsApp ak sa nimero
+  Future<void> _ouvrirWhatsApp() async {
+    final Uri whatsappUrl = Uri.parse("https://wa.me");
+    if (!await launchUrl(whatsappUrl, mode: LaunchMode.externalApplication)) {
+      throw Exception('Mënul a ubbi WhatsApp');
+    }
+  }
 
-        .header h1 {
-            color: #2b3d52;
-            font-size: 28px;
-            margin-bottom: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .dark-mode .header h1 {
-            color: #ffffff;
-        }
+  // Fonction ngir ubbi Wave ak sa lien dëgg-dëgg bi nga ma won
+  Future<void> _ouvrirWave() async {
+    final Uri waveUrl = Uri.parse("https://wave.com"); 
+    if (!await launchUrl(waveUrl, mode: LaunchMode.externalApplication)) {
+      throw Exception('Mënul a ubbi Wave');
+    }
+  }
 
-        .header p {
-            color: #6c757d;
-            margin: 0;
-            font-size: 16px;
-        }
-        
-        .dark-mode .header p {
-            color: #b0b3b8;
-        }
+  @override
+  Widget build(BuildContext context) {
+    // 4 buntu jàngale yi
+    final List<Map<String, dynamic>> buntuYi = [
+      {
+        'title': 'Anglais ci Wolof',
+        'subtitle': 'Lësonu Angale, kàddu yu am solo',
+        'color': Colors.blue.shade100,
+        'iconColor': Colors.blue,
+      },
+      {
+        'title': 'سَعَادَةُ الطُّلَّابِ',
+        'subtitle': "Sa'adatut Tullab bu Serigne Touba",
+        'color': Colors.orange.shade100,
+        'iconColor': Colors.orange,
+      },
+      {
+        'title': 'Français ci Wolof',
+        'subtitle': 'Français ngir Écool yi, jangkat yi',
+        'color': Colors.lightBlue.shade50,
+        'iconColor': Colors.blueAccent,
+      },
+      {
+        'title': 'اللغة العربية (L\'Arabe)',
+        'subtitle': 'Jàng kàddu yu am solo',
+        'color': Colors.green.shade100,
+        'iconColor': Colors.green,
+      },
+    ];
 
-        /* WAXTANU WHATSAPP BI (BU DOX TE DOXALUL ERROR) */
-        .whatsapp-box {
-            border: 2px dashed var(--primary-green);
-            padding: 15px;
-            border-radius: var(--btn-radius);
-            text-align: center;
-            margin-bottom: 30px;
-            background-color: var(--card-bg);
-            border-color: var(--primary-green);
-        }
+    return Scaffold(
+      backgroundColor: Colors.grey.shade100,
+      appBar: AppBar(
+        title: const Text(
+          'JÀNGALE APP',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        centerTitle: true,
+        backgroundColor: const Color(0xFF1E2746),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'SUJÉ YIY JÀNGALE (PROGRAMMES)',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF1E2746),
+              ),
+            ),
+            const SizedBox(height: 16),
+            
+            // 4 buntu yi yu tegu 2x2 (Grid View) ni nga ko bëggé
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.85,
+                ),
+                itemCount: buntuYi.length,
+                itemBuilder: (context, index) {
+                  final buntu = buntuYi[index];
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.1),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: buntu['color'],
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(Icons.book, color: buntu['iconColor'], size: 28),
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            buntu['title'],
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            buntu['subtitle'],
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(fontSize: 11, color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
 
-        .whatsapp-btn {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 15px 20px;
-            border: none;
-            border-radius: var(--btn-radius);
-            font-size: 18px;
-            font-weight: bold;
-            width: 100%;
-            cursor: pointer;
-        }
+            const Divider(height: 32),
 
-        /* SECTION SUJÉ YI */
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2b3d52;
-            border-bottom: 2px solid #2b3d52;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .dark-mode .section-title {
-            color: #ffffff;
-            border-bottom-color: #ffffff;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: var(--btn-radius);
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s;
-            border: 1px solid var(--border-light);
-        }
-
-        .card:active {
-            transform: scale(0.98);
-        }
-
-        /* Kulooru buntu téere bu ci nekk */
-        .card.orange { border-left: 6px solid #ff8c00; }
-        .card.blue { border-left: 6px solid #007bff; }
-        .card.green { border-left: 6px solid #28a745; }
-
-        .card-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card-desc {
-            font-size: 14px;
-            color: #6c757d;
-            line-height: 1.5;
-        }
-        
-        .dark-mode .card-desc {
-            color: #b0b3b8;
-        }
-</style>
-  <script>
-    window.addEventListener('load', function() {
-        history.pushState({page: "home"}, "", "");
-    });
-    window.addEventListener('popstate', function(event) {
-        if (document.referrer !== "") {
-            window.history.back();
-        } else {
-            window.location.href = "index.html";
-        }
-    });
-</script>
-  
-</head>
-<body>
-
-    <!-- BUTOONG PARAMETRAGE YI NGIR SOOPPI KULOOR AK MBIND MI -->
-    <div class="settings-bar">
-        <button class="settings-btn" onclick="toggleDarkMode()">🌙 Mode Nuit</button>
-        <div>
-            <button class="settings-btn" onclick="changeFontSize('up')">A +</button>
-            <button class="settings-btn" onclick="changeFontSize('down')">A -</button>
-        </div>
-    </div>
-
-    <!-- URREU BI -->
-    <div class="header">
-        <h1>JÀNGALE APP</h1>
-        <p>Mbalum Njangum Araab, Faransé ak Lihraab</p>
-    </div>
-    
-
-
-
-
-    <!-- PROGRAM YI -->
-    <div class="section-title">SUJÉ YIY JÀNGALE (PROGRAMMES)</div>
-
-         <!-- 0. BUNTU ANGLAIS -->
-        <a href="english.html" class="card" style="background: var(--card-bg); border: 1px solid var(--border-light); border-left: 5px solid #9b59b6; border-radius: var(--btn-radius); display: block; margin-bottom: 20px; padding: 15px; text-decoration: none; color: var(--text-color);">
-            <div class="card-title" style="font-weight: bold; font-size: 20px; color: var(--text-color); display: flex; align-items: center; gap: 10px;">📘 Anglais ci Wolof</div>
-            <div class="card-desc" style="color: #6c757d; font-size: 14px; margin-top: 5px;">Wolof: Lësonu Angale, kàddu yu am solo ak waxtaan</div>
-        </a>
-   <!-- 1. BUNTU NAHWU: Sa'adatut Tullab -->
-    <a href="saadatut-tullab.html" class="card orange">
-        <div class="card-title">🍊 سَعَادَةُ الطُّلَّابِ</div>
-        <div class="card-desc">Wolof: Sa'adatut Tullab bu Serigne Touba - Lihraab ak Leeral gu yaatu</div>
-    </a>
-
-    <!-- 2. BUNTU FRANÇAIS -->
-    <a href="french.html" class="card blue">
-        <div class="card-title">📘 Français ci Wolof</div>
-        <div class="card-desc">Français ngir Écool yi, jangkat yi ak jàng buntu kàddu yi</div>
-    </a>
-
-    <!-- 3. BUNTU ARAAB -->
-    <a href="arabe.html" class="card green">
-        <div class="card-title">🟢 اللغة العربية (L'Arabe)</div>
-        <div class="card-desc">Wolof: Lësonu Araabi, kàddu yu am solo ak waxtaan</div>
-    </a>
-
-    <!-- JAVASCRIPT NGIR PARAMETRE YI LIGGÉEY DIAL-DIAL -->
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-
-        let currentSize = 16;
-        function changeFontSize(direction) {
-            if (direction === 'up' && currentSize < 24) {
-                currentSize += 1;
-            } else if (direction === 'down' && currentSize > 13) {
-                currentSize -= 1;
-            }
-            document.body.style.fontSize = currentSize + 'px';
-        }
-    </script>
-</body>
-</html>
+            // Wàllu Paaymant ak Waxtaan (Wave ak WhatsApp)
+            const Text(
+              'CONTACT & PAIEMENT',
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey),
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                // Bouton Wave bu lay fay direktamaan
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: _ouvrirWave,
+                    icon: const Icon(Icons.account_balance_wallet, color: Colors.white),
+                    label: const Text('Fay ci Wave', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF19B4E5), // Kuloor u Wave
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                // Bouton WhatsApp
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: _ouvrirWhatsApp,
+                    icon: const Icon(Icons.chat, color: Colors.white),
+                    label: const Text('WhatsApp', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF25D366), // Kuloor u WhatsApp
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
