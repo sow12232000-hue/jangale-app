@@ -44,7 +44,6 @@
         .vocab-box.nasale { border-left: 5px solid #9b59b6; }
         .vocab-box.jafee { border-left: 5px solid #e74c3c; }
         .vocab-box.niroo { border-left: 5px solid #3498db; }
-        .vocab-box.guddu { border-left: 5px solid #2c3e50; }
         
         .alphabet-grid {
             display: grid;
@@ -63,23 +62,46 @@
             cursor: pointer;
             transition: 0.2s;
         }
-        .letter-box:hover {
-            background: #e2e4e9;
-        }
+        .letter-box:hover { background: #e2e4e9; }
         .letter-main { font-weight: bold; color: #e74c3c; }
         .pronounce-main { color: #27ae60; font-weight: bold; }
         
+        /* Grid bu bees ngir sartu boole araf yi mel ni sa nataal bi */
+        .syllabe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .syllabe-box {
+            background: #f1f2f6;
+            padding: 10px 5px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .syllabe-box:hover { background: #e2e4e9; }
+        .syllabe-text { font-weight: bold; margin-bottom: 5px; }
+
         .fr { font-weight: bold; color: #e74c3c; font-size: 18px; }
         .wo { font-weight: bold; color: #27ae60; font-size: 16px; margin-top: 5px; }
-        .misal-line { 
-            margin-top: 10px; 
-            font-size: 14px; 
-            line-height: 1.5; 
-            color: #333;
+        
+        .misal-container {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            transition: 0.2s;
         }
+        .misal-container:hover { background: #f1f2f6; }
+        .misal-line { font-size: 14px; line-height: 1.5; color: #333; }
         .bold-word { font-weight: bold; color: #2c3e50; }
         .pronounce { color: #27ae60; font-weight: bold; }
         
@@ -93,22 +115,9 @@
             border-radius: 5px;
             font-weight: bold;
         }
-
-        /* Ikon megafon buy dundal audio */
         .speaker-icon {
-            font-size: 18px;
-            cursor: pointer;
-            user-select: none;
-        }
-        
-        .line-item {
-            cursor: pointer;
-            padding: 4px;
-            border-radius: 4px;
-            transition: 0.2s;
-        }
-        .line-item:hover {
-            background: #f1f2f6;
+            font-size: 16px;
+            margin-top: 2px;
         }
     </style>
 </head>
@@ -138,7 +147,7 @@
             <div class="letter-box" onclick="waxFaranse('L')"><span><span class="letter-main">L</span> -> <span class="pronounce-main">(el)</span></span> <span class="speaker-icon">🔊</span></div>
             <div class="letter-box" onclick="waxFaranse('M')"><span><span class="letter-main">M</span> -> <span class="pronounce-main">(em)</span></span> <span class="speaker-icon">🔊</span></div>
             <div class="letter-box" onclick="waxFaranse('N')"><span><span class="letter-main">N</span> -> <span class="pronounce-main">(en)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('O');"><span><span class="letter-main">O</span> -> <span class="pronounce-main">(o)</span></span> <span class="speaker-icon">🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('O')"><span><span class="letter-main">O</span> -> <span class="pronounce-main">(o)</span></span> <span class="speaker-icon">🔊</span></div>
             <div class="letter-box" onclick="waxFaranse('P')"><span><span class="letter-main">P</span> -> <span class="pronounce-main">(pé)</span></span> <span class="speaker-icon">🔊</span></div>
             <div class="letter-box" onclick="waxFaranse('Q')"><span><span class="letter-main">Q</span> -> <span class="pronounce-main">(kü)</span></span> <span class="speaker-icon">🔊</span></div>
             <div class="letter-box" onclick="waxFaranse('R')"><span><span class="letter-main">R</span> -> <span class="pronounce-main">(er)</span></span> <span class="speaker-icon">🔊</span></div>
@@ -153,13 +162,8 @@
         </div>
     </div>
 
-    <!-- 2. SARTU BOOLE ARAF YI -->
+    <!-- 2. SARTU BOOLE ARAF YI (GRID) -->
     <h2>2. Sartu boole araf yi (Syllabes)</h2>
     <p style="text-align: left;">Jàngal ni ngay boolee consonne ak voyelle ngir rëcc kàddu yi :</p>
     <div class="vocab-box boole">
-        <div class="misal-line">
-            <span class="line-item" onclick="waxFaranse('BA')"><span class="bold-word">B + A = BA</span> -> <span class="pronounce">(ba)</span> 🔊</span> | 
-            <span class="line-item" onclick="waxFaranse('BE')"><span class="bold-word">B + E = BE</span> -> <span class="pronounce">(be)</span> 🔊</span> | 
-            <span class="line-item" onclick="waxFaranse('BI')"><span class="bold-word">B + I = BI</span> -> <span class="pronounce">(bi)</span> 🔊</span>
-        </div>
-        <div class="misal-line">
+        <div class="syllabe-grid">
