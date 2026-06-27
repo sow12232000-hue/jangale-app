@@ -22,6 +22,7 @@
         h1 {
             text-align: center;
             color: #333;
+            margin-top: 10px;
         }
         h2 {
             font-size: 20px;
@@ -83,11 +84,30 @@
             color: #27ae60;
             font-weight: bold;
         }
+        .back-btn {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #eee;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- BUTOÑU DELLU GANNAAW -->
+        <a href="index.html" class="back-btn">⬅️ Dellu gannaaw</a>
+
         <h1>Jangale</h1>
 
         <!-- LESON 1: ALPHABET -->
@@ -102,7 +122,7 @@
             <div class="letter-box" onclick="waxFaranse('G')">G -> (sé) 🔊</div>
             <div class="letter-box" onclick="waxFaranse('H')">H -> (as) 🔊</div>
             <div class="letter-box" onclick="waxFaranse('I')">I -> (i) 🔊</div>
-            <div class="letter-box" onclick="waxFaranse('J')">J </head>-> (ji) 🔊</div>
+            <div class="letter-box" onclick="waxFaranse('J')">J -> (ji) 🔊</div>
             <div class="letter-box" onclick="waxFaranse('K')">K -> (ka) 🔊</div>
             <div class="letter-box" onclick="waxFaranse('L')">L -> (el) 🔊</div>
             <div class="letter-box" onclick="waxFaranse('M')">M -> (em) 🔊</div>
@@ -195,19 +215,3 @@
             </div>
         </div>
 
-    </div>
-
-    <!-- CODE JAVASCRIPT NGIR WAX BI -->
-    <script>
-    function waxFaranse(texte) {
-        if ('speechSynthesis' in window) {
-            let message = new SpeechSynthesisUtterance(texte);
-            message.lang = 'fr-FR';
-            message.rate = 0.85; // Nu mu koy waxe (ndank ngir mu jàngu)
-            window.speechSynthesis.speak(message);
-        }
-    }
-    </script>
-
-</body>
-</html>
