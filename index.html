@@ -3,164 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jangaleapp</title>
+    <title>Jangale App</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+        * {
             margin: 0;
-            padding: 10px;
-            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-        .container {
-            max-width: 450px;
-            margin: auto;
-            background: #f8f9fa;
+
+        body {
+            background-color: #f5f5f5;
+            padding: 16px;
         }
-        .app-title {
-            background-color: #1e2746;
+
+        .header {
+            background-color: #1E2746;
             color: white;
-            padding: 15px;
-            font-size: 22px;
+            text-align: center;
+            padding: 16px;
             font-weight: bold;
-            border-radius: 10px;
-            margin-top: 10px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            font-size: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
+
         .section-title {
-            color: #1e2746;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            color: #1E2746;
+            margin-bottom: 16px;
         }
+
         .grid-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: 16px;
+            margin-bottom: 30px;
         }
-        .card {
-            background: white;
-            padding: 15px 5px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+
+        .grid-item {
+            background-color: white;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
             text-decoration: none;
-            color: #000000;
+            color: black;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 120px;
-            box-sizing: border-box;
         }
-        .card-icon {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-        .card h3 {
-            font-size: 14px;
-            margin: 3px 0;
-            font-weight: bold;
-        }
-        .card p {
-            font-size: 11px;
-            color: #9ea4ab;
-            margin: 0;
-            line-height: 1.3;
-        }
-        .footer-section {
-            border-top: 1px solid #e2e8f0;
-            padding-top: 15px;
-            text-align: left;
-        }
-        .footer-title {
-            font-size: 12px;
-            color: #718096;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .btn-container {
+
+        .circle-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 12px;
         }
-        .btn-action {
-            flex: 1;
-            padding: 12px 5px;
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
+
+        .item-title {
             font-weight: bold;
             font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .item-subtitle {
+            font-size: 11px;
+            color: grey;
+        }
+
+        .contact-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: grey;
+            margin-bottom: 12px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
         }
+
         .btn-wave {
-            background-color: #00a4e4;
+            background-color: #19B4E5;
         }
+
         .btn-whatsapp {
-            background-color: #1ebd5b;
+            background-color: #25D366;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="app-title">JÀNGALE APP</div>
+    <div class="header">JÀNGALE APP</div>
+
     <div class="section-title">SUJÉ YIY JÀNGALE (PROGRAMMES)</div>
 
     <div class="grid-container">
-        <!-- 1. ANGLAIS -->
-        <a href="english.html" class="card">
-            <span class="card-icon">📘</span>
-            <h3>Anglais ci Wolof</h3>
-            <p>Lësonu Angale,<br>kàddu yu am solo</p>
+        <a href="english.html" class="grid-item">
+            <div class="circle-icon" style="background-color: #E3F2FD; color: #1E88E5;">📘</div>
+            <div class="item-title">Anglais ci Wolof</div>
+            <div class="item-subtitle">Lësonu Angale, kàddu yu am solo</div>
         </a>
 
-        <!-- 2. SA'ADATUT -->
-        <a href="#" class="card">
-            <span class="card-icon">🍊</span>
-            <h3>سَعَادَةُ الطُّلَّابِ</h3>
-            <p>Sa'adatut bu Serigne<br>Touba</p>
+        <a href="saadatut-tullab.html" class="grid-item">
+            <div class="circle-icon" style="background-color: #FFF3E0; color: #FB8C00;">🍊</div>
+            <div class="item-title">سَعَادَةُ الطُّلَّابِ</div>
+            <div class="item-subtitle">Sa'adatut bu Serigne Touba</div>
         </a>
 
-        <!-- 3. FRANÇAIS -->
-        <a href="french.html" class="card">
-            <span class="card-icon">📖</span>
-            <h3>Français ci<br>Wolof</h3>
-            <p>Français ngir Écool<br>yi...</p>
+        <a href="french.html" class="grid-item">
+            <div class="circle-icon" style="background-color: #E1F5FE; color: #039BE5;">📖</div>
+            <div class="item-title">Français ci Wolof</div>
+            <div class="item-subtitle">Français ngir Écool yi...</div>
         </a>
 
-        <!-- 4. L'ARABE -->
-        <a href="#" class="card">
-            <span class="card-icon">🟢</span>
-            <h3>اللغة العربية<br>(L'Arabe)</h3>
-            <p>Jàng kàddu yu am<br>solo</p>
+        <a href="arabe.html" class="grid-item">
+            <div class="circle-icon" style="background-color: #E8F5E9; color: #43A047;">🟢</div>
+            <div class="item-title">اللغة العربية (L'Arabe)</div>
+            <div class="item-subtitle">Jàng kàddu yu am solo</div>
         </a>
     </div>
 
-    <!-- CONTACT & PAIEMENT (WAVE ACC WHATSAPP) -->
-    <div class="footer-section">
-        <div class="footer-title">CONTACT & PAIEMENT</div>
-        <div class="btn-container">
-            <!-- LIEN PAIEMENT WAVE LAMINE SOW 1.000F -->
-            <a href="https://wave.com" target="_blank" class="btn-action btn-wave">
-                🍊 Wave (76 359 08 77)
-            </a>
-            <!-- LIEN WHATSAPP -->
-            <a href="https://wa.me" target="_blank" class="btn-action btn-whatsapp">
-                💬 WhatsApp
-            </a>
-        </div>
+    <hr style="border: 0; border-top: 1px solid #ccc; margin-bottom: 20px;">
+
+    <div class="contact-title">CONTACT & PAIEMENT</div>
+
+    <div class="button-container">
+        <!-- Fii la sa nimero 763590877 nekk directly ci aname tel: ngir mu ubbi clavier bi directly te du bloque -->
+        <a href="tel:763590877" class="btn btn-wave">💰 Wave (76 359 08 77)</a>
+        
+        <a href="https://wa.me" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
     </div>
-</div>
 
 </body>
 </html>
