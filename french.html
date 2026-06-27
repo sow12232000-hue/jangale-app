@@ -45,6 +45,7 @@
         .vocab-box.jafee { border-left: 5px solid #e74c3c; }
         .vocab-box.niroo { border-left: 5px solid #3498db; }
         .vocab-box.guddu { border-left: 5px solid #2c3e50; }
+        .vocab-box.bees-jafee { border-left: 5px solid #e67e22; }
         
         .alphabet-grid {
             display: grid;
@@ -61,47 +62,19 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: 0.2s;
         }
-        .letter-box:hover { background: #e2e4e9; }
+        
         .letter-main { font-weight: bold; color: #e74c3c; }
         .pronounce-main { color: #27ae60; font-weight: bold; }
         
-        .syllabe-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .syllabe-box {
-            background: #f1f2f6;
-            padding: 10px 5px;
-            border-radius: 8px;
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .syllabe-box:hover { background: #e2e4e9; }
-        .syllabe-text { font-weight: bold; margin-bottom: 5px; }
-
         .fr { font-weight: bold; color: #e74c3c; font-size: 18px; }
         .wo { font-weight: bold; color: #27ae60; font-size: 16px; margin-top: 5px; }
-        
-        .misal-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 6px;
-            transition: 0.2s;
+        .misal-line { 
+            margin-top: 10px; 
+            font-size: 14px; 
+            line-height: 1.8; 
+            color: #333; 
         }
-        .misal-container:hover { background: #f1f2f6; }
-        .misal-line { font-size: 14px; line-height: 1.5; color: #333; width: 100%; }
         .bold-word { font-weight: bold; color: #2c3e50; }
         .pronounce { color: #27ae60; font-weight: bold; }
         
@@ -115,9 +88,15 @@
             border-radius: 5px;
             font-weight: bold;
         }
-        .speaker-icon {
-            font-size: 16px;
-            margin-top: 2px;
+        
+        .audio-item {
+            cursor: pointer;
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+        .audio-item:hover {
+            background: #e2e4e9;
         }
     </style>
 </head>
@@ -125,45 +104,58 @@
 
 <div class="container">
     <a href="index.html" class="back-btn">⬅️ Delu Guinnaw</a>
-    <h1>Lëson 1: Sartu Lire bu mat sekk</h1>
+    <h1>Jàngale App - Faransé bu mat sekk</h1>
     <p>Mbooleem bindeen yi ak ni ñuy waxee baat yu nekk ci Faransé</p>
 
-    <!-- 1. ALPHABET FRANÇAIS -->
+    <!-- ==================== LËSON 1 ==================== -->
+    <h1>Lëson 1: Sartu Lire bu mat sekk</h1>
+
     <h2>1. Mbooleem Araf yi (A ba Z)</h2>
     <p style="text-align: left;">Araf par araf, ni ñuy waxee turam ci Faransé :</p>
     <div class="vocab-box alphabet">
         <div class="alphabet-grid">
-            <div class="letter-box" onclick="waxFaranse('A')"><span><span class="letter-main">A</span> -> <span class="pronounce-main">(a)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('B')"><span><span class="letter-main">B</span> -> <span class="pronounce-main">(bé)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('C')"><span><span class="letter-main">C</span> -> <span class="pronounce-main">(sé)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('D')"><span><span class="letter-main">D</span> -> <span class="pronounce-main">(dé)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('E')"><span><span class="letter-main">E</span> -> <span class="pronounce-main">(e)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('F')"><span><span class="letter-main">F</span> -> <span class="pronounce-main">(ef)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('G')"><span><span class="letter-main">G</span> -> <span class="pronounce-main">(jé)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('H')"><span><span class="letter-main">H</span> -> <span class="pronounce-main">(ac)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('I')"><span><span class="letter-main">I</span> -> <span class="pronounce-main">(i)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('J')"><span><span class="letter-main">J</span> -> <span class="pronounce-main">(ji)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('K')"><span><span class="letter-main">K</span> -> <span class="pronounce-main">(ka)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('L')"><span><span class="letter-main">L</span> -> <span class="pronounce-main">(el)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('M')"><span><span class="letter-main">M</span> -> <span class="pronounce-main">(em)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('N')"><span><span class="letter-main">N</span> -> <span class="pronounce-main">(en)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('O')"><span><span class="letter-main">O</span> -> <span class="pronounce-main">(o)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('P')"><span><span class="letter-main">P</span> -> <span class="pronounce-main">(pé)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('Q')"><span><span class="letter-main">Q</span> -> <span class="pronounce-main">(kü)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('R')"><span><span class="letter-main">R</span> -> <span class="pronounce-main">(er)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('S')"><span><span class="letter-main">S</span> -> <span class="pronounce-main">(es)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('T')"><span><span class="letter-main">T</span> -> <span class="pronounce-main">(té)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('U')"><span><span class="letter-main">U</span> -> <span class="pronounce-main">(ü)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('V')"><span><span class="letter-main">V</span> -> <span class="pronounce-main">(vé)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('W')"><span><span class="letter-main">W</span> -> <span class="pronounce-main">(dublé-vé)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('X')"><span><span class="letter-main">X</span> -> <span class="pronounce-main">(iks)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('Y')"><span><span class="letter-main">Y</span> -> <span class="pronounce-main">(igrek)</span></span> <span class="speaker-icon">🔊</span></div>
-            <div class="letter-box" onclick="waxFaranse('Z')"><span><span class="letter-main">Z</span> -> <span class="pronounce-main">(zed)</span></span> <span class="speaker-icon">🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('A')"><span><span class="letter-main">A</span> -> <span class="pronounce-main">(a)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('B')"><span><span class="letter-main">B</span> -> <span class="pronounce-main">(bé)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('C')"><span><span class="letter-main">C</span> -> <span class="pronounce-main">(sé)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('D')"><span><span class="letter-main">D</span> -> <span class="pronounce-main">(dé)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('E')"><span><span class="letter-main">E</span> -> <span class="pronounce-main">(e)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('F')"><span><span class="letter-main">F</span> -> <span class="pronounce-main">(ef)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('G')"><span><span class="letter-main">G</span> -> <span class="pronounce-main">(jé)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('H')"><span><span class="letter-main">H</span> -> <span class="pronounce-main">(ac)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('I')"><span><span class="letter-main">I</span> -> <span class="pronounce-main">(i)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('J')"><span><span class="letter-main">J</span> -> <span class="pronounce-main">(ji)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('K')"><span><span class="letter-main">K</span> -> <span class="pronounce-main">(ka)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('L')"><span><span class="letter-main">L</span> -> <span class="pronounce-main">(el)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('M')"><span><span class="letter-main">M</span> -> <span class="pronounce-main">(em)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('N')"><span><span class="letter-main">N</span> -> <span class="pronounce-main">(en)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('O')"><span><span class="letter-main">O</span> -> <span class="pronounce-main">(o)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('P')"><span><span class="letter-main">P</span> -> <span class="pronounce-main">(pé)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('Q')"><span><span class="letter-main">Q</span> -> <span class="pronounce-main">(kü)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('R')"><span><span class="letter-main">R</span> -> <span class="pronounce-main">(er)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('S')"><span><span class="letter-main">S</span> -> <span class="pronounce-main">(es)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('T')"><span><span class="letter-main">T</span> -> <span class="pronounce-main">(té)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('U')"><span><span class="letter-main">U</span> -> <span class="pronounce-main">(ü)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('V')"><span><span class="letter-main">V</span> -> <span class="pronounce-main">(vé)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('W')"><span><span class="letter-main">W</span> -> <span class="pronounce-main">(dublé-vé)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('X')"><span><span class="letter-main">X</span> -> <span class="pronounce-main">(iks)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('Y')"><span><span class="letter-main">Y</span> -> <span class="pronounce-main">(igrek)</span></span> <span>🔊</span></div>
+            <div class="letter-box" onclick="waxFaranse('Z')"><span><span class="letter-main">Z</span> -> <span class="pronounce-main">(zed)</span></span> <span>🔊</span></div>
         </div>
     </div>
 
-    <!-- 2. SARTU BOOLE ARAF YI -->
     <h2>2. Sartu boole araf yi (Syllabes)</h2>
     <p style="text-align: left;">Jàngal ni ngay boolee consonne ak voyelle ngir rëcc kàddu yi :</p>
     <div class="vocab-box boole">
-        <div class="syllabe-grid">
+        <div class="misal-line">
+            <span class="audio-item" onclick="waxFaranse('BA')"><span class="bold-word">B + A = BA</span> -> <span class="pronounce">(ba)</span> 🔊</span> | 
+            <span class="audio-item" onclick="waxFaranse('BE')"><span class="bold-word">B + E = BE</span> -> <span class="pronounce">(be)</span> 🔊</span> | 
+            <span class="audio-item" onclick="waxFaranse('BI')"><span class="bold-word">B + I = BI</span> -> <span class="pronounce">(bi)</span> 🔊</span>
+        </div>
+        <div class="misal-line">
+            <span class="audio-item" onclick="waxFaranse('BO')"><span class="bold-word">B + O = BO</span> -> <span class="pronounce">(bo)</span> 🔊</span> | 
+            <span class="audio-item" onclick="waxFaranse('BU')"><span class="bold-word">B + U = BU</span> -> <span class="pronounce">(bü)</span> 🔊</span>
+        </div>
+        <hr style="border: 0; border-top: 1px dashed #e0e0e0; margin: 10px 0;">
+        <div class="misal-line">
+            <span class="audio-item" onclick="waxFaranse('MA')"><span class="bold-word">M + A = MA</span> -> <span class="pronounce">(ma)</span> 🔊</span> | 
+            <span class="audio-item" onclick="waxFaranse('ME')"><span class="bold-word">M + E = ME</span> -> <span class="pronounce">(me)</span> 🔊</span> | 
