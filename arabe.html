@@ -78,7 +78,7 @@
                 <td class="ar-word"><button class="audio-btn" onclick="playAudio('audio/r1_9.mp3')">🔊</button> أَنْهَضُ مِنْ سَرِيرِي بِسُرْعَةٍ.</td>
             </tr>
             <tr>
-                <td class="wo-word">Damay nuyu sama ñaari waajur ak sama bokk yi.</td>
+                <td class="wo-word">Damay nuyo sama ñaari waajur ak sama bokk yi.</td>
                 <td class="ar-word"><button class="audio-btn" onclick="playAudio('audio/r1_10.mp3')">🔊</button> أُصْبِحُ وَالِدَيَّ وَإِخْوَتِي.</td>
             </tr>
         </tbody>
@@ -123,15 +123,24 @@
         </tbody>
     </table>
 
+    <!-- SECTION 3 (NEW) -->
+    <div class="section-title">الشُّعُورُ وَالْعَوَاطِفُ (Yëg-yëg ak xalaat yi)</div>
+    <table class="vocab-table">
+        <tbody>
+            <tr>
+                <td class="wo-word">Naka mu neexé sett gi! (mujeex)</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('audio/r3_1.mp3')">🔊</button> مَا أَحْلَى النَّاظَافَةَ!</td>
+            </tr>
+        </tbody>
+    </table>
+
     <!-- JavaScript ngir MP3 yi dox -->
     <script>
         var currentAudio = null;
         function playAudio(fileUrl) {
-            // Su fekkenté am na audio buy dox, dagg ko
             if (currentAudio) {
                 currentAudio.pause();
             }
-            // Jël fise MP3 bu bees bi te jàng ko
             currentAudio = new Audio(fileUrl);
             currentAudio.play();
         }
