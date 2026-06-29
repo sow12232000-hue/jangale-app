@@ -1,85 +1,137 @@
 <!DOCTYPE html>
-<html lang="wo">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lësonu Araab</title>
+    <title>الدَّرْسُ الْأَوَّلُ - الإنشاء الصحيح</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 20px; }
-        .back-btn { display: inline-block; background-color: #333; color: white; text-decoration: none; padding: 10px 15px; border-radius: 5px; margin-bottom: 20px; font-weight: bold; }
-        .title { text-align: center; color: #2c3e50; font-size: 24px; font-weight: bold; margin-bottom: 5px; }
-        .subtitle { text-align: center; color: #e67e22; font-size: 16px; margin-bottom: 20px; font-weight: bold; }
-        .section-title { background-color: #2c3e50; color: white; padding: 8px 12px; border-radius: 5px; font-size: 16px; margin-top: 25px; margin-bottom: 15px; font-weight: bold; }
-        .rule-card { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 15px; }
-        .ar-text { font-size: 24px; color: #2980b9; text-align: right; direction: rtl; margin-bottom: 10px; font-weight: bold; }
-        .wo-text { font-size: 16px; color: #333; line-height: 1.5; }
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 20px; direction: ltr; }
+        .back-btn { display: inline-block; background-color: #333; color: white; text-decoration: none; padding: 10px 15px; border-radius: 5px; margin-bottom: 20px; font-size: 14px; }
+        .lesson-header { text-align: center; background-color: #2c3e50; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .lesson-title-ar { font-size: 26px; font-weight: bold; margin-bottom: 5px; }
+        .lesson-title-wo { font-size: 16px; color: #f39c12; font-weight: bold; }
+        .section-title { background-color: #e67e22; color: white; padding: 8px 12px; border-radius: 5px; font-size: 16px; margin-top: 25px; font-weight: bold; }
+        .vocab-table { width: 100%; border-collapse: collapse; margin-top: 10px; background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .vocab-table th { background-color: #34495e; color: white; padding: 12px; font-size: 16px; }
+        .vocab-table td { padding: 12px; border-bottom: 1px solid #eee; font-size: 16px; vertical-align: middle; }
+        .ar-word { font-size: 22px; color: #2980b9; font-weight: bold; text-align: right; direction: rtl; }
+        .wo-word { color: #333; text-align: left; font-weight: 500; }
+        .audio-btn { background-color: #27ae60; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-left: 10px; }
+        .audio-btn:hover { background-color: #219653; }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-btn">⬅ Dellu ginnaw</a>
+    <!-- Bouton back -->
+    <a href="index.html" class="back-btn">← Dellu ginnaw</a>
 
-    <div class="title">Lësonu Araabi - اللغة العربية</div>
-    <div class="subtitle">Ay Waxtaan yu am solo ci biir dund gi</div>
-
-    <!-- WAXTAAN 1 -->
-    <div class="section-title">1. Waxtaan diggante Góor ak Jigéen (Conversation Homme & Femme)</div>
-
-    <div class="rule-card">
-        <div class="ar-text">مَرْحَبًا يَا سَيِّدَتِي. - مَرْحَبًا بِكَ يَا سَيِّدِي.</div>
-        <div class="wo-text">
-            <strong>Français:</strong> Bonjour ma dame. - Bonjour mon monsieur. <br>
-            <strong>Wolof:</strong> Dalal jamm jigéen ji. - Bismilah góor gi.
-        </div>
+    <!-- Main Header -->
+    <div class="lesson-header">
+        <div class="lesson-title-ar">الدَّرْسُ الْأَوَّلُ: مَاذَا أَعْمَلُ كُلَّ صَبَاحٍ؟ <button class="audio-btn" onclick="playAudio('ماذا أعمل كل صباح')">🔊 Jàngal</button></div>
+        <div class="lesson-title-wo">Lëson 1: Looy def suba bu nekk?</div>
     </div>
 
-    <div class="rule-card">
-        <div class="ar-text">كَيْفَ حَالُكِ؟ - أَنَا بِخَيْرٍ، وَكَيْفَ حَالُكَ أَنْتَ؟</div>
-        <div class="wo-text">
-            <strong>Français:</strong> Comment vas-tu ? (à la femme) - Je vais bien, et toi comment vas-tu ? (à l'homme) <br>
-            <strong>Wolof:</strong> Nanga def? (laaj jigéen) - Maa ngi fi rekk, yaw naka nga def? (laaj góor)
-        </div>
-    </div>
+    <!-- SECTION 1 -->
+    <div class="section-title">الْعِبَارَاتُ وَالْمُفْرَدَاتُ (Baat yi ak firi gi)</div>
+    <table class="vocab-table">
+        <thead>
+            <tr>
+                <th style="width: 45%;">Wolof</th>
+                <th style="width: 55%;">العربية</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="wo-word">Kañ laay jóg ci suba si?</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('متى أنهض صباحا')">🔊</button> مَتَى أَنْهَضُ صَبَاحًا؟</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Naaj bi dafay fenq.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('تشرق الشمس')">🔊</button> تُشْرِقُ الشَّمْسُ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Beccëg bi dafay feeñ.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('يظهر النهار')">🔊</button> يَظْهَرُ النَّهَارُ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Montoor bi dafay sone ci 7:00.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('تدق الساعة سبعا')">🔊</button> تَدُقُّ السَّاعَةُ سَبْعًا.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Sama yaay dafay yeendel (yeewe).</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('توقظني أمي')">🔊</button> تُوقِظُنِي أُمِّي.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay ubbi sama bët yi.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أفتح عيني')">🔊</button> أَفْتَحُ عَيْنَيَّ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay giss asamaan si sett.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أرى السماء الصافية')">🔊</button> أَرَى السَّمَاءَ الصَّافِيَةَ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay dégg sabaru gannar yi.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أسمع صياح الديوك')">🔊</button> أَسْمَعُ صِيَاحَ الدِّيُوكِ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay jòg ci sama lal ci gaawaay.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أنهض من سريري بسرعة')">🔊</button> أَنْهَضُ مِنْ سَرِيرِي بِسُرْعَةٍ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay nuyo ak sama waajur ak sama bokk yi.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أصبح والدي وإخوتي')">🔊</button> أُصْبِحُ وَالِدَيَّ وَإِخْوَتِي.</td>
+            </tr>
+        </tbody>
+    </table>
 
+    <!-- SECTION 2 -->
+    <div class="section-title">كَيْفَ أَعْتَنِي بِهِنْدَامِي؟ (Naka laay jàppatoo sama solay?)</div>
+    <table class="vocab-table">
+        <tbody>
+            <tr>
+                <td class="wo-word">Damay raxas sama kanam.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أغسل وجهي')">🔊</button> أَغْسِلُ وَجْهِي.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Ak sama nopp, sama baat, sama loxo, ak sama tànk yi.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('وأذني ورقبتي وساعدي وقدمي')">🔊</button> وَأُذُنَيَّ وَرَقَبَتِي وَسَاعِدَيَّ وَقَدَمَيَّ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Danaleeñ fomp ci sarbet bi.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أنشفها بالمنشفة')">🔊</button> أُنَشِّفُهَا بِالْمِنْشَفَةِ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay peñe sama kawar.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أسرح شعري')">🔊</button> أُسَرِّحُ شَعْرِي.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Ci peñe bi ak bëros bi.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('بالمشط والفرشاة')">🔊</button> بِالْمُشْطِ وَالْفُرْشَاةِ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay sol sama yére.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('ألبس ثيابي')">🔊</button> أَلْبَسُ ثِيَابِي.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay lekk sama ndéki.</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أتناول الفطور')">🔊</button> أَتَنَاوَلُ الْفُطُورَ.</td>
+            </tr>
+            <tr>
+                <td class="wo-word">Damay dem ca lekol (daara).</td>
+                <td class="ar-word"><button class="audio-btn" onclick="playAudio('أذهب إلى المدرسة')">🔊</button> أَذْهَبُ إِلَى الْمَدْرَسَةِ.</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <!-- WAXTAAN 2 -->
-    <div class="section-title">2. Waxtaan diggante ñaari Góor (Conversation entre deux Hommes)</div>
+    <!-- JavaScript ngir audio bi dox -->
+    <script>
+        function playAudio(text) {
+            var msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'ar-SA';
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
 
-    <div class="rule-card">
-        <div class="ar-text">كَيْفَ حَالُكَ يَا أَخِي؟ - أَنَا بِخَيْرٍ وَالْحَمْدُ للهِ.</div>
-        <div class="wo-text">
-            <strong>Français:</strong> Comment vas-tu mon frère ? - Je vais bien, Dieu merci. <br>
-            <strong>Wolof:</strong> Nanga def sama frére? - Maa ngi fi rekk, Alhamdoulilah.
-        </div>
-    </div>
-
-    <div class="rule-card">
-        <div class="ar-text">مِنْ أَيْنَ أَنْتَ؟ - أَنَا مِنَ السِّنِغَالِ.</div>
-        <div class="wo-text">
-            <strong>Français:</strong> D'où viens-tu ? - Je viens du Sénégal. <br>
-            <strong>Wolof:</strong> Fan nga jögé? - Senegal laa jögé.
-        </div>
-    </div>
-
-
-    <!-- WAXTAAN 3 -->
-    <div class="section-title">3. Waxtaan diggante ñaari Jigéen (Conversation entre deux Femmes)</div>
-
-    <div class="rule-card">
-        <div class="ar-text">أَهْلًا يَا أُخْتِي. - أَهْلًا بِكِ، كَيْفَ حَالُكِ؟</div>
-        <div class="wo-text">
-            <strong>Français:</strong> Salut ma sœur. - Salut à toi, comment vas-tu ? <br>
-            <strong>Wolof:</strong> Nanga def sama soeur? - Maa ngi fi, naka nga def?
-        </div>
-    </div>
-
-    <div class="rule-card">
-        <div class="ar-text">أَيْنَ تَذْهَبِينَ؟ - أَذْهَبُ إِلَى السُّوقِ.</div>
-        <div class="wo-text">
-            <strong>Français:</strong> Où vas-tu ? (à la femme) - Je vais au marché. <br>
-            <strong>Wolof:</strong> Fan ngay dem? (laaj jigéen) - Marisé ba laay dem.
-        </div>
-    </div>
-
-</body> 
+</body>
 </html>
