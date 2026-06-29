@@ -144,7 +144,9 @@ function playAudio(fileUrl) {
         currentAudio.currentTime = 0;
     }
 
-    currentAudio = new Audio(fileUrl);
+    var newUrl = fileUrl.replace('audio/', 'audio_ar/');
+
+    currentAudio = new Audio(newUrl);
     currentAudio.preload = "auto";
     currentAudio.playbackRate = 1.35; 
 
@@ -153,7 +155,5 @@ function playAudio(fileUrl) {
     });
 }
 </script>
-    
 
-</body>
 </html>
