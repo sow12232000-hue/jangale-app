@@ -216,13 +216,11 @@
         </div>
 <script>
 
-       let cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ç/g, "c");
-    let audio = new Audio('audio_fr/' + cleanText + '.mp3');
+       
+       let audio = new Audio('audio_fr/' + text.toLowerCase() + '.mp3');
     audio.play();
-    }
-    
-    
-    
+}
+ 
 
    
 
