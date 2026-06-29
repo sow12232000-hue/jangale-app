@@ -215,7 +215,17 @@
             </div>
         </div>
 <script>
-
+function waxFaranse(turBaat) {
+    let file = turBaat.toLowerCase();
+    if (file === "garçon") {
+        file = "garcon";
+    }
+    let audio = new Audio('audio_fr/' + file + '.mp3');
+    audio.play().catch(function(error) {
+        console.log("Audio bi liggéeyul ngir : " + file, error);
+    });
+}
+</script>
 
    
 
