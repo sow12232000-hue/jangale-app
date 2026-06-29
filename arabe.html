@@ -135,16 +135,25 @@
     </table>
 
     <!-- JavaScript ngir MP3 yi dox -->
-    <script>
-        var currentAudio = null;
-        function playAudio(fileUrl) {
-            if (currentAudio) {
-                currentAudio.pause();
-            }
-            currentAudio = new Audio(fileUrl);
-            currentAudio.play();
-        }
-    </script>
+<script>
+var currentAudio = null;
+
+function playAudio(fileUrl) {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+
+    currentAudio = new Audio(fileUrl);
+    currentAudio.preload = "auto";
+    currentAudio.playbackRate = 1.35; 
+
+    currentAudio.play().catch(function(error) {
+        console.log("Error:", error);
+    });
+}
+</script>
+    
 
 </body>
 </html>
