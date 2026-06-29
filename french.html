@@ -215,10 +215,14 @@
             </div>
         </div>
 <script>
-function waxFaranse(text) {
-     let cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ç/g, "c");
+
+       let cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ç/g, "c");
     let audio = new Audio('audio_fr/' + cleanText + '.mp3');
     audio.play();
-}
+    }
+    
+    
+    
+
    
 
