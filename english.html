@@ -289,7 +289,8 @@
             <div class="example-line" style="display: flex; align-items: center; justify-content: space-between; padding: 10px; margin-bottom: 8px; background-color: #f9f9f9; border-radius: 6px;">
                 <span style="font-size: 16px; color: #34495e;"><strong style="color: #27ae60; font-size: 18px;">See you later!</strong> <br><small style="color: #7f8c8d;">Ba beneen yoon! (Ba ci kanam!)</small></span>
                 <audio id="audio-see" src="audio/see_you_later.mp3"></audio>
-                <button onclick="document.getElementById('audio-see').play()" style="background: none; border: none; cursor: pointer; font-size: 20px; padding: 5px;">🔊</button>
+                           <button onclick="var a=document.getElementById('audio-see'); a.volume=1.0; a.play();" style="background: none; border: none; cursor: pointer; font-size: 20px; padding: 5px;">🔊</button>
+ 
             </div>
         </div>
     
