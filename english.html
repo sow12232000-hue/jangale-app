@@ -366,7 +366,66 @@
     </div>
     </div>
         </div>
-    
+ <style>
+/* DI RAFETAL LOOK BI CI KAW REK */
+.example-section {
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    margin-top: 25px !important;
+    padding: 10px !important;
+}
+
+.example-section .example-line {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding: 15px !important;
+    margin-bottom: 12px !important;
+    background-color: #f8f9fa !important;
+    border-radius: 8px !important;
+    border-left: 4px solid #2c3e50 !important;
+    position: relative !important;
+    width: 90% !important;
+    box-sizing: border-box !important;
+}
+
+/* Lëson 4 day and ak couleur bu vert */
+.example-section:nth-of-type(2) .example-line {
+    border-left-color: #27ae60 !important;
+}
+
+/* Button audio yi dañuy dem ci wetu ndeyjoor */
+.example-section .example-line button {
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-size: 22px !important;
+    padding: 5px !important;
+}
+
+/* Tekst yi dañuy tëju bu baax ci cammoñ */
+.example-section .example-line span {
+    text-align: left !important;
+    display: block !important;
+    max-width: 75% !important;
+}
+</style>
+
+<script>
+/* DI REKKAL BAT YI CI BIIR BUTTON YI NDAX IJEEM BI FÉEÑ */
+document.querySelectorAll('.example-section .example-line button').forEach(btn => {
+    if (!btn.textContent.trim()) {
+        btn.textContent = '🔊';
+    }
+});
+</script>
+            
 
 
             
