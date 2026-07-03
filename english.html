@@ -296,7 +296,75 @@
                              <button onclick="if(!window.audioCtx){window.audioCtx=new(window.AudioContext||window.webkitAudioContext)();} var aud=document.getElementById('audio-see'); if(!aud.dataset.hooked){var src=window.audioCtx.createMediaElementSource(aud); var gain=window.audioCtx.createGain(); gain.gain.value=4.0; src.connect(gain); gain.connect(window.audioCtx.destination); aud.dataset.hooked='true';} if(window.audioCtx.state==='suspended'){window.audioCtx.resume();} aud.play();" style="background: none; border: none; cursor: pointer; font-size: 20px; padding: 5px;">🔊</button>
           
  
+            <!-- SECTION 3: JËND AK WONE YOON -->
+    <div class="example-section" style="margin-bottom: 25px;">
+        <h4 style="color: #2c3e50; font-size: 16px; border-bottom: 2px solid #bdc3c7; padding-bottom: 5px; margin-bottom: 15px;">Lëson 3: Jënd (Shopping)</h4>
+
+        <!-- Phrase 6 -->
+        <div class="example-line" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f4f6f7;">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-size: 16px; color: #2c3e50; font-weight: bold; margin-bottom: 4px;">How much is this?</span>
+                <span style="font-size: 14px; color: #7f8c8d;">Ñata la li?</span>
             </div>
+            <audio id="audio-how_much" src="audio/how_much.mp3"></audio>
+            <button onclick="if(!window.audioCtx){window.audioCtx=new(window.AudioContext||window.webkitAudioContext)();}document.getElementById('audio-how_much').play()" style="background: none; border: none; cursor: pointer; font-size: 22px; padding: 5px;">🔊</button>
+        </div>
+
+        <!-- Phrase 7 -->
+        <div class="example-line" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f4f6f7;">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-size: 16px; color: #2c3e50; font-weight: bold; margin-bottom: 4px;">It is too expensive!</span>
+                <span style="font-size: 14px; color: #7f8c8d;">Da fa jafe lool!</span>
+            </div>
+            <audio id="audio-expensive" src="audio/expensive.mp3"></audio>
+            <button onclick="if(!window.audioCtx){window.audioCtx=new(window.AudioContext||window.webkitAudioContext)();}document.getElementById('audio-expensive').play()" style="background: none; border: none; cursor: pointer; font-size: 22px; padding: 5px;">🔊</button>
+        </div>
+
+        <!-- Phrase 8 -->
+        <div class="example-line" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f4f6f7;">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-size: 16px; color: #2c3e50; font-weight: bold; margin-bottom: 4px;">Please decrease the price.</span>
+                <span style="font-size: 14px; color: #7f8c8d;">Waññil ma ko waay.</span>
+            </div>
+            <audio id="audio-decrease" src="audio/decrease.mp3"></audio>
+            <button onclick="if(!window.audioCtx){window.audioCtx=new(window.AudioContext||window.webkitAudioContext)();}document.getElementById('audio-decrease').play()" style="background: none; border: none; cursor: pointer; font-size: 22px; padding: 5px;">🔊</button>
+        </div>
+    </div>
+
+    <div class="example-section" style="margin-bottom: 25px;">
+        <h4 style="color: #27ae60; font-size: 16px; border-bottom: 2px solid #d4efdf; padding-bottom: 5px; margin-bottom: 15px;">Lëson 4: Wone Yoon (Directions)</h4>
+
+        <!-- Phrase 9 -->
+        <div class="example-line" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f4f6f7;">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-size: 16px; color: #27ae60; font-weight: bold; margin-bottom: 4px;">Where are you going?</span>
+                <span style="font-size: 14px; color: #7f8c8d;">Foo jëm?</span>
+            </div>
+            <audio id="audio-where_going" src="audio/where_going.mp3"></audio>
+            <button onclick="if(!window.audioCtx){window.audioCtx=new(window.AudioContext||window.webkitAudioContext)();}document.getElementById('audio-where_going').play()" style="background: none; border: none; cursor: pointer; font-size: 22px; padding: 5px;">🔊</button>
+        </div>
+
+        <!-- Phrase 10 -->
+        <div class="example-line" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f4f6f7;">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-size: 16px; color: #27ae60; font-weight: bold; margin-bottom: 4px;">I am going to the market.</span>
+                <span style="font-size: 14px; color: #7f8c8d;">Maa ngi jëm marse.</span>
+            </div>
+            <audio id="audio-market" src="audio/market.mp3"></audio>
+            <button onclick="if(!window.audioCtx){window.audioCtx=new(window.AudioContext||window.webkitAudioContext)();}document.getElementById('audio-market').play()" style="background: none; border: none; cursor: pointer; font-size: 22px; padding: 5px;">🔊</button>
+        </div>
+
+        <!-- Phrase 11 -->
+        <div class="example-line" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f4f6f7;">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-size: 16px; color: #27ae60; font-weight: bold; margin-bottom: 4px;">Where is the taxi?</span>
+                <span style="font-size: 14px; color: #7f8c8d;">Fan la taksi bi nekk?</span>
+            </div>
+            <audio id="audio-taxi" src="audio/taxi.mp3"></audio>
+            <button onclick="if(!window.audioCtx){window.audioCtx=new(window.AudioContext||window.webkitAudioContext)();}document.getElementById('audio-taxi').play()" style="background: none; border: none; cursor: pointer; font-size: 22px; padding: 5px;">🔊</button>
+        </div>
+    </div>
+    </div>
         </div>
     
 
