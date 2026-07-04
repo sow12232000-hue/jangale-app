@@ -138,94 +138,87 @@
             <div class="letter-box" onclick="waxFaranse('W')">W -> (dublé-vé) 🔊</div>
             <div class="letter-box" onclick="waxFaranse('X')">X -> (iks) 🔊</div>
             <div class="letter-box" onclick="waxFaranse('Y')">Y -> (igrek) 🔊</div>
-            <div class="letter-box" onclick="waxFaranse('Z')">Z -> (zed) 🔊</div>
-        </div>
+       <!-- 🔍 BARRE DE RECHERCHE BI FI LA WARAL NEKK -->
+    <div class="search-box" style="text-align: center; margin: 20px 0;">
+        <input type="text" id="rechercheInput" onkeyup="seetluBaat()" placeholder="Bindal baatub Wolof walla Français fii..." style="width: 90%; padding: 12px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none;">
+    </div>
 
-        <!-- LESON 2: SYLLABES -->
-        <h2>2. Sartu boole araf yi (Syllabes)</h2>
-        <div class="vocab-box">
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('BA')"><span class="bold-word">B + A = BA</span> -> <span class="wo">(ba) 🔊</span></span>
-                <span class="audio-item" onclick="waxFaranse('BE')"><span class="bold-word">B + E = BE</span> -> <span class="wo">(be) 🔊</span></span>
-                <span class="audio-item" onclick="waxFaranse('BI')"><span class="bold-word">B + I = BI</span> -> <span class="wo">(bi) 🔊</span></span>
-                <span class="audio-item" onclick="waxFaranse('BO')"><span class="bold-word">B + O = BO</span> -> <span class="wo">(bo) 🔊</span></span>
-                <span class="audio-item" onclick="waxFaranse('BU')"><span class="bold-word">B + U = BU</span> -> <span class="wo">(bü) 🔊</span></span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('MA')"><span class="bold-word">M + A = MA</span> -> <span class="wo">(ma) 🔊</span></span>
-                <span class="audio-item" onclick="waxFaranse('ME')"><span class="bold-word">M + E = ME</span> -> <span class="wo">(me) 🔊</span></span>
-                <span class="audio-item" onclick="waxFaranse('MI')"><span class="bold-word">M + I = MI</span> -> <span class="wo">(mi) 🔊</span></span>
-                <span class="audio-item" onclick="waxFaranse('MO')"><span class="bold-word">M + O = MO</span> -> <span class="wo">(mo) 🔊</span></span>
-                <span class="audio-item" onclick="waxFaranse('MU')"><span class="bold-word">M + U = MU</span> -> <span class="wo">(mü) 🔊</span></span>
-            </div>
-        </div>
+    <h2>3. 10 Baat yu solo ngir tàggatu ci lire</h2>
+    
+    <!-- 📚 FI LA BAAT YI DI FEEÑÉ CI JAVASCRIPT -->
+    <div class="vocab-box" id="mboléemBaatYi" style="background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></div>
 
-        <!-- LESON 3: 10 BAAT YU JAFEE -->
-        <h2>3. 10 Baat yu solo ngir tàggatu ci lire</h2>
-        <div class="vocab-box">
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Oiseau')">
-                    <span class="bold-word">Oiseau</span> <span class="wo">.fr</span> -> <span class="wo">(Wazo)</span> = Picc bi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Montagne')">
-                    <span class="bold-word">Montagne</span> <span class="wo">.fr</span> -> <span class="wo">(Montañ)</span> = Tund bi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Grenouille')">
-                    <span class="bold-word">Grenouille</span> <span class="wo">.fr</span> -> <span class="wo">(Grënuy)</span> = Mbott gi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Bouteille')">
-                    <span class="bold-word">Bouteille</span> <span class="wo">.fr</span> -> <span class="wo">(Butay)</span> = Butel bi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Chapeau')">
-                    <span class="bold-word">Chapeau</span> <span class="wo">.fr</span> -> <span class="wo">(Sapo)</span> = Mbonat bi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Téléphone')">
-                    <span class="bold-word">Téléphone</span> <span class="wo">.fr</span> -> <span class="wo">(Telefon)</span> = Telefon bi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Garçon')">
-                    <span class="bold-word">Garçon</span> <span class="wo">.fr</span> -> <span class="wo">(Garsoñ)</span> = Xale bu góor bi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Cuisine')">
-                    <span class="bold-word">Cuisine</span> <span class="wo">.fr</span> -> <span class="wo">(Kwizin)</span> = Waañ bi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Voyage')">
-                    <span class="bold-word">Voyage</span> <span class="wo">.fr</span> -> <span class="wo">(Vwayas)</span> = Tukki bi 🔊
-                </span>
-            </div>
-            <div class="misal-line">
-                <span class="audio-item" onclick="waxFaranse('Papillon')">
-                    <span class="bold-word">Papillon</span> <span class="wo">.fr</span> -> <span class="wo">(Papiyon)</span> = Lëp-lëp bi 🔊
-                </span>
-            </div>
-        </div>
 <script>
+// 📂 DENCUKAAY U BAAT YI (Mën nga ci doli ay junniy baat yu la neex fii ci suuf)
+const databaseBaat = [
+    { fr: "Oiseau", pr: "Wazo", wo: "Picc bi" },
+    { fr: "Montagne", pr: "Montañ", wo: "Tund bi" },
+    { fr: "Grenouille", pr: "Grënuy", wo: "Mbott gi" },
+    { fr: "Bouteille", pr: "Butay", wo: "Butel bi" },
+    { fr: "Chapeau", pr: "Sapo", wo: "Mbonat bi" },
+    { fr: "Téléphone", pr: "Telefon", wo: "Telefon bi" },
+    { fr: "Garçon", pr: "Garsoñ", wo: "Xale bu góor bi" },
+    { fr: "Cuisine", pr: "Kwizin", wo: "Waañ bi" },
+    { fr: "Voyage", pr: "Vwayaj", wo: "Tukki bi" },
+    { fr: "Papillon", pr: "Papiyon", wo: "Lëp-lëp bi" }
+
+
+// 🔄 Liggéey buy tax baat yi génn ci xët bi ci saa si
+function wonéBaatYi(baatYi) {
+    let container = document.getElementById('mboléemBaatYi');
+    container.innerHTML = ""; 
+    
+    if(baatYi.length === 0) {
+        container.innerHTML = "<p style='text-align:center; color:#999; padding: 10px;'>Amul baat bu mel noonu...</p>";
+        return;
+    }
+
+    baatYi.forEach(baat => {
+        let div = document.createElement('div');
+        div.className = "misal-line";
+        div.style.cssText = "display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; border-bottom: 1px dashed #eee; font-size: 16px; cursor: pointer;";
+        div.onclick = function() { waxFaranse(baat.fr); };
+        
+        div.innerHTML = `
+            <span>
+                <span class="bold-word" style="font-weight: bold; color: #1a1a1a;">${baat.fr}</span> -> 
+                <span class="wo" style="color: #2e7d32; font-weight: bold;">(${baat.pr})</span> = 
+                <span class="firi" style="color: #555;">${baat.wo}</span>
+            </span>
+            <span class="audio-icon" style="font-size: 18px; color: #7b9acc;">🔊</span>
+        `;
+        container.appendChild(div);
+    });
+
+
+// 🔍 Liggéey u barra de recherche bi (Fadd mi)
+function seetluBaat() {
+    let input = document.getElementById('rechercheInput').value.toLowerCase();
+    
+    let filtered = databaseBaat.filter(baat => 
+        baat.wo.toLowerCase().includes(input) || 
+        baat.fr.toLowerCase().includes(input) ||
+        baat.pr.toLowerCase().includes(input)
+    );
+    
+    wonéBaatYi(filtered);
+}
+
+// 🔊 Liggéey u son bi (Audio)
 function waxFaranse(turBaat) {
     let file = turBaat.toLowerCase();
-    if (file === "garçon") {
-        file = "garcon";
-    }
+    if (file === "garçon") { file = "garcon"; }
+    
     let audio = new Audio('audio_fr/' + file + '.mp3');
     audio.play().catch(function(error) {
-        console.log("Audio bi liggéeyul ngir : " + file, error);
+        console.log("Audio bi liggéeyul ngir: " + file, error);
     });
 }
+
+// Tàmbali woné baat yi bu xët bi ubbéekoo
+wonéBaatYi(databaseBaat);
 </script>
+         
 
    
 
