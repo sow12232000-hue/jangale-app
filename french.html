@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="wo">
 <head>
@@ -9,13 +8,9 @@
         body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; }
         .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; text-decoration: none; display: inline-block; margin-bottom: 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
         h1, h2 { color: #333; text-align: center; margin-top: 20px; }
-        
-        /* Alphabet Grid */
         .alphabet-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 25px; }
         .letter-box { background: white; padding: 12px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-weight: bold; cursor: pointer; border: 1px solid #eee; }
         .letter-box:active { background: #f0f0f0; }
-        
-        /* Tableau Syllabes */
         .syllable-table { width: 100%; border-collapse: collapse; margin: 20px auto 30px auto; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .syllable-table th, .syllable-table td { border: 1px solid #eee; padding: 12px 5px; text-align: center; font-size: 15px; }
         .syllable-table th { background-color: #fafafa; font-weight: bold; color: #333; }
@@ -23,20 +18,14 @@
         .sub-text { font-size: 11px; color: #c62828; display: block; font-weight: normal; margin-top: 2px; }
         .clickable-cell { cursor: pointer; font-weight: bold; color: #1a1a1a; }
         .clickable-cell:active { filter: brightness(0.9); }
-        
-        /* Kuloor yu rafet */
         .col-a { background-color: #ffebee; }
         .col-e { background-color: #e3f2fd; }
         .col-i { background-color: #e8f5e9; }
         .col-o { background-color: #fffde7; }
         .col-u { background-color: #fff3e0; }
         .col-y { background-color: #f3e5f5; }
-
-        /* Barre de recherche */
         .search-container { clear: both; display: block; width: 100%; text-align: center; margin: 25px auto; }
         .search-box { width: 90%; padding: 14px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none; box-sizing: border-box; }
-        
-        /* Cadre baat yi */
         .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 25px; clear: both; padding-bottom: 20px; }
         .misal-line { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; border-bottom: 1px dashed #eee; font-size: 16px; box-sizing: border-box; cursor: pointer; }
         .misal-line:last-child { border-bottom: none; }
@@ -53,7 +42,6 @@
     <h1>Jangale</h1>
 
     <!-- 1. ALPHABET -->
-    <h2>1. Mbooleem Araf yi (A ba Z)</h2>
     <div class="alphabet-grid">
         <div class="letter-box" onclick="waxFaranse('a')">A -> (a) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('b')">B -> (bé) 🔊</div>
@@ -138,7 +126,6 @@
     <div class="vocab-box" id="mbooléemBaatYii"></div>
 
     <script>
-        // Database u 12 baat yu dëggu yi
         const databaseBaat = [
             { fr: "Oiseau", pr: "Wazo", wo: "Picc bi" },
             { fr: "Montagne", pr: "Montañ", wo: "Tund bi" },
@@ -158,11 +145,19 @@
             let container = document.getElementById('mbooléemBaatYii');
             if (!container) return;
             container.innerHTML = "";
-
-            if (baatYi.length === 0) {
-                container.innerHTML = "<p style='text-align:center; color:#999;'>Gisuma loolu...</p>";
-                return;
-            }
-
             baatYi.forEach(baat => {
                 let div = document.createElement('div');
+                div.className = "misal-line";
+                div.onclick = function() { waxFaranse(baat.fr); };
+                div.innerHTML = `
+                    <span>
+                        <span class="bold-word">${baat.fr}</span>
+                        <span class="wo">(${baat.pr})</span>
+                        <span class="firi">${baat.wo}</span>
+                    </span>
+                    <span class="audio-icon">🔊</span>
+                `;
+                container.appendChild(div);
+            });
+        }
+
