@@ -36,7 +36,7 @@
         .search-box { width: 90%; padding: 14px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none; box-sizing: border-box; }
         
         /* Cadre baat yi */
-        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 25px; clear: both; padding-bottom: 20px; }
+        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 25px; clear: both; padding-bottom: 20px; min-height: 50px; }
         .misal-line { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; border-bottom: 1px dashed #eee; font-size: 16px; box-sizing: border-box; cursor: pointer; }
         .misal-line:last-child { border-bottom: none; }
         .bold-word { font-weight: bold; color: #1a1a1a; }
@@ -97,7 +97,6 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Row b -->
             <tr>
                 <td class="consonant-col">b<span class="sub-text">(be)</span></td>
                 <td class="clickable-cell col-a" onclick="waxFaranse('ba')">ba<span class="sub-text">(ba)</span> 🔊</td>
@@ -107,7 +106,6 @@
                 <td class="clickable-cell col-u" onclick="waxFaranse('bu')">bu<span class="sub-text">(bu)</span> 🔊</td>
                 <td class="clickable-cell col-y" onclick="waxFaranse('by')">by<span class="sub-text">(bi)</span> 🔊</td>
             </tr>
-            <!-- Row c -->
             <tr>
                 <td class="consonant-col">c<span class="sub-text">(ce)</span></td>
                 <td class="clickable-cell col-a" onclick="waxFaranse('ca')">ca<span class="sub-text">(ca)</span> 🔊</td>
@@ -117,7 +115,6 @@
                 <td class="clickable-cell col-u" onclick="waxFaranse('cu')">cu<span class="sub-text">(cu)</span> 🔊</td>
                 <td class="clickable-cell col-y" onclick="waxFaranse('cy')">cy<span class="sub-text">(ci)</span> 🔊</td>
             </tr>
-            <!-- Row d -->
             <tr>
                 <td class="consonant-col">d<span class="sub-text">(de)</span></td>
                 <td class="clickable-cell col-a" onclick="waxFaranse('da')">da<span class="sub-text">(da)</span> 🔊</td>
@@ -130,12 +127,12 @@
         </tbody>
     </table>
 
-    <!-- BARRE DE RECHERCHE -->
+    <!-- 3. BARRE DE RECHERCHE -->
     <div class="search-container">
         <input type="text" id="rechercheInput" onkeyup="seetluBaat()" class="search-box" placeholder="Bindal baatub Wolof walla Français fii...">
     </div>
 
-    <!-- 3. BAAT YU SOLO YI -->
+    <!-- 4. BAAT YU SOLO YI -->
     <h2>3. Baat yu solo ngir tàggatu ci lire</h2>
     <div class="vocab-box" id="mbooléemBaatYii"></div>
 
@@ -157,13 +154,15 @@
         ];
 
         function wonéBaatYi(baatYi) {
-            let container = document.getElementById('mbooléemBaatYii');
-            if(!container) return;
-            container.innerHTML = "";
+            try {
+                let container = document.getElementById('mbooléemBaatYii');
+                if (!container) return;
+                container.innerHTML = "";
 
-            if (baatYi.length === 0) {
-                container.innerHTML = "<p style='text-align:center; color:#999;'>Gisuma loolu ci biir database bi...</p>";
-                return;
-            }
+                if (baatYi.length === 0) {
+                    container.innerHTML = "<p style='text-align:center; color:#999;'>Gisuma loolu...</p>";
+                    return;
+                }
 
-            baatYi.forEach(baat => {
+                baatYi.forEach(baat => {
+                    let div = document.createElement('div');
