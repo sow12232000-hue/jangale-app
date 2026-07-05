@@ -8,8 +8,8 @@
         body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; }
         .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; }
         h1, h2 { color: #333; text-align: center; }
-        
-        /* 🅰️ Xarala u araf yi (Alphabet Grid) */
+
+        /* 🅰 Xarala u araf yi (Alphabet Grid) */
         .alphabet-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
         .letter-box { background: white; padding: 12px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
         .letter-box:active { background: #f0f0f0; }
@@ -17,9 +17,9 @@
         /* 🔍 Xarala u Barre de recherche bi */
         .search-container { clear: both; display: block; width: 100%; text-align: center; margin: 25px auto; }
         .search-box { width: 90%; padding: 14px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none; box-sizing: border-box; display: inline-block; }
-        
+
         /* 📚 Xarala u Cadre baat yi */
-        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 15px; }
+        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 25px; clear: both; padding-bottom: 120px; }
         .misal-line { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; border-bottom: 1px dashed #eee; font-size: 16px; cursor: pointer; }
         .misal-line:last-child { border-bottom: none; }
         .bold-word { font-weight: bold; color: #1a1a1a; }
@@ -30,11 +30,11 @@
 </head>
 <body>
 
-    <a href="javascript:history.back()" class="btn-back"> Dellu gannaaw</a>
+    <a href="javascript:history.back()" class="btn-back">Dellu gannaaw</a>
 
     <h1>Jangale</h1>
 
-    <!-- 1️⃣ LESON 1: ALPHABET (A ba Z) -->
+    <!-- 1 LESON 1: ALPHABET (A ba Z) -->
     <h2>1. Mbooleem Araf yi (A ba Z)</h2>
     <div class="alphabet-grid">
         <div class="letter-box" onclick="waxFaranse('A')">A -> (a) 🔊</div>
@@ -57,120 +57,98 @@
         <div class="letter-box" onclick="waxFaranse('R')">R -> (er) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('S')">S -> (es) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('T')">T -> (té) 🔊</div>
-   <div class="letter-box" onclick="waxFaranse('V')">V -> (vé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('U')">U -> (ü) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('V')">V -> (vé) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('W')">W -> (dublé-vé) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('X')">X -> (iks) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('Y')">Y -> (igrek) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('Z')">Z -> (zed) 🔊</div>
     </div>
 
-    <!-- 🔍 2️⃣ BARRE DE RECHERCHE BI (Dafa wacc ci suuf ba mu set) -->
+    <!-- 🔍 2 BARRE DE RECHERCHE BI -->
     <div class="search-container">
         <input type="text" id="rechercheInput" onkeyup="seetluBaat()" class="search-box" placeholder="Bindal baatub Wolof walla Français fii...">
     </div>
 
-    <!-- 3️⃣ LESON 2: BAAT YU SOLO YI -->
+    <!-- 3 LESON 2: BAAT YU SOLO YI -->
     <h2>2. Baat yu solo ngir tàggatu ci lire</h2>
     <div class="vocab-box" id="mboléemBaatYi"></div>
 
-<script>
-// 📂 DENCUKAAY U BAAT YI (Mën nga fiy doli ay junniy baat yu la neex bu kanamé)
-const databaseBaat = [
-    // Baat yu jëkk yi nga amoon
-    { fr: "Oiseau", pr: "Wazo", wo: "Picc bi" },
-    { fr: "Montagne", pr: "Montañ", wo: "Tund bi" },
-    { fr: "Grenouille", pr: "Grënuy", wo: "Mbott gi" },
-    { fr: "Bouteille", pr: "Butay", wo: "Butel bi" },
-    { fr: "Chapeau", pr: "Sapo", wo: "Mbonat bi" },
-    { fr: "Téléphone", pr: "Telefon", wo: "Telefon bi" },
-    { fr: "Garçon", pr: "Garsoñ", wo: "Xale bu góor bi" },
-    { fr: "Cuisine", pr: "Kwizin", wo: "Waañ bi" },
-    { fr: "Voyage", pr: "wayas", wo: "Tukki bi" },
-    { fr: "Papillon", pr: "Papiyon", wo: "Lëp-lëp bi" },
-    
-    // ✨ Baat yu bees yu am solo (Dundam, Nuyoos, Ndox, ...)
-    { fr: "Bonjour", pr: "Boñjur", wo: "Nanga def / Suba ak jamm" },
-    { fr: "Bonsoir", pr: "Boñswar", wo: "Ngoon ak jamm" },
-    { fr: "Merci", pr: "Mërsi", wo: "Jërëjëf" },
-    { fr: "S'il vous plaît", pr: "Sil vu plé", wo: "Su la neexee" },
-    { fr: "Oui", pr: "Wi", wo: "Waaw" },
-    { fr: "Non", pr: "Noñ", wo: "Déet" },
-    { fr: "Maison", pr: "Mezoñ", wo: "Kër gi" },
-    { fr: "Voiture", pr: "Vwatur", wo: "Auto bi" },
-    { fr: "Livre", pr: "Livr", wo: "Téere bi" },
-    { fr: "Table", pr: "Tabl", wo: "Taabal bi" },
-    { fr: "Eau", pr: "O", wo: "Ndox mi" },
-    { fr: "Pain", pr: "Pëñ", wo: "Mburu mi" },
-    { fr: "Enfant", pr: "Ãfã", wo: "Xale bi" },
-    { fr: "Femme", pr: "Fam", wo: "Jigéen ji" },
-    { fr: "Homme", pr: "Om", wo: "Góor gi" },
-    { fr: "Argent", pr: "Arjã", wo: "Xalis bi" },
-    { fr: "Amis", pr: "Ami", wo: "Xarit bi" },
-    { fr: "Travail", pr: "Travay", wo: "Liggéey bi" },
-    { fr: "Marché", pr: "Marsé", wo: "Marsee bi" },
-    { fr: "Boutique", pr: "Butik", wo: "Bitik bi" },
-    { fr: "Route", pr: "Rut", wo: "Yoon bi" },
-    { fr: "Hôpital", pr: "Opital", wo: "Hopital bi" },
-    { fr: "Médicament", pr: "Médikamã", wo: "Garab gi" },
-    { fr: "Habit", pr: "Abi", wo: "Yëre bi" },
-    { fr: "Chaussure", pr: "Sossür", wo: "Dal bi" },
-    { fr: "École", pr: "Ekol", wo: "Ekool bi" },
-    { fr: "Heure", pr: "Ër", wo: "Waxtu bi" },
-    { fr: "Famille", pr: "Famiy", wo: "Njabuot gi" }
-];
+    <script>
+        // 💾 DENCUKAAY U BAAT YI
+        const databaseBaat = [
+            { fr: "Oiseau", pr: "Wazo", wo: "Picc bi" },
+            { fr: "Montagne", pr: "Montañ", wo: "Tund bi" },
+            { fr: "Grenouille", pr: "Grënuy", wo: "Mbott gi" },
+            { fr: "Bouteille", pr: "Butay", wo: "Butel bi" },
+            { fr: "Chapeau", pr: "Sapo", wo: "Mbonat bi" },
+            { fr: "Téléphone", pr: "Telefon", wo: "Telefon bi" },
+            { fr: "Garçon", pr: "Garsoñ", wo: "Xale bu góor bi" },
+            { fr: "Cuisine", pr: "Kwizin", wo: "Waañ bi" },
+            { fr: "Voyage", pr: "wayas", wo: "Tukki bi" },
+            { fr: "Papillon", pr: "Tapiyon", wo: "Lëp-lëp bi" },
+            { fr: "Bonjour", pr: "Boñjur", wo: "Nanga def / Suba ak jamm" },
+            { fr: "Bonsoir", pr: "Boñswar", wo: "Ngoon ak jamm" },
+            { fr: "Merci", pr: "Mërsi", wo: "Jërëjëf" },
+            { fr: "S'il vous plaît", pr: "Sil vu plé", wo: "Su la neexee" },
+            { fr: "Oui", pr: "Wi", wo: "Waaw" },
+            { fr: "Non", pr: "Noñ", wo: "Déet" },
+            { fr: "Maison", pr: "Mezoñ", wo: "Kër gi" },
+            { fr: "Voiture", pr: "Vwatur", wo: "Auto bi" },
+            { fr: "Livre", pr: "Livr", wo: "Téere bi" },
+            { fr: "Table", pr: "Tabl", wo: "Taabal bi" },
+            { fr: "Eau", pr: "O", wo: "Ndox mi" },
+            { fr: "Pain", pr: "Pëñ", wo: "Mburu mi" },
+            { fr: "Enfant", pr: "Ãfã", wo: "Xale bi" },
+            { fr: "Femme", pr: "Fam", wo: "Jigéen ji" }
+        ];
 
-// 🔄 Liggéey buy tax baat yi génn ci xët bi ci saa si
-function wonéBaatYi(baatYi) {
-    let container = document.getElementById('mboléemBaatYi');
-    container.innerHTML = ""; 
-    
-    if(baatYi.length === 0) {
-        container.innerHTML = "<p style='text-align:center; color:#999; padding: 10px;'>Amul baat bu mel noonu...</p>";
-        return;
-    }
+        // Liggéey buy tax baat yi génn ci xët bi
+        function wonéBaatYi(baatYi) {
+            let container = document.getElementById('mboléemBaatYi');
+            container.innerHTML = "";
 
-    baatYi.forEach(baat => {
-        let div = document.createElement('div');
-        div.className = "misal-line";
-        div.onclick = function() { waxFaranse(baat.fr); };
-        
-        div.innerHTML = 
-            <span>
-                <span class="bold-word">${baat.fr}</span> -> 
-                <span class="wo">(${baat.pr})</span> = 
-                <span class="firi">${baat.wo}</span>
-            </span>
-            <span class="audio-icon">🔊</span>
-        ;
-        container.appendChild(div);
-    });
-} // 🔍 Liggéey u barra de recherche bi (Fadd mi)
-function seetluBaat() {
-    let input = document.getElementById('rechercheInput').value.toLowerCase();
-    
-    let filtered = databaseBaat.filter(baat => 
-        baat.wo.toLowerCase().includes(input) || 
-        baat.fr.toLowerCase().includes(input) ||
-        baat.pr.toLowerCase().includes(input)
-    );
-    
-    wonéBaatYi(filtered);
-}
+            if(baatYi.length === 0) {
+                container.innerHTML = "<p style='text-align:center; color:#999;'>Gisuma loolu ci biir database bi...</p>";
+                return;
+            }
 
-// 🔊 Liggéey u son bi (Audio)
-function waxFaranse(turBaat) {
-    let file = turBaat.toLowerCase();
-    if (file === "garçon") { file = "garcon"; }
-    
-    let audio = new Audio('audio_fr/' + file + '.mp3');
-    audio.play().catch(function(error) {
-        console.log("Audio bi liggéeyul ngir: " + file, error);
-    });
-}
+            baatYi.forEach(baat => {
+                let div = document.createElement('div');
+                div.className = "misal-line";
+                div.onclick = function() { waxFaranse(baat.fr); };
 
-// Tàmbali woné baat yi bu xët bi ubbéekoo
-wonéBaatYi(databaseBaat);
-</script>
+                div.innerHTML = `
+                    <span>
+                        <span class="bold-word">${baat.fr}</span> 
+                        <span class="wo">(${baat.pr})</span>: 
+                        <span class="firi">${baat.wo}</span>
+                    </span>
+                    <span class="audio-icon">🔊</span>
+                `;
+                container.appendChild(div);
+            });
+        }
 
+        // Function bu bees bi di seet baat yi ci biir input bi
+        function seetluBaat() {
+            let input = document.getElementById('rechercheInput').value.toLowerCase();
+            let baatYuTànnu = databaseBaat.filter(b => 
+                b.fr.toLowerCase().includes(input) || 
+                b.wo.toLowerCase().includes(input)
+            );
+            wonéBaatYi(baatYuTànnu);
+        }
+
+        // Function pour wax (Voice synthesis)
+        function waxFaranse(text) {
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Wooal function bi dëgg ngir baat yi feeñ saa joo ubee xët bi
+        wonéBaatYi(databaseBaat);
+    </script>
 </body>
-</html>    <div class="letter-box" onclick="waxFaranse('U')">U -> (ü) 🔊</div>
+</html>
