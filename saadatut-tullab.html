@@ -1,156 +1,131 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="wo">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sa'adatut Tullab</title>
+    <title>Jangale - Ikhraab ak Kalima</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #111;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 24px;
-         font-weight: bold;
-        }
-        .container {
-            padding: 20px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .title {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-top: 25px;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #2c3e50;
-        }
-        .rule-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-        }
-        .ex-ar {
-            font-size: 24px;
-            font-weight: bold;
-            color: #1e88e5;
-            line-height: 1.6;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        .wo-text {
-            font-size: 16px;
-            color: #333;
-            background: #fffde7;
-            padding: 12px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        .explanation {
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-        .ex-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            border-left: 4px solid #2e7d32;
-        }
-        .item-ar {
-            font-size: 20px;
-            font-weight: bold;
-            color: #2e7d32;
-            width: 25%;
-            text-align: right;
-        }
-        .item-wo {
-            font-size: 15px;
-            color: #333;
-            width: 70%;
-            text-align: left;
-        }
- 
+        body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; color: #333; }
+        .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        h1 { color: #2e7d32; text-align: center; margin-bottom: 25px; }
+        .section-title { font-size: 20px; color: #2e7d32; border-bottom: 2px solid #2e7d32; padding-bottom: 5px; margin-top: 25px; margin-bottom: 15px; }
+        .leson-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .audio-item { display: flex; align-items: center; justify-content: space-between; background: #fff; padding: 15px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .audio-item:active { background: #f0f0f0; }
+        .arabe { font-size: 22px; color: #1e88e5; font-weight: bold; }
+        .wolof { font-size: 15px; color: #555; line-height: 1.5; }
+        .misaal { font-style: italic; color: #d32f2f; font-weight: bold; }
+        .audio-icon { font-size: 20px; color: #7b9acc; }
     </style>
-<script>
-    history.pushState({page: "subpage"}, "", "");
-    window.addEventListener('popstate', function(event) {
-        window.location.href = "index.html";
-    });
-</script>
-
 </head>
 <body>
 
-    <div class="header">jangaleapp</div>
-<!-- Dëggal butoŋ bi ci kow xët bi -->
-<button onclick="window.history.back()" class="back-btn">&#8592; Dellu gannaaw</button>
+    <!-- Bitoo dellu gannaaw bi -->
+    <a href="javascript:history.back()" class="btn-back"> Dellu gannaaw</a>
 
-    <div class="container">
-        <div class="title">سَعَادَةُ الطُّلَّابِ</div>
-        <div class="subtitle">Sa'adatut Tullab (Serigne Touba) - Lihraab ak Leeral gu yaatu</div>
+    <h1>عِلْمُ النَّحْوِ (Darsu Nahwu Bu Leer)</h1>
 
-        <!-- CER 1 -->
-        <div class="section-title">Cer 1: Tàmbalee ci Bismillah ak Alhamdoulillah</div>
-        <div class="rule-card">
-            <div class="ex-ar">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ <br> الْحَمْدُ لِلَّهِ الْمُرَجَّلِ الْكَلَامَ</div>
-            <div class="wo-text">
-                <strong>Tekki bi:</strong> Ma ngi tàmbalee ci turu Yàlla bu rëy bi, Ku bakh bi, Ku am yërmande bi. Ngant lépp yelloo na ko Yàlla, Kii nga xamni Moo rëkkal (soowal) kàddu gi.
+    <!-- SECTION 1: AL-KALIMA -->
+    <div class="section-title">I. Tàllalug Kàddu gi (أقسام الكلام)</div>
+    
+    <div class="leson-container">
+        <!-- Bitoo 1: Ismun -->
+        <div class="audio-item" onclick="waxNahwu('ismun')">
+            <div>
+                <span class="arabe">1. اِسْمٌ (Ismun)</span><br>
+                <span class="wolof">Turu nit, rab, walla mbir.<br>
+                <span class="misaal">Misaal: مُحَمَّدٌ (Muhammad) / اَلْكِتَابُ (Teere bi)</span></span>
             </div>
-            <div class="explanation">
-                <strong style="color: #2e7d32;">Lihraab (الإعراب) :</strong>
-                <div class="ex-item"><div class="item-wo">Jarr ak majroor, mu ngi lëkkaloo ak feem bu ñu bëtt buy woné "ma ngi tàmbalee".</div><div class="item-ar">بِسْمِ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Mudaaf ilayhi:</strong> Turu Yàlla bi, day majroor te firnde bi mooy kasra.</div><div class="item-ar">اللهِ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Na'at (Sifa):</strong> Ñaari sifa yu top turu Yàlla bi, dañuy majroor.</div><div class="item-ar">الرَّحْمَنِ / الرَّحِيمِ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Mubtada:</strong> Baat bu tàmbalee wax ji, day marfooh ci damma.</div><div class="item-ar">الْحَمْدُ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Khabar:</strong> Lâm-u jarr ak Turu Yàlla bi, ñoo matal maana wu mubtada bi.</div><div class="item-ar">لِلَّهِ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Na'at (Sifa):</strong> Day sifaal turu Yàlla bi ko jiitu.</div><div class="item-ar">الْمُرَجَّلِ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Maf'oolun bihi:</strong> Baat bu jëf bi jëm ci kawam, day mansoob ci fatha.</div><div class="item-ar">الْكَلَامَ</div></div>
-            </div>
+            <div class="audio-icon">🔊</div>
         </div>
 
-        <!-- CER 2 -->
-        <div class="section-title">Cer 2: Mën-mënu Kàddu gi (الْكَلَام)</div>
-        <div class="rule-card">
-            <div class="ex-ar">كَلَامُهُمْ لَفْظٌ مُرَكَّبٌ مُفِيدْ <br> أَقْسَامُهُ جِيءَ بِهَا لِمَنْ يُرِيدْ</div>
-            <div class="wo-text">
-                <strong>Tekki bi:</strong> Kàddu gi ñuy jëfandiko (ci lakkub Àraab) mooy baat bu ñu lëkkalé te mu lay jox maana bu mat sëkk. Wàll (xeet) yi ko jéppal nag, dañu ko fi andil ku ko bëgg a xam.
+        <!-- Bitoo 2: Fihlun -->
+        <div class="audio-item" onclick="waxNahwu('fihlun')">
+            <div>
+                <span class="arabe">2. فِعْلٌ (Fihlun)</span><br>
+                <span class="wolof">Kàddu buy wane jëf bu aju ci jamano.<br>
+                <span class="misaal">Misaal: كَتَبَ (Bind na) / يَكْتُبُ (Mingi bind)</span></span>
             </div>
-            <div class="explanation">
-                <strong style="color: #2e7d32;">Lihraab (الإعراب) :</strong>
-                <div class="ex-item"><div class="item-wo"><strong>Mubtada:</strong> Baat bu tàmbalee wax ji, day marfooh ci damma.</div><div class="item-ar">كَلَامُ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Mudaaf ilayhi:</strong> Tur bu lëkkale ak baat bu jëkk bi, mu ngi mabni ci kaw sukun.</div><div class="item-ar">هُمْ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Khabar:</strong> Xibar buy matal maana wu mubtada bi, day marfooh ci damma.</div><div class="item-ar">لَفْظٌ</div></div>
-                <div class="ex-item"><div class="item-wo"><strong>Na'at (Sifa):</strong> Ñaari sifa yu top baat bi ko jiitu, dañuy marfooh ci damma.</div><div class="item-ar">مُرَكَّبٌ / مُفِيدٌ</div></div>
+            <div class="audio-icon">🔊</div>
+        </div>
+
+        <!-- Bitoo 3: Harfun -->
+        <div class="audio-item" onclick="waxNahwu('harfun')">
+            <div>
+                <span class="arabe">3. حَرْفٌ (Harfun)</span><br>
+                <span class="wolof">Kàddu gu dul wane bakk bu mat sëkk mukk li feek boole woo ko ak yeneen kàddu.<br>
+                <span class="misaal">Misaal: فِي / عَلَى / مِنْ</span></span>
             </div>
-        </div> 
-   </div>
+            <div class="audio-icon">🔊</div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: LUY IXRAAB -->
+    <div class="section-title">II. Lan moodi Ikhraab? (تعريف الإعراب)</div>
+    
+    <div class="leson-container">
+        <!-- Bitoo 4: Hikrab -->
+        <div class="audio-item" onclick="waxNahwu('ikhraab_def')">
+            <div>
+                <span class="arabe">اَلْإِعْرَابُ (Ikhraab)</span><br>
+                <span class="wolof">Moodi soppikog mujjug kàddu gi ndax ay kàddu yu ko jiitu.<br>
+                <span class="misaal">Misaal: زَيْدٌ (Zaydun) / زَيْدًا (Zaydan) / زَيْدٍ (Zaydin)</span></span>
+            </div>
+            <div class="audio-icon">🔊</div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: ÑEENTI CÉRI IXRAAB -->
+    <div class="section-title">III. Ñeenti céri Ikhraab (أقسام الإعراب أربعة)</div>
+    
+    <div class="leson-container">
+        <!-- Bitoo 5: Rafxu -->
+        <div class="audio-item" onclick="waxNahwu('rafxu')">
+            <div>
+                <span class="arabe">1. اَلرَّفْعُ (Rafxu)</span><br>
+                <span class="wolof">Mandargaam moodi Damat ( ُ ).<br>
+                <span class="misaal">Misaal: جَاءَ زَيْدٌ</span></span>
+            </div>
+            <div class="audio-icon">🔊</div>
+        </div>
+
+        <!-- Bitoo 6: Nasbu -->
+        <div class="audio-item" onclick="waxNahwu('nasbu')">
+            <div>
+                <span class="arabe">2. اَلنَّصْبُ (Nasbu)</span><br>
+                <span class="wolof">Mandargaam moodi Fat-hat ( َ ).<br>
+                <span class="misaal">Misaal: رَأَيْتُ زَيْدًا</span></span>
+            </div>
+            <div class="audio-icon">🔊</div>
+        </div>
+
+        <!-- Bitoo 7: Khafdu -->
+        <div class="audio-item" onclick="waxNahwu('khafdu_ixrab')">
+            <div>
+                <span class="arabe">3. اَلْخَفْضُ (Khafdu)</span><br>
+                <span class="wolof">Mandargaam moodi Kasrat ( ِ ). Aju rekk ci tur yi.<br>
+                <span class="misaal">Misaal: مَرَرْتُ بِزَيْدٍ</span></span>
+            </div>
+            <div class="audio-icon">🔊</div>
+        </div>
+
+        <!-- Bitoo 8: Jazmu -->
+        <div class="audio-item" onclick="waxNahwu('jazmu')">
+            <div>
+                <span class="arabe">4. اَلْجَزْمُ (Jazmu)</span><br>
+                <span class="wolof">Mandargaam moodi Sukoon ( ْ ). Aju rekk ci jëf yi.<br>
+                <span class="misaal">Misaal: لَمْ يَكْتُبْ</span></span>
+            </div>
+            <div class="audio-icon">🔊</div>
+        </div>
+    </div>
+
+<script>
+    function waxNahwu(turuAudio) {
+        let audio = new Audio("audio/" + turuAudio + ".mp3");
+        audio.play();
+    }
+</script>
 
 </body>
 </html>
