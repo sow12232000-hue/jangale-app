@@ -75,16 +75,18 @@
 
 <script>
 function waxFaranse(araf) {
-    if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel(); 
-        let utterance = new SpeechSynthesisUtterance(araf.trim());
-        utterance.lang = 'fr-FR';
-        utterance.rate = 0.9;
-        utterance.pitch = 1.0;
-        window.speechSynthesis.speak(utterance);
-    } else {
-        alert("Sa telefon mënul liir kàddu yi"
-
+    let arafNdaw = araf.trim().toLowerCase();
+    let audioPath = "audio_fr/" + arafNdaw + ".mp3";
+    let audio = new Audio(audioPath);
+    
+    audio.play().catch(function(error) {
+        console.log("Audio mp3 bi manque na: ", error);
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            let utterance = new SpeechSynthesisUtterance(araf);
+            utterance.lang = 'fr-FR';
+            window.speechSynthesis.speak(utterance);
+    
 // 2. Fonction ngir seet baat yi (fii nga koy denc ngir mu dox)
 function seetluBaat() {
     let input = document.getElementById("rechercheInput").value.toLowerCase();
