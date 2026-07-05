@@ -65,24 +65,42 @@
         <div class="letter-box" onclick="waxFaranse('Z')">Z -> (zed) 🔊</div>
     </div>
 
-    <!-- LËSON BOOLE ARAF YI -->
-    <div style="background: #f9fbfd; border: 1px solid #ddd; border-radius: 10px; padding: 10px; margin-bottom: 15px; text-align: center;">
-        <h3 style="margin-top:0; font-size:14px; color:#333; font-family:sans-serif;">Boole parñaari araf</h3>
-        <div style="margin-bottom: 8px; display: flex; justify-content: center; gap: 5px;">
-            <button onclick="booleC('B')" style="padding:6px 12px; font-weight:bold; border-radius:5px; border:1px solid #ccc; background:white; cursor:pointer;">B</button>
-            <button onclick="booleC('M')" style="padding:6px 12px; font-weight:bold; border-radius:5px; border:1px solid #ccc; background:white; cursor:pointer;">M</button>
-            <button onclick="booleC('T')" style="padding:6px 12px; font-weight:bold; border-radius:5px; border:1px solid #ccc; background:white; cursor:pointer;">T</button>
+     <!-- LËSON BOOLE ARAF YI (AUDIO BOKKUL CI BAAT BU NEKK) -->
+    <div style="background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-family: sans-serif; text-align: center;">
+        <div style="font-size: 15px; font-weight: bold; color: #2c3e50; text-align: left; margin-bottom: 12px; border-bottom: 2px solid #2ecc71; padding-bottom: 5px;">
+            📖 Cuuqal araf bu nekk ngir dégg sonam boppam:
         </div>
-        <div style="margin-bottom: 8px; display: flex; justify-content: center; gap: 5px;">
-            <button onclick="booleV('a')" style="padding:6px 12px; font-weight:bold; border-radius:5px; border:1px solid #ccc; background:white; cursor:pointer;">a</button>
-            <button onclick="booleV('é')" style="padding:6px 12px; font-weight:bold; border-radius:5px; border:1px solid #ccc; background:white; cursor:pointer;">é</button>
-            <button onclick="booleV('ë')" style="padding:6px 12px; font-weight:bold; border-radius:5px; border:1px solid #ccc; background:white; cursor:pointer;">ë</button>
+        
+        <!-- Section 1: Consonnes -->
+        <div style="font-size: 12px; color: #7f8c8d; text-align: left; margin-bottom: 4px; font-weight: bold;">1. Consonnes:</div>
+        <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; justify-content: center;">
+            <button onclick="waxAraf('Bë', this, 'C')" class="c-btn-style active" style="background: #2ecc71; color: white; border: 1px solid #2ecc71; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">B 🔊</button>
+            <button onclick="waxAraf('Më', this, 'C')" class="c-btn-style" style="background: white; color: #333; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">M 🔊</button>
+            <button onclick="waxAraf('Të', this, 'C')" class="c-btn-style" style="background: white; color: #333; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">T 🔊</button>
+            <button onclick="waxAraf('Dë', this, 'C')" class="c-btn-style" style="background: white; color: #333; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">D 🔊</button>
+            <button onclick="waxAraf('Lë', this, 'C')" class="c-btn-style" style="background: white; color: #333; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">L 🔊</button>
+            <button onclick="waxAraf('Pë', this, 'C')" class="c-btn-style" style="background: white; color: #333; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">P 🔊</button>
         </div>
-        <div style="font-size: 18px; font-weight: bold; margin-top: 5px; color:#2c3e50; font-family:sans-serif; display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <span id="syllabeResult">B + a = ba</span> 
-            <button onclick="waxSyllabe()" style="background:none; border:none; font-size:18px; cursor:pointer;">🔊</button>
+
+        <!-- Section 2: Voyelles -->
+        <div style="font-size: 12px; color: #7f8c8d; text-align: left; margin-bottom: 4px; font-weight: bold;">2. Voyelles:</div>
+        <div style="display: flex; gap: 6px; margin-bottom: 15px; flex-wrap: wrap; justify-content: center;">
+            <button onclick="waxAraf('a', this, 'V')" class="v-btn-style active" style="background: #2ecc71; color: white; border: 1px solid #2ecc71; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">a 🔊</button>
+            <button onclick="waxAraf('i', this, 'V')" class="v-btn-style" style="background: white; color: #333; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">i 🔊</button>
+            <button onclick="waxAraf('o', this, 'V')" class="v-btn-style" style="background: white; color: #333; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">o 🔊</button>
+            <button onclick="waxAraf('u', this, 'V')" class="v-btn-style" style="background: white; color: #333; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer; min-width: 45px;">u 🔊</button>
+        </div>
+
+        <!-- Section 3: Boole gi ak sonam boppam -->
+        <div style="background: #eef2f3; border-radius: 10px; padding: 15px; margin-top: 10px;">
+            <div style="font-size: 13px; color: #555; margin-bottom: 5px; font-weight: bold;">3. Syllabe bi dadi juddu:</div>
+            <button onclick="waxSyllabeBoppam()" style="background: white; border: 2px solid #3498db; border-radius: 10px; padding: 12px 25px; font-size: 24px; font-weight: bold; color: #2c3e50; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; width: 80%; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <span id="syllabeResult">B + a = ba</span> 🔊
+            </button>
         </div>
     </div>
+   
+    
     <!-- 🔍 2️⃣ BARRE DE RECHERCHE BI (Dafa wacc ci suuf ba mu set) -->
     <div class="search-container">
         <input type="text" id="rechercheInput" onkeyup="seetluBaat()" class="search-box" placeholder="Bindal baatub Wolof walla Français fii...">
@@ -93,31 +111,49 @@
     <div class="vocab-box" id="mboléemBaatYi"></div>
 
 <script>
-    let consonneTann = "B";
+      let consonneTann = "B";
+    let consonneSon = "Bë";
     let voyelleTann = "a";
 
-    function booleC(c) {
-        consonneTann = c;
-        woneSyllabe();
-    }
+    function waxAraf(son, element, type) {
+        let speech = new SpeechSynthesisUtterance(son);
+        speech.lang = "fr-FR";
+        window.speechSynthesis.speak(speech);
 
-    function booleV(v) {
-        voyelleTann = v;
+        if (type === 'C') {
+            document.querySelectorAll('.c-btn-style').forEach(btn => {
+                btn.style.background = "white"; btn.style.color = "#333"; btn.style.borderColor = "#ccc";
+            });
+            element.style.background = "#2ecc71"; element.style.color = "white"; element.style.borderColor = "#2ecc71";
+            consonneTann = son.replace('ë', '');
+            consonneSon = son;
+        } else {
+            document.querySelectorAll('.v-btn-style').forEach(btn => {
+                btn.style.background = "white"; btn.style.color = "#333"; btn.style.borderColor = "#ccc";
+            });
+            element.style.background = "#2ecc71"; element.style.color = "white"; element.style.borderColor = "#2ecc71";
+            voyelleTann = son;
+        }
         woneSyllabe();
     }
 
     function woneSyllabe() {
         let res = consonneTann.toLowerCase() + voyelleTann;
-        if(consonneTann === "B" && voyelleTann === "a") res = "ba";
+        if (consonneTann === "B" && voyelleTann === "a") res = "ba";
         document.getElementById("syllabeResult").innerText = `${consonneTann} + ${voyelleTann} = ${res}`;
     }
 
-    function waxSyllabe() {
-        let baat bi = consonneTann.toLowerCase() + voyelleTann;
-        let speech = new SpeechSynthesisUtterance(baat bi);
-        speech.lang = "fr-FR"; 
+    function waxSyllabeBoppam() {
+        let res = consonneTann.toLowerCase() + voyelleTann;
+        if (consonneTann === "B" && voyelleTann === "a") res = "ba";
+        
+        let speech = new SpeechSynthesisUtterance(res);
+        speech.lang = "fr-FR";
+        speech.rate = 0.8;
         window.speechSynthesis.speak(speech);
     }
+  
+    
     // 📂 DENCUKAAY U BAAT YI (Mën nga fiy doli ay junniy baat yu la neex bu kanamé)
 const databaseBaat = [
     // Baat yu jëkk yi nga amoon
