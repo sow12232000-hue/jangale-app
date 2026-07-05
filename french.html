@@ -117,29 +117,4 @@ const databaseBaat = [
     { fr: "Chaussure", pr: "Sossür", wo: "Dal bi" },
     { fr: "École", pr: "Ekol", wo: "Ekool bi" },
     { fr: "Heure", pr: "Ër", wo: "Waxtu bi" },
-    { fr: "Famille", pr: "Famiy", wo: "Njabuot gi" }
-];
-
-// 🔄 Liggéey buy tax baat yi génn ci xët bi ci saa si
-function wonéBaatYi(baatYi) {
-    let container = document.getElementById('mboléemBaatYi');
-    container.innerHTML = ""; 
-    
-    if(baatYi.length === 0) {
-        container.innerHTML = "<p style='text-align:center; color:#999; padding: 10px;'>Amul baat bu mel noonu...</p>";
-        return;
-    
-    baatYi.forEach(baat => {
-        let div = document.createElement('div');
-        div.className = "misal-line";
-        div.onclick = function() { waxFaranse(baat.fr); };
-        
-        div.innerHTML = 
-            <span>
-                <span class="bold-word">${baat.fr}</span> -> 
-              
-                   <span class="wo">(${baat.pr})</span> = 
-              
-        <span class="firi">${baat.wo}</span>
-            <span class="audio-icon">🔊</span>
-        container.appendChild(div);
+    { fr: "Famille", pr: "Famiy", wo: "Njabuot gi" 
