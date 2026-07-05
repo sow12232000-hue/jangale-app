@@ -58,3 +58,91 @@
         <div class="letter-box" onclick="waxFaranse('S')">S -> (es) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('T')">T -> (té) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('U')">U -> (ü) 🔊</div>
+<div class="letter-box" onclick="waxFaranse('V')">V -> (vé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('W')">W -> (dublé-vé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('X')">X -> (iks) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('Y')">Y -> (igrek) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('Z')">Z -> (zed) 🔊</div>
+    </div>
+
+    <!-- 🔍 2️⃣ BARRE DE RECHERCHE BI (Dafa wacc ci suuf ba mu set) -->
+    <div class="search-container">
+        <input type="text" id="rechercheInput" onkeyup="seetluBaat()" class="search-box" placeholder="Bindal baatub Wolof walla Français fii...">
+    </div>
+
+    <!-- 3️⃣ LESON 2: BAAT YU SOLO YI -->
+    <h2>2. Baat yu solo ngir tàggatu ci lire</h2>
+    <div class="vocab-box" id="mboléemBaatYi"></div>
+
+<script>
+// 📂 DENCUKAAY U BAAT YI (Mën nga fiy doli ay junniy baat yu la neex bu kanamé)
+const databaseBaat = [
+    // Baat yu jëkk yi nga amoon
+    { fr: "Oiseau", pr: "Wazo", wo: "Picc bi" },
+    { fr: "Montagne", pr: "Montañ", wo: "Tund bi" },
+    { fr: "Grenouille", pr: "Grënuy", wo: "Mbott gi" },
+    { fr: "Bouteille", pr: "Butay", wo: "Butel bi" },
+    { fr: "Chapeau", pr: "Sapo", wo: "Mbonat bi" },
+    { fr: "Téléphone", pr: "Telefon", wo: "Telefon bi" },
+    { fr: "Garçon", pr: "Garsoñ", wo: "Xale bu góor bi" },
+    { fr: "Cuisine", pr: "Kwizin", wo: "Waañ bi" },
+    { fr: "Voyage", pr: "wayas", wo: "Tukki bi" },
+    { fr: "Papillon", pr: "Papiyon", wo: "Lëp-lëp bi" },
+    
+    // ✨ Baat yu bees yu am solo (Dundam, Nuyoos, Ndox, ...)
+    { fr: "Bonjour", pr: "Boñjur", wo: "Nanga def / Suba ak jamm" },
+    { fr: "Bonsoir", pr: "Boñswar", wo: "Ngoon ak jamm" },
+    { fr: "Merci", pr: "Mërsi", wo: "Jërëjëf" },
+    { fr: "S'il vous plaît", pr: "Sil vu plé", wo: "Su la neexee" },
+    { fr: "Oui", pr: "Wi", wo: "Waaw" },
+    { fr: "Non", pr: "Noñ", wo: "Déet" },
+    { fr: "Maison", pr: "Mezoñ", wo: "Kër gi" },
+    { fr: "Voiture", pr: "Vwatur", wo: "Auto bi" },
+    { fr: "Livre", pr: "Livr", wo: "Téere bi" },
+    { fr: "Table", pr: "Tabl", wo: "Taabal bi" },
+    { fr: "Eau", pr: "O", wo: "Ndox mi" },
+    { fr: "Pain", pr: "Pëñ", wo: "Mburu mi" },
+    { fr: "Enfant", pr: "Ãfã", wo: "Xale bi" },
+    { fr: "Femme", pr: "Fam", wo: "Jigéen ji" },
+    { fr: "Homme", pr: "Om", wo: "Góor gi" },
+    { fr: "Argent", pr: "Arjã", wo: "Xalis bi" },
+    { fr: "Amis", pr: "Ami", wo: "Xarit bi" },
+    { fr: "Travail", pr: "Travay", wo: "Liggéey bi" },
+    { fr: "Marché", pr: "Marsé", wo: "Marsee bi" },
+    { fr: "Boutique", pr: "Butik", wo: "Bitik bi" },
+    { fr: "Route", pr: "Rut", wo: "Yoon bi" },
+    { fr: "Hôpital", pr: "Opital", wo: "Hopital bi" },
+    { fr: "Médicament", pr: "Médikamã", wo: "Garab gi" },
+    { fr: "Habit", pr: "Abi", wo: "Yëre bi" },
+    { fr: "Chaussure", pr: "Sossür", wo: "Dal bi" },
+    { fr: "École", pr: "Ekol", wo: "Ekool bi" },
+    { fr: "Heure", pr: "Ër", wo: "Waxtu bi" },
+    { fr: "Famille", pr: "Famiy", wo: "Njabuot gi" }
+];
+
+// 🔄 Liggéey buy tax baat yi génn ci xët bi ci saa si
+function wonéBaatYi(baatYi) {
+    let container = document.getElementById('mboléemBaatYi');
+    container.innerHTML = ""; 
+    
+    if(baatYi.length === 0) {
+        container.innerHTML = "<p style='text-align:center; color:#999; padding: 10px;'>Amul baat bu mel noonu...</p>";
+        return;
+    }
+
+    baatYi.forEach(baat => {
+        let div = document.createElement('div');
+        div.className = "misal-line";
+        div.onclick = function() { waxFaranse(baat.fr); };
+        
+        div.innerHTML = 
+            <span>
+                <span class="bold-word">${baat.fr}</span> -> 
+                <span class="wo">(${baat.pr})</span> = 
+                <span class="firi">${baat.wo}</span>
+            </span>
+            <span class="audio-icon">🔊</span>
+        ;
+        container.appendChild(div);
+    });
+}
