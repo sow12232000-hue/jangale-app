@@ -218,5 +218,191 @@
     </script>
 </body>
 </html>
-           
+ <!DOCTYPE html>
+<html lang="wo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jangale - Leson 2 ak 3</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; color: #333; }
+        .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-size: 14px; display: inline-block; margin-bottom: 10px; }
+        h1, h2, h3 { text-align: center; }
+        
+        /* Tablo bi ak araf yi */
+        .syllable-table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .syllable-table th, .syllable-table td { border: 1px solid #ddd; padding: 10px 5px; text-align: center; font-size: 16px; }
+        .vowel-a { background-color: #f3c6c6; }
+        .vowel-e { background-color: #bbdefb; }
+        .vowel-i { background-color: #c8e6c9; }
+        .vowel-o { background-color: #fff9c4; }
+        .vowel-u { background-color: #ffe0b2; }
+        .vowel-y { background-color: #d1c4e9; }
+        .consonant-col { background-color: #e0f7fa; color: #e53935; font-weight: bold; }
+        .audio-btn { display: block; background: none; border: none; font-weight: bold; font-size: 16px; cursor: pointer; width: 100%; padding: 5px 0; }
+        .audio-btn:active { background-color: rgba(0,0,0,0.1); border-radius: 4px; }
+
+        /* Vocab Box Style bu dëppoo ak sa code */
+        .vocab-box { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+        .misal-line { display: flex; justify-content: space-between; align-items: center; background-color: white; border: 1px solid #e0e0e0; padding: 12px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .misal-line:active { background-color: #e0f7fa; }
+        .bold-word { font-weight: bold; color: #1565c0; font-size: 16px; }
+        .wo { color: #666; font-style: italic; font-size: 14px; }
+        .firi { color: #e53935; font-weight: bold; }
+        .audio-icon { font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-back">Dellu gannaaw</a>
+    <h1>Jangale</h1>
+    
+    <!-- 2️⃣ LESON 2: TABLO SYLLABES YI -->
+    <h2>1. Bolloo ñaari araf yi</h2>
+    <table class="syllable-table">
+        <thead>
+            <tr>
+                <th style="background-color: #fff;">+</th>
+                <th class="vowel-a">a</th>
+                <th class="vowel-e">e</th>
+                <th class="vowel-i">i</th>
+                <th class="vowel-o">o</th>
+                <th class="vowel-u">u</th>
+                <th class="vowel-y">y</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="consonant-col">b</td>
+                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('ba')">ba 🔊</button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('be')">be 🔊</button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('bi')">bi 🔊</button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('bo')">bo 🔊</button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('bu')">bu 🔊</button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('by')">by 🔊</button></td>
+            </tr>
+            <tr>
+                <td class="consonant-col">c</td>
+                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('ca')">ca 🔊</button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('ce')">ce 🔊</button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('ci')">ci 🔊</button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('co')">co 🔊</button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('cu')">cu 🔊</button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('cy')">cy 🔊</button></td>
+            </tr>
+            <tr>
+                <td class="consonant-col">d</td>
+                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('da')">da 🔊</button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('de')">de 🔊</button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('di')">di 🔊</button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('do')">do 🔊</button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('du')">du 🔊</button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('dy')">dy 🔊</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr style="margin-top: 40px; border: 0; border-top: 2px dashed #7b9acc;">
+
+    <!-- 3️⃣ LESON 3: BAAT YU SOLO YI -->
+    <h2>2. Baat yu solo ngir tàggatu ci lire</h2>
+    <div class="vocab-box" id="mboléemBaatYi"></div>
+
+<script>
+// 📂 DENCUKAAY U BAAT YI (100 baat yu mat sekk)
+const databaseBaat = [
+    { fr: "Oiseau", pr: "Wazo", wo: "Picc bi" },
+    { fr: "Montagne", pr: "Montañ", wo: "Tund bi" },
+    { fr: "Grenouille", pr: "Grënuy", wo: "Mbott gi" },
+    { fr: "Bouteille", pr: "Butay", wo: "Butel bi" },
+    { fr: "Chapeau", pr: "Sapo", wo: "Mbonat bi" },
+    { fr: "Téléphone", pr: "Telefon", wo: "Telefon bi" },
+    { fr: "Garçon", pr: "Garsoñ", wo: "Xale bu góor bi" },
+    { fr: "Cuisine", pr: "Kwizin", wo: "Waañ bi" },
+    { fr: "Voyage", pr: "wayas", wo: "Tukki bi" },
+    { fr: "Papillon", pr: "Papiyon", wo: "Lëp-lëp bi" },
+    { fr: "Bonjour", pr: "Boñjur", wo: "Nanga def" },
+    { fr: "Merci", pr: "Mërsi", wo: "Jërëjëf" },
+    { fr: "Oui", pr: "Wi", wo: "Waaw" },
+    { fr: "Non", pr: "Noñ", wo: "Déet" },
+    { fr: "Maison", pr: "Mezoñ", wo: "Kër gi" },
+    { fr: "Voiture", pr: "Vwatur", wo: "Auto bi" },
+    { fr: "Livre", pr: "Livr", wo: "Téere bi" },
+    { fr: "Table", pr: "Tabl", wo: "Taabal bi" },
+    { fr: "Eau", pr: "O", wo: "Ndox mi" },
+    { fr: "Pain", pr: "Pëñ", wo: "Mburu mi" },
+    { fr: "Enfant", pr: "Ãfã", wo: "Xale bi" },
+    { fr: "Femme", pr: "Fam", wo: "Jigéen ji" },
+    { fr: "Homme", pr: "Om", wo: "Góor gi" },
+    { fr: "Argent", pr: "Arjã", wo: "Xalis bi" },
+    { fr: "Amis", pr: "Ami", wo: "Xarit bi" },
+    { fr: "Travail", pr: "Travay", wo: "Liggéey bi" },
+    { fr: "Marché", pr: "Marsé", wo: "Marsee bi" },
+    { fr: "Boutique", pr: "Butik", wo: "Bitik bi" },
+    { fr: "Route", pr: "Rut", wo: "Yoon bi" },
+    { fr: "Hôpital", pr: "Opital", wo: "Hopital bi" },
+    { fr: "Habit", pr: "Abi", wo: "Yëre bi" },
+    { fr: "Chaussure", pr: "Sossür", wo: "Dal bi" },
+    { fr: "École", pr: "Ekol", wo: "Ekool bi" },
+    { fr: "Heure", pr: "Ër", wo: "Waxtu bi" },
+    { fr: "Famille", pr: "Famiy", wo: "Njabuot gi" },
+    { fr: "Arbre", pr: "Arbr", wo: "Garab gi" },
+    { fr: "Chien", pr: "Siẽ", wo: "Xaj bi" },
+    { fr: "Chat", pr: "Sa", wo: "Muus mi" },
+    { fr: "Poisson", pr: "Pwasoñ", wo: "Jën bi" },
+    { fr: "Viande", pr: "Viãd", wo: "Yapp wi" },
+    { fr: "Riz", pr: "Ri", wo: "Ceeb bi" },
+    { fr: "Lait", pr: "Lé", wo: "Meew mi" },
+    { fr: "Sucre", pr: "Sukr", wo: "Suukër si" },
+    { fr: "Sel", pr: "Sél", wo: "Xorom si" },
+    { fr: "Piment", pr: "Pimã", wo: "Kaani gi" },
+    { fr: "Oignon", pr: "Oñoñ", wo: "Soble si" },
+    { fr: "Fruit", pr: "Frwi", wo: "Doom u garab bi" },
+    { fr: "Ciel", pr: "Siyél", wo: "Asamaan si" },
+    { fr: "Terre", pr: "Tér", wo: "Suuf si" },
+    { fr: "Soleil", pr: "Soléy", wo: "Jant bi" },
+    { fr: "Lune", pr: "Lün", wo: "Weer wi" },
+    { fr: "Étoile", pr: "Etwal", wo: "Biddew bi" },
+    { fr: "Vent", pr: "Vã", wo: "Ngélaw li" },
+    { fr: "Pluie", pr: "Plwi", wo: "Taw bi" },
+    { fr: "Feu", pr: "Fë", wo: "Safara si" },
+    { fr: "Mer", pr: "Mér", wo: "Géej gi" },
+    { fr: "Fleuve", pr: "Flëv", wo: "Dekx wi" },
+    { fr: "Sable", pr: "Sabl", wo: "Suuf u banti si" },
+    { fr: "Pierre", pr: "Piyér", wo: "Xer mi" },
+    { fr: "Or", tact: "Or", wo: "Wurwus wi" },
+    { fr: "Fer", pr: "Fér", wo: "Weñ gi" },
+    { fr: "Porte", pr: "Port", wo: "Bunt bi" },
+    { fr: "Fenêtre", pr: "Fenétr", wo: "Palanteer bi" },
+    { fr: "Lit", pr: "Li", wo: "Lal bi" },
+    { fr: "Chaise", pr: "Séz", wo: "Toogu bi" },
+    { fr: "Sac", pr: "Sak", wo: "Saaku bi" },
+    { fr: "Clé", pr: "Klé", wo: "Caabi ji" },
+    { fr: "Lampe", pr: "Lãp", wo: "Ampool bi" },
+    { fr: "Radio", pr: "Radio", wo: "Radio bi" },
+    { fr: "Papier", pr: "Papiyé", wo: "Kayit wi" },
+    { fr: "Crayon", pr: "Kreyoñ", wo: "Kreyoñ bi" },
+    { fr: "Montre", pr: "Moñtr", wo: "Montor bi" },
+    { fr: "Lunettes", pr: "Lünét", wo: "Linit yi" },
+    { fr: "Chambre", pr: "Sãbr", wo: "Negu kër gi" },
+    { fr: "Marmite", pr: "Marmit", wo: "Cin bi" },
+    { fr: "Cuillère", pr: "Kwiyér", wo: "Kuddu gi" },
+    { fr: "Assiette", pr: "Asiyét", wo: "Ndap li" },
+    { fr: "Verre", pr: "Vér", wo: "Kopo bi" },
+    { fr: "Balai", pr: "Balé", wo: "Bale bi" },
+    { fr: "Savon", pr: "Savoñ", wo: "Saabu bi" },
+    { fr: "Serviette", pr: "Sérvyét", wo: "Serwét bi" },
+    { fr: "Habitation", pr: "Abitasyoñ", wo: "Dëkkuwaay bi" },
+    { fr: "Ville", pr: "Vil", wo: "Dëkk bi" },
+    { fr: "Village", pr: "Vilaj", wo: "Aloo bi" },
+    { fr: "Pays", pr: "Peyi", wo: "Réew mi" },
+    { fr: "Monde", pr: "Moñd", wo: "Aduna si" },
+    { fr: "Jour", pr: "Jur", wo: "Bes bi" },
+    { fr: "Nuit", pr: "Nwi", wo: "Guddi gi" },
+    { fr: "Matin", pr: "Matẽ", wo: "Suba si" },
+    { fr: "Soir", pr: "Swar", wo: "Ngoon gi" },
+    { fr: "Midi", pr: "Midi", wo: "Njolloor li" },
+    { fr: "Minuit", pr: "Minwi", wo: "Diggu-guddi gi" },
+    { fr: "Semaine", pr: "Sëmén", wo: "Ayubés bi" },
+          
 
