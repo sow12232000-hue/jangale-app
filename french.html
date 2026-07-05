@@ -128,8 +128,7 @@ function wonéBaatYi(baatYi) {
     if(baatYi.length === 0) {
         container.innerHTML = "<p style='text-align:center; color:#999; padding: 10px;'>Amul baat bu mel noonu...</p>";
         return;
-    }
-
+    
     baatYi.forEach(baat => {
         let div = document.createElement('div');
         div.className = "misal-line";
@@ -138,8 +137,9 @@ function wonéBaatYi(baatYi) {
         div.innerHTML = 
             <span>
                 <span class="bold-word">${baat.fr}</span> -> 
-                <span class="wo">(${baat.pr})</span> = 
-                <span class="firi">${baat.wo}</span>
-            </span>
+              
+                   <span class="wo">(${baat.pr})</span> = 
+              
+        <span class="firi">${baat.wo}</span>
             <span class="audio-icon">🔊</span>
         container.appendChild(div);
