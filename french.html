@@ -36,7 +36,7 @@
         .search-box { width: 90%; padding: 14px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none; box-sizing: border-box; }
         
         /* Cadre baat yi */
-        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 25px; clear: both; padding-bottom: 20px; min-height: 50px; }
+        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 25px; clear: both; padding-bottom: 20px; }
         .misal-line { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; border-bottom: 1px dashed #eee; font-size: 16px; box-sizing: border-box; cursor: pointer; }
         .misal-line:last-child { border-bottom: none; }
         .bold-word { font-weight: bold; color: #1a1a1a; }
@@ -154,15 +154,14 @@
         ];
 
         function wonéBaatYi(baatYi) {
-            try {
-                let container = document.getElementById('mbooléemBaatYii');
-                if (!container) return;
-                container.innerHTML = "";
+            let container = document.getElementById('mbooléemBaatYii');
+            if (!container) return;
+            container.innerHTML = "";
 
-                if (baatYi.length === 0) {
-                    container.innerHTML = "<p style='text-align:center; color:#999;'>Gisuma loolu...</p>";
-                    return;
-                }
+            if (baatYi.length === 0) {
+                container.innerHTML = "<p style='text-align:center; color:#999;'>Gisuma loolu...</p>";
+                return;
+            }
 
-                baatYi.forEach(baat => {
-                    let div = document.createElement('div');
+            baatYi.forEach(baat => {
+                let div = document.createElement('div');
