@@ -64,16 +64,17 @@
         <div class="letter-box" onclick="waxFaranse('Y')">Y -> (igrek) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('Z')">Z -> (zed) 🔊</div>
     </div>
+
 <!DOCTYPE html>
 <html lang="wo">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jangale - Leson 2 ak 50 Baat</title>
+    <title>Jangale - Leson 2 ak Aodio bu Dox</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; color: #333; }
         .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-size: 14px; display: inline-block; margin-bottom: 10px; }
-        h1, h2, h3 { text-align: center; }
+        h1, h2 { text-align: center; }
         
         /* Tablo bi ak araf yi */
         .syllable-table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -90,24 +91,14 @@
         .audio-btn { display: block; background: none; border: none; font-weight: bold; cursor: pointer; width: 100%; padding: 5px 0; }
         .audio-btn .read-help { display: block; font-size: 12px; color: #555; font-weight: normal; margin-top: 2px; }
         .audio-btn:active { background-color: rgba(0,0,0,0.1); border-radius: 4px; }
-
-        /* Vocab Box Style */
-        .vocab-box { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
-        .misal-line { display: flex; justify-content: space-between; align-items: center; background-color: white; border: 1px solid #e0e0e0; padding: 12px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .misal-line:active { background-color: #e0f7fa; }
-        .bold-word { font-weight: bold; color: #1565c0; font-size: 16px; }
-        .wo { color: #666; font-style: italic; font-size: 14px; }
-        .firi { color: #e53935; font-weight: bold; }
-        .audio-icon { font-size: 16px; }
     </style>
 </head>
 <body>
 
     <a href="javascript:history.back()" class="btn-back">Dellu gannaaw</a>
     <h1>Jangale</h1>
-    
-    <!-- 2️⃣ LESON 2: TABLO SYLLABES YI -->
     <h2>1. Bolloo ñaari araf yi</h2>
+    
     <table class="syllable-table">
         <thead>
             <tr>
@@ -188,10 +179,23 @@
                 <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('ke')">ke <span class="read-help">(ké) 🔊</span></button></td>
                 <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('ki')">ki <span class="read-help">(ki) 🔊</span></button></td>
                 <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('ko')">ko <span class="read-help">(kó) 🔊</span></button></td>
- 
-    
+                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('ku')">ku <span class="read-help">(ku) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('ky')">ky <span class="read-help">(ki) 🔊</span></button></td>
+            </tr>
+        </tbody>
+    </table>
 
-    
-
-          
+    <script>
+        // Fonksioñ buy tax mu wax saa su nekk
+        function waxFaranse(baat) {
+            window.speechSynthesis.cancel(); // Taxal li fi nekkoon
+            
+            // Jëfandikoo "SpeechSynthesis" ngir mu wax ci saa si
+            let msg = new SpeechSynthesisUtterance(baat);
+            msg.lang = 'fr-FR'; 
+            msg.rate = 0.7; // Ndank ngir mu leer
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+</body>
 
