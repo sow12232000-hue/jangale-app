@@ -8,16 +8,39 @@
         body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; }
         .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; text-decoration: none; display: inline-block; margin-bottom: 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
         h1, h2 { color: #333; text-align: center; margin-top: 20px; }
+        
+        /* Alphabet Grid */
         .alphabet-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 25px; }
         .letter-box { background: white; padding: 12px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-weight: bold; cursor: pointer; border: 1px solid #eee; }
         .letter-box:active { background: #f0f0f0; }
+        
+        /* Tableau Syllabes */
+        .syllable-table { width: 100%; border-collapse: collapse; margin: 20px auto 30px auto; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .syllable-table th, .syllable-table td { border: 1px solid #eee; padding: 12px 5px; text-align: center; font-size: 15px; }
+        .syllable-table th { background-color: #fafafa; font-weight: bold; color: #333; }
+        .consonant-col { font-weight: bold; color: #d32f2f; background-color: #fff; }
+        .sub-text { font-size: 11px; color: #c62828; display: block; font-weight: normal; margin-top: 2px; }
+        .clickable-cell { cursor: pointer; font-weight: bold; color: #1a1a1a; }
+        .clickable-cell:active { filter: brightness(0.9); }
+        
+        /* Kuloor yu rafet yu dëppo ak nataal bi */
+        .col-a { background-color: #ffebee; }
+        .col-e { background-color: #e3f2fd; }
+        .col-i { background-color: #e8f5e9; }
+        .col-o { background-color: #fffde7; }
+        .col-u { background-color: #fff3e0; }
+        .col-y { background-color: #f3e5f5; }
+
+        /* Barre de recherche */
         .search-container { clear: both; display: block; width: 100%; text-align: center; margin: 25px auto; }
         .search-box { width: 90%; padding: 14px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none; box-sizing: border-box; }
+        
+        /* Cadre baat yi */
         .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 25px; clear: both; padding-bottom: 20px; }
         .misal-line { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; border-bottom: 1px dashed #eee; font-size: 16px; box-sizing: border-box; cursor: pointer; }
         .misal-line:last-child { border-bottom: none; }
         .bold-word { font-weight: bold; color: #1a1a1a; }
-        .wo { color: #2e7d32; font-weight: bold; }
+        .wo { color: #2e7d32; font-weight: bold; margin: 0 10px; }
         .firi { color: #555; }
         .audio-icon { font-size: 18px; color: #7b9acc; }
     </style>
@@ -28,7 +51,7 @@
 
     <h1>Jangale</h1>
 
-    <!-- 1. MBOOLEEM ARAF YI -->
+    <!-- 1. ALPHABET -->
     <h2>1. Mbooleem Araf yi (A ba Z)</h2>
     <div class="alphabet-grid">
         <div class="letter-box" onclick="waxFaranse('a')">A -> (a) 🔊</div>
@@ -59,13 +82,61 @@
         <div class="letter-box" onclick="waxFaranse('z')">Z -> (zed) 🔊</div>
     </div>
 
-    <!-- 2. BARRE DE RECHERCHE -->
+    <!-- 2. BOLLOO ÑAARI ARAF YI -->
+    <h2>2. Bolloo ñaari araf yi</h2>
+    <table class="syllable-table">
+        <thead>
+            <tr>
+                <th>+</th>
+                <th>a</th>
+                <th>e</th>
+                <th>i</th>
+                <th>o</th>
+                <th>u</th>
+                <th>y</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Row b -->
+            <tr>
+                <td class="consonant-col">b<span class="sub-text">(be)</span></td>
+                <td class="clickable-cell col-a" onclick="waxFaranse('ba')">ba<span class="sub-text">(ba)</span> 🔊</td>
+                <td class="clickable-cell col-e" onclick="waxFaranse('be')">be<span class="sub-text">(bé)</span> 🔊</td>
+                <td class="clickable-cell col-i" onclick="waxFaranse('bi')">bi<span class="sub-text">(bi)</span> 🔊</td>
+                <td class="clickable-cell col-o" onclick="waxFaranse('bo')">bo<span class="sub-text">(bó)</span> 🔊</td>
+                <td class="clickable-cell col-u" onclick="waxFaranse('bu')">bu<span class="sub-text">(bu)</span> 🔊</td>
+                <td class="clickable-cell col-y" onclick="waxFaranse('by')">by<span class="sub-text">(bi)</span> 🔊</td>
+            </tr>
+            <!-- Row c -->
+            <tr>
+                <td class="consonant-col">c<span class="sub-text">(ce)</span></td>
+                <td class="clickable-cell col-a" onclick="waxFaranse('ca')">ca<span class="sub-text">(ca)</span> 🔊</td>
+                <td class="clickable-cell col-e" onclick="waxFaranse('ce')">ce<span class="sub-text">(cé)</span> 🔊</td>
+                <td class="clickable-cell col-i" onclick="waxFaranse('ci')">ci<span class="sub-text">(ci)</span> 🔊</td>
+                <td class="clickable-cell col-o" onclick="waxFaranse('co')">co<span class="sub-text">(có)</span> 🔊</td>
+                <td class="clickable-cell col-u" onclick="waxFaranse('cu')">cu<span class="sub-text">(cu)</span> 🔊</td>
+                <td class="clickable-cell col-y" onclick="waxFaranse('cy')">cy<span class="sub-text">(ci)</span> 🔊</td>
+            </tr>
+            <!-- Row d -->
+            <tr>
+                <td class="consonant-col">d<span class="sub-text">(de)</span></td>
+                <td class="clickable-cell col-a" onclick="waxFaranse('da')">da<span class="sub-text">(da)</span> 🔊</td>
+                <td class="clickable-cell col-e" onclick="waxFaranse('de')">de<span class="sub-text">(dé)</span> 🔊</td>
+                <td class="clickable-cell col-i" onclick="waxFaranse('di')">di<span class="sub-text">(di)</span> 🔊</td>
+                <td class="clickable-cell col-o" onclick="waxFaranse('do')">do<span class="sub-text">(dó)</span> 🔊</td>
+                <td class="clickable-cell col-u" onclick="waxFaranse('du')">du<span class="sub-text">(du)</span> 🔊</td>
+                <td class="clickable-cell col-y" onclick="waxFaranse('dy')">dy<span class="sub-text">(di)</span> 🔊</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- BARRE DE RECHERCHE -->
     <div class="search-container">
         <input type="text" id="rechercheInput" onkeyup="seetluBaat()" class="search-box" placeholder="Bindal baatub Wolof walla Français fii...">
     </div>
 
     <!-- 3. BAAT YU SOLO YI -->
-    <h2>2. Baat yu solo ngir tàggatu ci lire</h2>
+    <h2>3. Baat yu solo ngir tàggatu ci lire</h2>
     <div class="vocab-box" id="mbooléemBaatYii"></div>
 
     <script>
@@ -94,42 +165,3 @@
                 div.className = "misal-line";
                 div.onclick = function() { waxFaranse(baat.fr); };
                 div.innerHTML = `
-                    <span>
-                        <span class="bold-word">${baat.fr}</span>
-                        <span class="wo">(${baat.pr})</span>
-                        <span class="firi">${baat.wo}</span>
-                    </span>
-                    <span class="audio-icon">🔊</span>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function seetluBaat() {
-            let input = document.getElementById('rechercheInput').value.toLowerCase();
-            let baatYuTànnu = databaseBaat.filter(b => 
-                b.fr.toLowerCase().includes(input) || 
-                b.wo.toLowerCase().includes(input)
-            );
-            wonéBaatYi(baatYuTànnu);
-        }
-
-        function waxFaranse(text) {
-            let turuAudio = text.toLowerCase();
-            
-            // Faju mbind yu rëy walla accent yi dëppo ak sa fise yi ci GitHub dëgg-dëgg
-            if (text === "Bouteille") { turuAudio = "Bouteille"; }
-            if (text === "Montagne") { turuAudio = "Montagne"; }
-            if (text === "Voyage") { turuAudio = "Voyage"; }
-            if (text === "Téléphone") { turuAudio = "telephone"; }
-            if (text === "Garçon") { turuAudio = "garcon"; }
-            
-            let url = "https://githubusercontent.com" + turuAudio + ".mp3";
-            let audio = new Audio(url);
-            audio.play().catch(function(error) { console.log(error); });
-        }
-
-        wonéBaatYi(databaseBaat);
-    </script>
-</body>
-</html>
