@@ -3,111 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jangale - Leson Kabaal</title>
+    <title>Jangale - Français</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 10px; background-color: #f5f5f5; margin: 0; }
-        .btn-back { background-color: #333; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; display: inline-block; margin-bottom: 15px; font-weight: bold; font-size: 14px; }
-        
-        .header-title { text-align: center; font-size: 24px; font-weight: bold; margin: 10px 0; color: #333; }
-        
-        /* 📊 Xarala u Tábulo Kabaal bi (Table Layout) */
-        .syllable-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
-        .syllable-table th, .syllable-table td { border: 1px solid #ddd; text-align: center; padding: 8px 4px; font-size: 14px; vertical-align: middle; }
-        
-        /* 🎨 Koloru araf yi ca kaw */
-        .th-plus { background-color: #ffffff; font-size: 18px; font-weight: bold; }
-        .th-vowel { background-color: #f3d1dc; font-weight: bold; }
-        
-        /* 🎨 Koloru weñ yi ca wet */
-        .td-consonant { background-color: #e3f2fd; font-weight: bold; color: #d32f2f; }
-        .consonant-sub { font-size: 11px; color: #555; font-weight: normal; display: block; margin-top: 2px; }
+        body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; }
+        .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        h1, h2 { color: #333; text-align: center; }
 
-        /* 🎨 Koloru biir kabaal yi (Syllables) */
-        .col-a { background-color: #ffebee; }
-        .col-e { background-color: #e3f2fd; }
-        .col-i { background-color: #e8f5e9; }
-        .col-o { background-color: #fffde7; }
-        .col-u { background-color: #fff3e0; }
-        .col-y { background-color: #ede7f6; }
+        /* 🅰 Xarala u araf yi (Alphabet Grid) */
+        .alphabet-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+        .letter-box { background: white; padding: 12px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .letter-box:active { background: #f0f0f0; }
 
-        /* Style u biir cell yi */
-        .syllable-box { cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 55px; }
-        .syl-text { font-weight: bold; color: #000; font-size: 15px; }
-        .syl-sub { font-size: 11px; color: #d32f2f; margin-top: 1px; }
-        .audio-icon { font-size: 11px; color: #78909c; margin-top: 2px; }
-        
-        .syllable-box:active { opacity: 0.6; background-color: #ccc !important; }
+        /* 🔍 Xarala u Barre de recherche bi */
+        .search-container { clear: both; display: block; width: 100%; text-align: center; margin: 25px auto; }
+        .search-box { width: 90%; padding: 14px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none; box-sizing: border-box; display: inline-block; }
+
+        /* 📚 Xarala u Cadre baat yi */
+        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 25px; clear: both; padding-bottom: 120px; }
+        .misal-line { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; border-bottom: 1px dashed #eee; font-size: 16px; cursor: pointer; }
+        .misal-line:last-child { border-bottom: none; }
+        .bold-word { font-weight: bold; color: #1a1a1a; }
+        .wo { color: #2e7d32; font-weight: bold; }
+        .firi { color: #555; }
+        .audio-icon { font-size: 18px; color: #7b9acc; }
     </style>
 </head>
 <body>
 
     <a href="javascript:history.back()" class="btn-back">Dellu gannaaw</a>
-    <div class="header-title">Jangale</div>
 
-    <!-- Tábulo bu mat bu dëppoo ak sa nataal bi -->
-    <table class="syllable-table">
-        <thead>
-            <tr>
-                <th class="th-plus">+</th>
-                <th class="th-vowel">a</th>
-                <th class="th-vowel">e</th>
-                <th class="th-vowel">i</th>
-                <th class="th-vowel">o</th>
-                <th class="th-vowel">u</th>
-                <th class="th-vowel">y</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- 🟥 LINE B -->
-            <tr>
-                <td class="td-consonant">b<span class="consonant-sub">(be)</span></td>
-                <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ba')"><span class="syl-text">ba</span><span class="syl-sub">(ba)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-e"><div class="syllable-box" onclick="jouerAudio('be')"><span class="syl-text">be</span><span class="syl-sub">(bé)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-i"><div class="syllable-box" onclick="jouerAudio('bi')"><span class="syl-text">bi</span><span class="syl-sub">(bi)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-o"><div class="syllable-box" onclick="jouerAudio('bo')"><span class="syl-text">bo</span><span class="syl-sub">(bó)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-u"><div class="syllable-box" onclick="jouerAudio('bu')"><span class="syl-text">bu</span><span class="syl-sub">(bu)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-y"><div class="syllable-box" onclick="jouerAudio('by')"><span class="syl-text">by</span><span class="syl-sub">(bi)</span><span class="audio-icon">🔊</span></div></td>
-            </tr>
-            <!-- 🟥 LINE C -->
-            <tr>
-                <td class="td-consonant">c<span class="consonant-sub">(ce)</span></td>
-                <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ca')"><span class="syl-text">ca</span><span class="syl-sub">(ca)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-e"><div class="syllable-box" onclick="jouerAudio('ce')"><span class="syl-text">ce</span><span class="syl-sub">(cé)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-i"><div class="syllable-box" onclick="jouerAudio('ci')"><span class="syl-text">ci</span><span class="syl-sub">(ci)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-o"><div class="syllable-box" onclick="jouerAudio('co')"><span class="syl-text">co</span><span class="syl-sub">(có)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-u"><div class="syllable-box" onclick="jouerAudio('cu')"><span class="syl-text">cu</span><span class="syl-sub">(cu)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-y"><div class="syllable-box" onclick="jouerAudio('cy')"><span class="syl-text">cy</span><span class="syl-sub">(ci)</span><span class="audio-icon">🔊</span></div></td>
-            </tr>
-            <!-- 🟥 LINE D -->
-            <tr>
-                <td class="td-consonant">d<span class="consonant-sub">(de)</span></td>
-                <td class="col-a"><div class="syllable-box" onclick="jouerAudio('da')"><span class="syl-text">da</span><span class="syl-sub">(da)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-e"><div class="syllable-box" onclick="jouerAudio('de')"><span class="syl-text">de</span><span class="syl-sub">(dé)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-i"><div class="syllable-box" onclick="jouerAudio('di')"><span class="syl-text">di</span><span class="syl-sub">(di)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-o"><div class="syllable-box" onclick="jouerAudio('do')"><span class="syl-text">do</span><span class="syl-sub">(dó)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-u"><div class="syllable-box" onclick="jouerAudio('du')"><span class="syl-text">du</span><span class="syl-sub">(du)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-y"><div class="syllable-box" onclick="jouerAudio('dy')"><span class="syl-text">dy</span><span class="syl-sub">(di)</span><span class="audio-icon">🔊</span></div></td>
-            </tr>
-            <!-- 🟥 LINE F -->
-            <tr>
-                <td class="td-consonant">f<span class="consonant-sub">(ef)</span></td>
-                <td class="col-a"><div class="syllable-box" onclick="jouerAudio('fa')"><span class="syl-text">fa</span><span class="syl-sub">(fa)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-e"><div class="syllable-box" onclick="jouerAudio('fe')"><span class="syl-text">fe</span><span class="syl-sub">(fé)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-i"><div class="syllable-box" onclick="jouerAudio('fi')"><span class="syl-text">fi</span><span class="syl-sub">(fi)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-o"><div class="syllable-box" onclick="jouerAudio('fo')"><span class="syl-text">fo</span><span class="syl-sub">(fó)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-u"><div class="syllable-box" onclick="jouerAudio('fu')"><span class="syl-text">fu</span><span class="syl-sub">(fu)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-y"><div class="syllable-box" onclick="fontAudio('fy')"><span class="syl-text">fy</span><span class="syl-sub">(fi)</span><span class="audio-icon">🔊</span></div></td>
-            </tr>
-            <!-- 🟥 LINE G -->
-            <tr>
-                <td class="td-consonant">g<span class="consonant-sub">(ji)</span></td>
-                <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ga')"><span class="syl-text">ga</span><span class="syl-sub">(ga)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-e"><div class="syllable-box" onclick="jouerAudio('ge')"><span class="syl-text">ge</span><span class="syl-sub">(gé)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-i"><div class="syllable-box" onclick="jouerAudio('gi')"><span class="syl-text">gi</span><span class="syl-sub">(gi)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-o"><div class="syllable-box" onclick="jouerAudio('go')"><span class="syl-text">go</span><span class="syl-sub">(gó)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-u"><div class="syllable-box" onclick="jouerAudio('gu')"><span class="syl-text">gu</span><span class="syl-sub">(gu)</span><span class="audio-icon">🔊</span></div></td>
-                <td class="col-y"><div class="syllable-box" onclick="jouerAudio('gy')"><span class="syl-text">gy</span><span class="syl-sub">(gi)</span><span class="audio-icon">🔊</span></div></td>
-            </tr>
-            <!-- 🟥 LINE J -->
-            <tr>
-                <td class="td-consonant">j<span class="consonant-sub">(ji)</span></td>
+    <h1>Jangale</h1>
+
+    <!-- 1 LESON 1: ALPHABET (A ba Z) -->
+    <h2>1. Mbooleem Araf yi (A ba Z)</h2>
+    <div class="alphabet-grid">
+        <div class="letter-box" onclick="waxFaranse('A')">A -> (a) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('B')">B -> (bé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('C')">C -> (sé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('D')">D -> (dé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('E')">E -> (e) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('F')">F -> (ef) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('G')">G -> (ji) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('H')">H -> (ach) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('I')">I -> (i) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('J')">J -> (ji) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('K')">K -> (ka) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('L')">L -> (el) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('M')">M -> (em) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('N')">N -> (en) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('O')">O -> (o) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('P')">P -> (pé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('Q')">Q -> (ky) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('R')">R -> (er) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('S')">S -> (es) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('T')">T -> (té) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('U')">U -> (ü) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('V')">V -> (vé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('W')">W -> (dublé-vé) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('X')">X -> (iks) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('Y')">Y -> (igrek) 🔊</div>
+        <div class="letter-box" onclick="waxFaranse('Z')">Z -> (zed) 🔊</div>
+    </div>
+
+    <!-- 🔍 2 BARRE DE RECHERCHE BI -->
+    <div class="search-container">
+        <input type="text" id="rechercheInput" onkeyup="seetluBaat()" class="search-box" placeholder="Bindal baatub Wolof walla Français fii...">
+    </div>
+
+    <!-- 3 LESON 2: BAAT YU SOLO YI -->
+    <h2>2. Baat yu solo ngir tàggatu ci lire</h2>
+    <div class="vocab-box" id="mboléemBaatYi"></div>
+
+    <script>
+        // 💾 DENCUKAAY U BAAT YI
+        const databaseBaat = [
+            { fr: "Oiseau", pr: "Wazo", wo: "Picc bi" },
+            { fr: "Montagne", pr: "Montañ", wo: "Tund bi" },
+            { fr: "Grenouille", pr: "Grënuy", wo: "Mbott gi" },
+            { fr: "Bouteille", pr: "Butay", wo: "Butel bi" },
+            { fr: "Chapeau", pr: "Sapo", wo: "Mbonat bi" },
+            { fr: "Téléphone", pr: "Telefon", wo: "Telefon bi" },
+            { fr: "Garçon", pr: "Garsoñ", wo: "Xale bu góor bi" },
+            { fr: "Cuisine", pr: "Kwizin", wo: "Waañ bi" },
+            { fr: "Voyage", pr: "wayas", wo: "Tukki bi" },
+            { fr: "Papillon", pr: "Tapiyon", wo: "Lëp-lëp bi" },
+            { fr: "Bonjour", pr: "Boñjur", wo: "Nanga def / Suba ak jamm" },
+            { fr: "Bonsoir", pr: "Boñswar", wo: "Ngoon ak jamm" },
+            { fr: "Merci", pr: "Mërsi", wo: "Jërëjëf" },
+            { fr: "S'il vous plaît", pr: "Sil vu plé", wo: "Su la neexee" },
+            { fr: "Oui", pr: "Wi", wo: "Waaw" },
+            { fr: "Non", pr: "Noñ", wo: "Déet" },
+            { fr: "Maison", pr: "Mezoñ", wo: "Kër gi" },
+            { fr: "Voiture", pr: "Vwatur", wo: "Auto bi" },
+            { fr: "Livre", pr: "Livr", wo: "Téere bi" },
+            { fr: "Table", pr: "Tabl", wo: "Taabal bi" },
+            { fr: "Eau", pr: "O", wo: "Ndox mi" },
+            { fr: "Pain", pr: "Pëñ", wo: "Mburu mi" },
+            { fr: "Enfant", pr: "Ãfã", wo: "Xale bi" },
+            { fr: "Femme", pr: "Fam", wo: "Jigéen ji" }
+        ];
+
+        // Liggéey buy tax baat yi génn ci xët bi
+        function wonéBaatYi(baatYi) {
+            let container = document.getElementById('mboléemBaatYi');
+            container.innerHTML = "";
+
+            if(baatYi.length === 0) {
+                container.innerHTML = "<p style='text-align:center; color:#999;'>Gisuma loolu ci biir database bi...</p>";
+                return;
+            }
+
+            baatYi.forEach(baat => {
+                let div = document.createElement('div');
+                div.className = "misal-line";
+                div.onclick = function() { waxFaranse(baat.fr); };
+
+                div.innerHTML = `
+                    <span>
+                        <span class="bold-word">${baat.fr}</span> 
+                        <span class="wo">(${baat.pr})</span>: 
+                        <span class="firi">${baat.wo}</span>
+                    </span>
+                    <span class="audio-icon">🔊</span>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // Function bu bees bi di seet baat yi ci biir input bi
+        function seetluBaat() {
+            let input = document.getElementById('rechercheInput').value.toLowerCase();
+            let baatYuTànnu = databaseBaat.filter(b => 
+                b.fr.toLowerCase().includes(input) || 
+                b.wo.toLowerCase().includes(input)
+            );
+            wonéBaatYi(baatYuTànnu);
+        }
+
+        // Function pour wax (Voice synthesis)
+        function waxFaranse(text) {
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Wooal function bi dëgg ngir baat yi feeñ saa joo ubee xët bi
+        wonéBaatYi(databaseBaat);
+    </script>
+</body>
+</html>
