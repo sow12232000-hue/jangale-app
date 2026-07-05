@@ -73,3 +73,29 @@
     <!-- 3️⃣ LESON 2: BAAT YU SOLO YI -->
     <h2>2. Baat yu solo ngir tàggatu ci lire</h2>
 
+<script>
+// 1. Fonction ngir wax araf yi ci Faranse
+function waxFaranse(araf) {
+    if ('speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance(araf);
+        utterance.lang = 'fr-FR';
+        window.speechSynthesis.speak(utterance);
+    } else {
+        console.log("Moteur vocal bi doxul ci sa wàllu téléphone");
+    }
+}
+
+// 2. Fonction ngir seet baat yi (fii nga koy denc ngir mu dox)
+function seetluBaat() {
+    let input = document.getElementById("rechercheInput").value.toLowerCase();
+    let letters = document.getElementsByClassName("letter-box");
+    
+    for (let i = 0; i < letters.length; i++) {
+        if (letters[i].innerText.toLowerCase().includes(input)) {
+            letters[i].style.display = "";
+        } else {
+            letters[i].style.display = "none";
+        }
+    }
+}
+</script>
