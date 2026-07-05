@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jangale - Leson 2 ak Mp3 bu Dox</title>
+    <title>Jangale - Leson 2 gu Mat Sekk</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; color: #333; }
         .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-size: 14px; display: inline-block; margin-bottom: 10px; }
@@ -84,63 +84,41 @@
                 <td class="vowel-u"><button class="audio-btn" onclick="feexalMp3('du')">du <span class="read-help">(du) 🔊</span></button></td>
                 <td class="vowel-y"><button class="audio-btn" onclick="feexalMp3('dy')">dy <span class="read-help">(di) 🔊</span></button></td>
             </tr>
-        </tbody>
-    </table>
-
-    <h2>2. Baat yu solo ngir tàggatu ci lire (50 Baat)</h2>
-    <div class="vocab-box" id="mboléemBaatYi"></div>
-
-    <script>
-        // 📂 DENCUKAAY U 50 BAAT YI (Turu 'fr' bi la wara am ngir seet .mp3 bi, misal: oiseau.mp3)
-        const databaseBaat = [
-            { fr: "oiseau", pr: "Wazo", wo: "Picc bi" }, { fr: "montagne", pr: "Montañ", wo: "Tund bi" },
-            { fr: "grenouille", pr: "Grënuy", wo: "Mbott gi" }, { fr: "bouteille", pr: "Butay", wo: "Butel bi" },
-            { fr: "chapeau", pr: "Sapo", wo: "Mbonat bi" }, { fr: "téléphone", pr: "Telefon", wo: "Telefon bi" },
-            { fr: "garçon", pr: "Garsoñ", wo: "Xale bu góor bi" }, { fr: "cuisine", pr: "Kwizin", wo: "Waañ bi" },
-            { fr: "voyage", pr: "wayas", wo: "Tukki bi" }, { fr: "papillon", pr: "Papiyon", wo: "Lëp-lëp bi" },
-            { fr: "bonjour", pr: "Boñjur", wo: "Nanga def" }, { fr: "merci", pr: "Mërsi", wo: "Jërëjëf" },
-            { fr: "oui", pr: "Wi", wo: "Waaw" }, { fr: "non", pr: "Noñ", wo: "Déet" },
-            { fr: "maison", pr: "Mezoñ", wo: "Kër gi" }, { fr: "voiture", pr: "Vwatur", wo: "Auto bi" },
-            { fr: "livre", pr: "Livr", wo: "Téere bi" }, { fr: "table", pr: "Tabl", wo: "Taabal bi" },
-            { fr: "eau", pr: "O", wo: "Ndox mi" }, { fr: "pain", pr: "Pëñ", wo: "Mburu mi" },
-            { fr: "enfant", pr: "Ãfã", wo: "Xale bi" }, { fr: "femme", pr: "Fam", wo: "Jigéen ji" },
-            { fr: "homme", pr: "Om", wo: "Góor gi" }, { fr: "argent", pr: "Arjã", wo: "Xalis bi" },
-            { fr: "amis", pr: "Ami", wo: "Xarit bi" }, { fr: "travail", pr: "Travay", wo: "Liggéey bi" },
-            { fr: "marché", pr: "Marsé", wo: "Marsee bi" }, { fr: "boutique", pr: "Butik", wo: "Bitik bi" },
-            { fr: "route", pr: "Rut", wo: "Yoon bi" }, { fr: "hôpital", pr: "Opital", wo: "Hopital bi" },
-            { fr: "habit", pr: "Abi", wo: "Yëre bi" }, { fr: "chaussure", pr: "Sossür", wo: "Dal bi" },
-            { fr: "école", pr: "Ekol", wo: "Ekool bi" }, { fr: "heure", pr: "Ër", wo: "Waxtu bi" },
-            { fr: "famille", pr: "Famiy", wo: "Njabuot gi" }, { fr: "arbre", pr: "Arbr", wo: "Garab gi" },
-            { fr: "chien", pr: "Siẽ", wo: "Xaj bi" }, { fr: "chat", pr: "Sa", wo: "Muus mi" },
-            { fr: "poisson", pr: "Pwasoñ", wo: "Jën bi" }, { fr: "viande", pr: "Viãd", wo: "Yapp wi" },
-            { fr: "riz", pr: "Ri", wo: "Ceeb bi" }, { fr: "lait", pr: "Lé", wo: "Meew mi" },
-            { fr: "sucre", pr: "Sukr", wo: "Suukër si" }, { fr: "sel", pr: "Sél", wo: "Xorom si" },
-            { fr: "piment", pr: "Pimã", wo: "Kaani gi" }, { fr: "oignon", pr: "Oñoñ", wo: "Soble si" },
-            { fr: "fruit", pr: "Frwi", wo: "Doom u garab bi" }, { fr: "ciel", pr: "Siyél", wo: "Asamaan si" },
-            { fr: "terre", pr: "Tér", wo: "Suuf si" }, { fr: "soleil", pr: "Soléy", wo: "Jant bi" }
-        ];
-
-        // 🔄 Liggéey buy tax baat yi génn ci xët bi
-        function wonéBaatYi(baatYi) {
-            let container = document.getElementById('mboléemBaatYi');
-            container.innerHTML = ""; 
-            baatYi.forEach(baat => {
-                let div = document.createElement('div');
-                div.className = "misal-line";
-                div.onclick = function() { feexalMp3(baat.fr); };
-                div.innerHTML = `
-                    <span>
-                        <span class="bold-word" style="text-transform: capitalize;">${baat.fr}</span> -> 
-                        <span class="wo">(${baat.pr})</span> = 
-                        <span class="firi">${baat.wo}</span>
-                    </span>
-                    <span class="audio-icon">🔊</span>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        // 🎵 LIGGÉEY BU LABE BUY UBBI FAYLOÑU .MP3 YI CI DOSSIER BI
-        let currentAudio = null;
-        function feexalMp3(turuSon) {
-            if (currentAudio) {
+            <!-- F -->
+            <tr>
+                <td class="consonant-col">f <br><span style="font-size:11px; color:#555;">(ef)</span></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="feexalMp3('fa')">fa <span class="read-help">(fa) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="feexalMp3('fe')">fe <span class="read-help">(fé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="feexalMp3('fi')">fi <span class="read-help">(fi) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="feexalMp3('fo')">fo <span class="read-help">(fó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="feexalMp3('fu')">fu <span class="read-help">(fu) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="feexalMp3('fy')">fy <span class="read-help">(fi) 🔊</span></button></td>
+            </tr>
+            <!-- G -->
+            <tr>
+                <td class="consonant-col">g <br><span style="font-size:11px; color:#555;">(ji)</span></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="feexalMp3('ga')">ga <span class="read-help">(ga) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="feexalMp3('ge')">ge <span class="read-help">(gé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="feexalMp3('gi')">gi <span class="read-help">(gi) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="feexalMp3('go')">go <span class="read-help">(gó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="feexalMp3('gu')">gu <span class="read-help">(gu) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="feexalMp3('gy')">gy <span class="read-help">(gi) 🔊</span></button></td>
+            </tr>
+            <!-- J -->
+            <tr>
+                <td class="consonant-col">j <br><span style="font-size:11px; color:#555;">(ji)</span></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="feexalMp3('ja')">ja <span class="read-help">(ja) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="feexalMp3('je')">je <span class="read-help">(jé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="feexalMp3('ji')">ji <span class="read-help">(ji) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="feexalMp3('jo')">jo <span class="read-help">(jó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="feexalMp3('ju')">ju <span class="read-help">(ju) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="feexalMp3('jy')">jy <span class="read-help">(ji) 🔊</span></button></td>
+            </tr>
+            <!-- K -->
+            <tr>
+                <td class="consonant-col">k <br><span style="font-size:11px; color:#555;">(ka)</span></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="feexalMp3('ka')">ka <span class="read-help">(ka) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="feexalMp3('ke')">ke <span class="read-help">(ké) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="feexalMp3('ki')">ki <span class="read-help">(ki) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="feexalMp3('ko')">ko <span class="read-help">(kó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="feexalMp3('ku')">ku <span class="read-help">(ku) 🔊</span></button></td>
