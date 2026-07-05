@@ -25,7 +25,25 @@
         .bold-word { font-weight: bold; color: #1a1a1a; }
         .wo { color: #2e7d32; font-weight: bold; }
         .firi { color: #555; }
-        .audio-icon { font-size: 18px; color: #7b9acc; }
+  /* 📊 Xarala u Tábulo Kabaal (Doli ko ca biir <style> ca kaw) */
+.table-container { width: 100%; overflow-x: auto; margin-bottom: 30px; }
+.syllable-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+.syllable-table th, .syllable-table td { border: 1px solid #ddd; text-align: center; padding: 8px 4px; font-size: 14px; vertical-align: middle; }
+.th-plus { background-color: #ffffff; font-size: 18px; font-weight: bold; }
+.th-vowel { background-color: #f3d1dc; font-weight: bold; font-size: 16px; }
+.td-consonant { background-color: #ffffff; font-weight: bold; color: #d32f2f; font-size: 16px; }
+.consonant-sub { font-size: 11px; color: #555; font-weight: normal; display: block; margin-top: 2px; }
+
+.col-a { background-color: #ffebee; }
+.col-e { background-color: #e3f2fd; }
+.col-i { background-color: #e8f5e9; }
+.col-o { background-color: #fffde7; }
+.col-u { background-color: #fff3e0; }
+.col-y { background-color: #ede7f6; }
+.syllable-box { cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 55px; }
+.syl-text { font-weight: bold; color: #000; font-size: 15px; }
+.syl-sub { font-size: 11px; color: #d32f2f; margin-top: 1px; }
+      .audio-icon { font-size: 18px; color: #7b9acc; }
     </style>
 </head>
 <body>
@@ -64,6 +82,121 @@
         <div class="letter-box" onclick="waxFaranse('Y')">Y -> (igrek) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('Z')">Z -> (zed) 🔊</div>
     </div>
+<!DOCTYPE html>
+<html lang="wo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jangale - Bolloo ñaari araf yi</title>
+    <style>
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f9f9f9; 
+            font-family: Arial, sans-serif;
+            overflow-y: auto !important; 
+            -webkit-overflow-scrolling: touch;
+        }
+        body { padding: 15px; padding-bottom: 80px; }
+
+        .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        h1, h2 { color: #333; text-align: center; margin-top: 30px; }
+
+        /* 📊 Xarala u Tábulo Kabaal */
+        .table-container { width: 100%; overflow-x: auto; margin-bottom: 30px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .syllable-table { width: 100%; border-collapse: collapse; }
+        .syllable-table th, .syllable-table td { border: 1px solid #ddd; text-align: center; padding: 10px 4px; font-size: 15px; vertical-align: middle; }
+        
+        .th-plus { background-color: #ffffff; font-size: 18px; font-weight: bold; }
+        .th-vowel { background-color: #f3d1dc; font-weight: bold; font-size: 16px; color: #333; }
+        .td-consonant { background-color: #ffffff; font-weight: bold; color: #d32f2f; font-size: 16px; }
+        .consonant-sub { font-size: 11px; color: #555; font-weight: normal; display: block; margin-top: 2px; }
+        
+        /* Koloru kabaal yi dëppoo ak nataal bi */
+        .col-a { background-color: #ffebee; }
+        .col-e { background-color: #e3f2fd; }
+        .col-i { background-color: #e8f5e9; }
+        .col-o { background-color: #fffde7; }
+        .col-u { background-color: #fff3e0; }
+        .col-y { background-color: #ede7f6; }
+        
+        .syllable-box { cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 55px; }
+        .syl-text { font-weight: bold; color: #000; font-size: 16px; }
+        .syl-sub { font-size: 12px; color: #d32f2f; margin-top: 2px; }
+        .audio-icon { font-size: 12px; color: #78909c; margin-top: 3px; }
+        
+        .syllable-box:active { opacity: 0.6; background-color: #ccc !important; }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-back">Dellu gannaaw</a>
+
+    <h1>Jangale</h1>
+
+    <h2>1. Bolloo ñaari araf yi</h2>
+    <div class="table-container">
+        <table class="syllable-table">
+            <thead>
+                <tr>
+                    <th class="th-plus">+</th>
+                    <th class="th-vowel">a</th>
+                    <th class="th-vowel">e</th>
+                    <th class="th-vowel">i</th>
+                    <th class="th-vowel">o</th>
+                    <th class="th-vowel">u</th>
+                    <th class="th-vowel">y</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- LINE B -->
+                <tr>
+                    <td class="td-consonant">b<span class="consonant-sub">(be)</span></td>
+                    <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ba')"><span class="syl-text">ba</span><span class="syl-sub">(ba)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-e"><div class="syllable-box" onclick="jouerAudio('be')"><span class="syl-text">be</span><span class="syl-sub">(bé)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-i"><div class="syllable-box" onclick="jouerAudio('bi')"><span class="syl-text">bi</span><span class="syl-sub">(bi)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-o"><div class="syllable-box" onclick="jouerAudio('bo')"><span class="syl-text">bo</span><span class="syl-sub">(bó)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-u"><div class="syllable-box" onclick="jouerAudio('bu')"><span class="syl-text">bu</span><span class="syl-sub">(bu)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-y"><div class="syllable-box" onclick="jouerAudio('by')"><span class="syl-text">by</span><span class="syl-sub">(bi)</span><span class="audio-icon">🔊</span></div></td>
+                </tr>
+                <!-- LINE C -->
+                <tr>
+                    <td class="td-consonant">c<span class="consonant-sub">(ce)</span></td>
+                    <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ca')"><span class="syl-text">ca</span><span class="syl-sub">(ca)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-e"><div class="syllable-box" onclick="jouerAudio('ce')"><span class="syl-text">ce</span><span class="syl-sub">(cé)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-i"><div class="syllable-box" onclick="jouerAudio('ci')"><span class="syl-text">ci</span><span class="syl-sub">(ci)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-o"><div class="syllable-box" onclick="jouerAudio('co')"><span class="syl-text">co</span><span class="syl-sub">(có)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-u"><div class="syllable-box" onclick="jouerAudio('cu')"><span class="syl-text">cu</span><span class="syl-sub">(cu)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-y"><div class="syllable-box" onclick="jouerAudio('cy')"><span class="syl-text">cy</span><span class="syl-sub">(ci)</span><span class="audio-icon">🔊</span></div></td>
+                </tr>
+                <!-- LINE D -->
+                <tr>
+                    <td class="td-consonant">d<span class="consonant-sub">(de)</span></td>
+                    <td class="col-a"><div class="syllable-box" onclick="jouerAudio('da')"><span class="syl-text">da</span><span class="syl-sub">(da)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-e"><div class="syllable-box" onclick="jouerAudio('de')"><span class="syl-text">de</span><span class="syl-sub">(dé)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-i"><div class="syllable-box" onclick="jouerAudio('di')"><span class="syl-text">di</span><span class="syl-sub">(di)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-o"><div class="syllable-box" onclick="jouerAudio('do')"><span class="syl-text">do</span><span class="syl-sub">(dó)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-u"><div class="syllable-box" onclick="jouerAudio('du')"><span class="syl-text">du</span><span class="syl-sub">(du)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-y"><div class="syllable-box" onclick="jouerAudio('dy')"><span class="syl-text">dy</span><span class="syl-sub">(di)</span><span class="audio-icon">🔊</span></div></td>
+                </tr>
+                <!-- LINE F -->
+                <tr>
+                    <td class="td-consonant">f<span class="consonant-sub">(ef)</span></td>
+                    <td class="col-a"><div class="syllable-box" onclick="jouerAudio('fa')"><span class="syl-text">fa</span><span class="syl-sub">(fa)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-e"><div class="syllable-box" onclick="jouerAudio('fe')"><span class="syl-text">fe</span><span class="syl-sub">(fé)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-i"><div class="syllable-box" onclick="jouerAudio('fi')"><span class="syl-text">fi</span><span class="syl-sub">(fi)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-o"><div class="syllable-box" onclick="jouerAudio('fo')"><span class="syl-text">fo</span><span class="syl-sub">(fó)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-u"><div class="syllable-box" onclick="jouerAudio('fu')"><span class="syl-text">fu</span><span class="syl-sub">(fu)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-y"><div class="syllable-box" onclick="jouerAudio('fy')"><span class="syl-text">fy</span><span class="syl-sub">(fi)</span><span class="audio-icon">🔊</span></div></td>
+                </tr>
+                <!-- LINE G -->
+                <tr>
+                    <td class="td-consonant">g<span class="consonant-sub">(ji)</span></td>
+                    <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ga')"><span class="syl-text">ga</span><span class="syl-sub">(ga)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-e"><div class="syllable-box" onclick="jouerAudio('ge')"><span class="syl-text">ge</span><span class="syl-sub">(gé)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-i"><div class="syllable-box" onclick="jouerAudio('gi')"><span class="syl-text">gi</span><span class="syl-sub">(gi)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-o"><div class="syllable-box" onclick="jouerAudio('go')"><span class="syl-text">go</span><span class="syl-sub">(gó)</span><span class="audio-icon">🔊</span></div></td>
+                    <td class="col-u"><div class="syllable-box" onclick="jouerAudio('gu')"><span class="syl-text">gu</span><span class="syl-sub">(gu)</span><span class="audio-icon">🔊</span></div></td>
 
     <!-- 🔍 2 BARRE DE RECHERCHE BI -->
     <div class="search-container">
