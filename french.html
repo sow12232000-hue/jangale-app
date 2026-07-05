@@ -64,13 +64,12 @@
         <div class="letter-box" onclick="waxFaranse('Y')">Y -> (igrek) 🔊</div>
         <div class="letter-box" onclick="waxFaranse('Z')">Z -> (zed) 🔊</div>
     </div>
-
 <!DOCTYPE html>
 <html lang="wo">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jangale - Leson 2 ak Aodio bu Dox</title>
+    <title>Jangale - Leson 2 ak 50 Baat yu am Aodio</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; color: #333; }
         .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-size: 14px; display: inline-block; margin-bottom: 10px; }
@@ -91,6 +90,15 @@
         .audio-btn { display: block; background: none; border: none; font-weight: bold; cursor: pointer; width: 100%; padding: 5px 0; }
         .audio-btn .read-help { display: block; font-size: 12px; color: #555; font-weight: normal; margin-top: 2px; }
         .audio-btn:active { background-color: rgba(0,0,0,0.1); border-radius: 4px; }
+
+        /* Vocab Box Style */
+        .vocab-box { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+        .misal-line { display: flex; justify-content: space-between; align-items: center; background-color: white; border: 1px solid #e0e0e0; padding: 12px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .misal-line:active { background-color: #e0f7fa; }
+        .bold-word { font-weight: bold; color: #1565c0; font-size: 16px; }
+        .wo { color: #666; font-style: italic; font-size: 14px; }
+        .firi { color: #e53935; font-weight: bold; }
+        .audio-icon { font-size: 16px; }
     </style>
 </head>
 <body>
@@ -115,87 +123,70 @@
             <!-- B -->
             <tr>
                 <td class="consonant-col">b <br><span style="font-size:11px; color:#555;">(be)</span></td>
-                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('ba')">ba <span class="read-help">(ba) 🔊</span></button></td>
-                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('be')">be <span class="read-help">(bé) 🔊</span></button></td>
-                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('bi')">bi <span class="read-help">(bi) 🔊</span></button></td>
-                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('bo')">bo <span class="read-help">(bó) 🔊</span></button></td>
-                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('bu')">bu <span class="read-help">(bu) 🔊</span></button></td>
-                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('by')">by <span class="read-help">(bi) 🔊</span></button></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="jëfeWax('ba')">ba <span class="read-help">(ba) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="jëfeWax('be')">be <span class="read-help">(bé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="jëfeWax('bi')">bi <span class="read-help">(bi) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="jëfeWax('bo')">bo <span class="read-help">(bó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="jëfeWax('bu')">bu <span class="read-help">(bu) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="jëfeWax('by')">by <span class="read-help">(bi) 🔊</span></button></td>
             </tr>
             <!-- C -->
             <tr>
                 <td class="consonant-col">c <br><span style="font-size:11px; color:#555;">(ce)</span></td>
-                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('ca')">ca <span class="read-help">(ca) 🔊</span></button></td>
-                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('ce')">ce <span class="read-help">(cé) 🔊</span></button></td>
-                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('ci')">ci <span class="read-help">(ci) 🔊</span></button></td>
-                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('co')">co <span class="read-help">(có) 🔊</span></button></td>
-                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('cu')">cu <span class="read-help">(cu) 🔊</span></button></td>
-                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('cy')">cy <span class="read-help">(ci) 🔊</span></button></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="jëfeWax('ca')">ca <span class="read-help">(ca) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="jëfeWax('ce')">ce <span class="read-help">(cé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="jëfeWax('ci')">ci <span class="read-help">(ci) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="jëfeWax('co')">co <span class="read-help">(có) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="jëfeWax('cu')">cu <span class="read-help">(cu) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="jëfeWax('cy')">cy <span class="read-help">(ci) 🔊</span></button></td>
             </tr>
             <!-- D -->
             <tr>
                 <td class="consonant-col">d <br><span style="font-size:11px; color:#555;">(de)</span></td>
-                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('da')">da <span class="read-help">(da) 🔊</span></button></td>
-                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('de')">de <span class="read-help">(dé) 🔊</span></button></td>
-                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('di')">di <span class="read-help">(di) 🔊</span></button></td>
-                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('do')">do <span class="read-help">(dó) 🔊</span></button></td>
-                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('du')">du <span class="read-help">(du) 🔊</span></button></td>
-                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('dy')">dy <span class="read-help">(di) 🔊</span></button></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="jëfeWax('da')">da <span class="read-help">(da) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="jëfeWax('de')">de <span class="read-help">(dé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="jëfeWax('di')">di <span class="read-help">(di) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="jëfeWax('do')">do <span class="read-help">(dó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="jëfeWax('du')">du <span class="read-help">(du) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="jëfeWax('dy')">dy <span class="read-help">(di) 🔊</span></button></td>
             </tr>
             <!-- F -->
             <tr>
                 <td class="consonant-col">f <br><span style="font-size:11px; color:#555;">(ef)</span></td>
-                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('fa')">fa <span class="read-help">(fa) 🔊</span></button></td>
-                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('fe')">fe <span class="read-help">(fé) 🔊</span></button></td>
-                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('fi')">fi <span class="read-help">(fi) 🔊</span></button></td>
-                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('fo')">fo <span class="read-help">(fó) 🔊</span></button></td>
-                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('fu')">fu <span class="read-help">(fu) 🔊</span></button></td>
-                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('fy')">fy <span class="read-help">(fi) 🔊</span></button></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="jëfeWax('fa')">fa <span class="read-help">(fa) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="jëfeWax('fe')">fe <span class="read-help">(fé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="jëfeWax('fi')">fi <span class="read-help">(fi) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="jëfeWax('fo')">fo <span class="read-help">(fó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="jëfeWax('fu')">fu <span class="read-help">(fu) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="jëfeWax('fy')">fy <span class="read-help">(fi) 🔊</span></button></td>
             </tr>
             <!-- G -->
             <tr>
                 <td class="consonant-col">g <br><span style="font-size:11px; color:#555;">(ji)</span></td>
-                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('ga')">ga <span class="read-help">(ga) 🔊</span></button></td>
-                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('ge')">ge <span class="read-help">(gé) 🔊</span></button></td>
-                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('gi')">gi <span class="read-help">(gi) 🔊</span></button></td>
-                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('go')">go <span class="read-help">(gó) 🔊</span></button></td>
-                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('gu')">gu <span class="read-help">(gu) 🔊</span></button></td>
-                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('gy')">gy <span class="read-help">(gi) 🔊</span></button></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="jëfeWax('ga')">ga <span class="read-help">(ga) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="jëfeWax('ge')">ge <span class="read-help">(gé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="jëfeWax('gi')">gi <span class="read-help">(gi) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="jëfeWax('go')">go <span class="read-help">(gó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="jëfeWax('gu')">gu <span class="read-help">(gu) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="jëfeWax('gy')">gy <span class="read-help">(gi) 🔊</span></button></td>
             </tr>
             <!-- J -->
             <tr>
                 <td class="consonant-col">j <br><span style="font-size:11px; color:#555;">(ji)</span></td>
-                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('ja')">ja <span class="read-help">(ja) 🔊</span></button></td>
-                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('je')">je <span class="read-help">(jé) 🔊</span></button></td>
-                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('ji')">ji <span class="read-help">(ji) 🔊</span></button></td>
-                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('jo')">jo <span class="read-help">(jó) 🔊</span></button></td>
-                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('ju')">ju <span class="read-help">(ju) 🔊</span></button></td>
-                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('jy')">jy <span class="read-help">(ji) 🔊</span></button></td>
+                <td class="vowel-a"><button class="audio-btn" onclick="jëfeWax('ja')">ja <span class="read-help">(ja) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="jëfeWax('je')">je <span class="read-help">(jé) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="jëfeWax('ji')">ji <span class="read-help">(ji) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="jëfeWax('jo')">jo <span class="read-help">(jó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="jëfeWax('ju')">ju <span class="read-help">(ju) 🔊</span></button></td>
+                <td class="vowel-y"><button class="audio-btn" onclick="jëfeWax('jy')">jy <span class="read-help">(ji) 🔊</span></button></td>
             </tr>
             <!-- K -->
             <tr>
                 <td class="consonant-col">k <br><span style="font-size:11px; color:#555;">(ka)</span></td>
-                <td class="vowel-a"><button class="audio-btn" onclick="waxFaranse('ka')">ka <span class="read-help">(ka) 🔊</span></button></td>
-                <td class="vowel-e"><button class="audio-btn" onclick="waxFaranse('ke')">ke <span class="read-help">(ké) 🔊</span></button></td>
-                <td class="vowel-i"><button class="audio-btn" onclick="waxFaranse('ki')">ki <span class="read-help">(ki) 🔊</span></button></td>
-                <td class="vowel-o"><button class="audio-btn" onclick="waxFaranse('ko')">ko <span class="read-help">(kó) 🔊</span></button></td>
-                <td class="vowel-u"><button class="audio-btn" onclick="waxFaranse('ku')">ku <span class="read-help">(ku) 🔊</span></button></td>
-                <td class="vowel-y"><button class="audio-btn" onclick="waxFaranse('ky')">ky <span class="read-help">(ki) 🔊</span></button></td>
-            </tr>
-        </tbody>
-    </table>
+                <td class="vowel-a"><button class="audio-btn" onclick="jëfeWax('ka')">ka <span class="read-help">(ka) 🔊</span></button></td>
+                <td class="vowel-e"><button class="audio-btn" onclick="jëfeWax('ke')">ke <span class="read-help">(ké) 🔊</span></button></td>
+                <td class="vowel-i"><button class="audio-btn" onclick="jëfeWax('ki')">ki <span class="read-help">(ki) 🔊</span></button></td>
+                <td class="vowel-o"><button class="audio-btn" onclick="jëfeWax('ko')">ko <span class="read-help">(kó) 🔊</span></button></td>
+                <td class="vowel-u"><button class="audio-btn" onclick="jëfeWax('ku')">ku <span class="read-help">(ku) 🔊</span></button></td>
 
-    <script>
-        // Fonksioñ buy tax mu wax saa su nekk
-        function waxFaranse(baat) {
-            window.speechSynthesis.cancel(); // Taxal li fi nekkoon
-            
-            // Jëfandikoo "SpeechSynthesis" ngir mu wax ci saa si
-            let msg = new SpeechSynthesisUtterance(baat);
-            msg.lang = 'fr-FR'; 
-            msg.rate = 0.7; // Ndank ngir mu leer
-            window.speechSynthesis.speak(msg);
-        }
-    </script>
-</body>
 
