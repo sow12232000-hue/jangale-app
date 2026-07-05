@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jangale - Français</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 15px; background-color: #f9f9f9; margin: 0; min-height: 100vh; }
+        /* 📜 Force-al scroll bi ci mboléem telefon yi */
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f9f9f9; 
+            font-family: Arial, sans-serif;
+            overflow-y: auto !important; 
+            -webkit-overflow-scrolling: touch;
+        }
+        body { padding: 15px; padding-bottom: 180px; } /* Yokk naa bërëb ca suuf gu mag */
+
         .btn-back { background-color: #7b9acc; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; }
         h1, h2 { color: #333; text-align: center; margin-top: 30px; }
 
@@ -14,8 +24,9 @@
         .letter-box { background: white; padding: 12px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
         .letter-box:active { background: #f0f0f0; }
 
-        /* 📊 Tábulo Kabaal */
-        .syllable-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; margin-bottom: 30px; }
+        /* 📊 Xarala u Tábulo Kabaal */
+        .table-container { width: 100%; overflow-x: auto; margin-bottom: 30px; }
+        .syllable-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
         .syllable-table th, .syllable-table td { border: 1px solid #ddd; text-align: center; padding: 8px 4px; font-size: 14px; vertical-align: middle; }
         .th-plus { background-color: #ffffff; font-size: 18px; font-weight: bold; }
         .th-vowel { background-color: #f3d1dc; font-weight: bold; font-size: 16px; }
@@ -34,11 +45,11 @@
         .syl-sub { font-size: 11px; color: #d32f2f; margin-top: 1px; }
 
         /* 🔍 Seetukaay bi */
-        .search-container { clear: both; display: block; width: 100%; text-align: center; margin: 25px auto; }
-        .search-box { width: 90%; padding: 14px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none; box-sizing: border-box; display: inline-block; }
+        .search-container { clear: both; display: block; width: 100%; text-align: center; margin: 35px auto; }
+        .search-box { width: 95%; padding: 14px; border-radius: 8px; border: 2px solid #7b9acc; font-size: 16px; outline: none; box-sizing: border-box; display: inline-block; }
 
         /* 📚 Cadre baat yi */
-        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 15px; clear: both; padding-bottom: 150px; }
+        .vocab-box { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 15px; clear: both; margin-bottom: 50px; }
         .misal-line { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; border-bottom: 1px dashed #eee; font-size: 16px; cursor: pointer; }
         .misal-line:last-child { border-bottom: none; }
         .bold-word { font-weight: bold; color: #1a1a1a; }
@@ -88,49 +99,44 @@
 
     <!-- 2️⃣ LËSON 2: TÁBULO KABAAL -->
     <h2>2. Lëson Kabaal (Syllabes)</h2>
-    <table class="syllable-table">
-        <thead>
-            <tr>
-                <th class="th-plus">+</th>
-                <th class="th-vowel">a</th>
-                <th class="th-vowel">e</th>
-                <th class="th-vowel">i</th>
-                <th class="th-vowel">o</th>
-                <th class="th-vowel">u</th>
-                <th class="th-vowel">y</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- LINE B -->
-            <tr>
-                <td class="td-consonant">b<span class="consonant-sub">(be)</span></td>
-                <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ba')"><span class="syl-text">ba</span><span class="syl-sub">(ba)</span>🔊</div></td>
-                <td class="col-e"><div class="syllable-box" onclick="jouerAudio('be')"><span class="syl-text">be</span><span class="syl-sub">(bé)</span>🔊</div></td>
-                <td class="col-i"><div class="syllable-box" onclick="jouerAudio('bi')"><span class="syl-text">bi</span><span class="syl-sub">(bi)</span>🔊</div></td>
-                <td class="col-o"><div class="syllable-box" onclick="jouerAudio('bo')"><span class="syl-text">bo</span><span class="syl-sub">(bó)</span>🔊</div></td>
-                <td class="col-u"><div class="syllable-box" onclick="jouerAudio('bu')"><span class="syl-text">bu</span><span class="syl-sub">(bu)</span>🔊</div></td>
-                <td class="col-y"><div class="syllable-box" onclick="jouerAudio('by')"><span class="syl-text">by</span><span class="syl-sub">(bi)</span>🔊</div></td>
-            </tr>
-            <!-- LINE C -->
-            <tr>
-                <td class="td-consonant">c<span class="consonant-sub">(ce)</span></td>
-                <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ca')"><span class="syl-text">ca</span><span class="syl-sub">(ca)</span>🔊</div></td>
-                <td class="col-e"><div class="syllable-box" onclick="jouerAudio('ce')"><span class="syl-text">ce</span><span class="syl-sub">(cé)</span>🔊</div></td>
-                <td class="col-i"><div class="syllable-box" onclick="jouerAudio('ci')"><span class="syl-text">ci</span><span class="syl-sub">(ci)</span>🔊</div></td>
-                <td class="col-o"><div class="syllable-box" onclick="jouerAudio('co')"><span class="syl-text">co</span><span class="syl-sub">(có)</span>🔊</div></td>
-                <td class="col-u"><div class="syllable-box" onclick="jouerAudio('cu')"><span class="syl-text">cu</span><span class="syl-sub">(cu)</span>🔊</div></td>
-                <td class="col-y"><div class="syllable-box" onclick="jouerAudio('cy')"><span class="syl-text">cy</span><span class="syl-sub">(ci)</span>🔊</div></td>
-            </tr>
-            <!-- LINE D -->
-            <tr>
-                <td class="td-consonant">d<span class="consonant-sub">(de)</span></td>
-                <td class="col-a"><div class="syllable-box" onclick="jouerAudio('da')"><span class="syl-text">da</span><span class="syl-sub">(da)</span>🔊</div></td>
-                <td class="col-e"><div class="syllable-box" onclick="jouerAudio('de')"><span class="syl-text">de</span><span class="syl-sub">(dé)</span>🔊</div></td>
-                <td class="col-i"><div class="syllable-box" onclick="jouerAudio('di')"><span class="syl-text">di</span><span class="syl-sub">(di)</span>🔊</div></td>
-                <td class="col-o"><div class="syllable-box" onclick="jouerAudio('do')"><span class="syl-text">do</span><span class="syl-sub">(dó)</span>🔊</div></td>
-                <td class="col-u"><div class="syllable-box" onclick="jouerAudio('du')"><span class="syl-text">du</span><span class="syl-sub">(du)</span>🔊</div></td>
-                <td class="col-y"><div class="syllable-box" onclick="jouerAudio('dy')"><span class="syl-text">dy</span><span class="syl-sub">(di)</span>🔊</div></td>
-            </tr>
-            <!-- LINE F (Saafara nañu jouerAudio fi) -->
-            <tr>
-                <td class="td-consonant">f<span class="consonant-sub">(ef)</span></td>
+    <div class="table-container">
+        <table class="syllable-table">
+            <thead>
+                <tr>
+                    <th class="th-plus">+</th>
+                    <th class="th-vowel">a</th>
+                    <th class="th-vowel">e</th>
+                    <th class="th-vowel">i</th>
+                    <th class="th-vowel">o</th>
+                    <th class="th-vowel">u</th>
+                    <th class="th-vowel">y</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- LINE B -->
+                <tr>
+                    <td class="td-consonant">b<span class="consonant-sub">(be)</span></td>
+                    <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ba')"><span class="syl-text">ba</span><span class="syl-sub">(ba)</span>🔊</div></td>
+                    <td class="col-e"><div class="syllable-box" onclick="jouerAudio('be')"><span class="syl-text">be</span><span class="syl-sub">(bé)</span>🔊</div></td>
+                    <td class="col-i"><div class="syllable-box" onclick="jouerAudio('bi')"><span class="syl-text">bi</span><span class="syl-sub">(bi)</span>🔊</div></td>
+                    <td class="col-o"><div class="syllable-box" onclick="jouerAudio('bo')"><span class="syl-text">bo</span><span class="syl-sub">(bó)</span>🔊</div></td>
+                    <td class="col-u"><div class="syllable-box" onclick="jouerAudio('bu')"><span class="syl-text">bu</span><span class="syl-sub">(bu)</span>🔊</div></td>
+                    <td class="col-y"><div class="syllable-box" onclick="jouerAudio('by')"><span class="syl-text">by</span><span class="syl-sub">(bi)</span>🔊</div></td>
+                </tr>
+                <!-- LINE C -->
+                <tr>
+                    <td class="td-consonant">c<span class="consonant-sub">(ce)</span></td>
+                    <td class="col-a"><div class="syllable-box" onclick="jouerAudio('ca')"><span class="syl-text">ca</span><span class="syl-sub">(ca)</span>🔊</div></td>
+                    <td class="col-e"><div class="syllable-box" onclick="jouerAudio('ce')"><span class="syl-text">ce</span><span class="syl-sub">(cé)</span>🔊</div></td>
+                    <td class="col-i"><div class="syllable-box" onclick="jouerAudio('ci')"><span class="syl-text">ci</span><span class="syl-sub">(ci)</span>🔊</div></td>
+                    <td class="col-o"><div class="syllable-box" onclick="jouerAudio('co')"><span class="syl-text">co</span><span class="syl-sub">(có)</span>🔊</div></td>
+                    <td class="col-u"><div class="syllable-box" onclick="jouerAudio('cu')"><span class="syl-text">cu</span><span class="syl-sub">(cu)</span>🔊</div></td>
+                    <td class="col-y"><div class="syllable-box" onclick="jouerAudio('cy')"><span class="syl-text">cy</span><span class="syl-sub">(ci)</span>🔊</div></td>
+                </tr>
+                <!-- LINE D -->
+                <tr>
+                    <td class="td-consonant">d<span class="consonant-sub">(de)</span></td>
+                    <td class="col-a"><div class="syllable-box" onclick="jouerAudio('da')"><span class="syl-text">da</span><span class="syl-sub">(da)</span>🔊</div></td>
+                    <td class="col-e"><div class="syllable-box" onclick="jouerAudio('de')"><span class="syl-text">de</span><span class="syl-sub">(dé)</span>🔊</div></td>
+                    <td class="col-i"><div class="syllable-box" onclick="jouerAudio('di')"><span class="syl-text">di</span><span class="syl-sub">(di)</span>🔊</div></td>
+                    <td class="col-o"><div class="syllable-box" onclick="jouerAudio('do')"><span class="syl-text">do</span><span class="syl-sub">(dó)</span>🔊</div></td>
