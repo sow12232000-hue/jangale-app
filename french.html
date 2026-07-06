@@ -86,14 +86,11 @@
     <!-- WÀLLU 2 : BOOLEE ARAF YI PAR ÑAAR -->
     <h2>Leson 1 : Boolee Araf yi ñaar-ñaar</h2>
     <div class="grid-leson">
-        <!-- B -->
         <button class="card-audio" onclick="playAudio('ba.mp3')">b + a -> (ba) <span class="icon-audio">🔊</span></button>
         <button class="card-audio" onclick="playAudio('be.mp3')">b + e -> (be) <span class="icon-audio">🔊</span></button>
         <button class="card-audio" onclick="playAudio('bi.mp3')">b + i -> (bi) <span class="icon-audio">🔊</span></button>
         <button class="card-audio" onclick="playAudio('bo.mp3')">b + o -> (bo) <span class="icon-audio">🔊</span></button>
         <button class="card-audio" onclick="playAudio('bu.mp3')">b + u -> (bu) <span class="icon-audio">🔊</span></button>
-
-        <!-- M -->
         <button class="card-audio" onclick="playAudio('ma.mp3')">m + a -> (ma) <span class="icon-audio">🔊</span></button>
         <button class="card-audio" onclick="playAudio('me.mp3')">m + e -> (me) <span class="icon-audio">🔊</span></button>
         <button class="card-audio" onclick="playAudio('mi.mp3')">m + i -> (mi) <span class="icon-audio">🔊</span></button>
@@ -117,11 +114,25 @@
         <button class="card-audio" onclick="playAudio('téléphone.mp3')">Téléphone -> (Telefoon) <span class="icon-audio">🔊</span></button>
     </div>
 
+    <!-- WÀLLU 4 : 10 BAAT YI NGIR MËN A LAKK -->
+    <h2>Leson 3 : 10 Baat ngir mën a lakk</h2>
+    <div class="grid-leson">
+        <button class="card-audio" onclick="playAudio('bonjour.mp3')">Bonjour -> (Nanga def) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('merci.mp3')">Merci -> (Jërëjëf) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('s_il_vous_plait.mp3')">S'il vous plaît -> (Su la neexee) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('oui.mp3')">Oui -> (Waaw) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('non.mp3')">Non -> (Déet) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('ca_va.mp3')">Ça va -> (Mbaa yaangi ci jamm) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('au_revoir.mp3')">Au revoir -> (Ba beneen yoon) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('bienvenue.mp3')">Bienvenue -> (Aksil / Dalal jamm) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('pardon.mp3')">Pardon -> (Baal ma) <span class="icon-audio">🔊</span></button>
+        <button class="card-audio" onclick="playAudio('ami.mp3')">Ami -> (Xarit) <span class="icon-audio">🔊</span></button>
+    </div>
+
 </div>
 
 <script>
     function playAudio(nomFichier) {
-        // Lii dafay wut sàqu odiyo yi ci biir dëtt bu tudd audio_fr
         var audio = new Audio('audio_fr/' + nomFichier);
         audio.play();
     }
