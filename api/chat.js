@@ -1,5 +1,3 @@
-import https from 'https';
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ reply: 'Method not allowed' });
@@ -17,59 +15,36 @@ export default async function handler(req, res) {
       return res.status(200).json({ reply: 'Mbind mi nga laaj manke na!' });
     }
 
-    const postData = JSON.stringify({
-      contents: [
-        {
-          role: 'user',
-          parts: [{ text: `Yaw ab tontukaay AI nga bu tudd Gemini Wolof. Tontu ko ci Wolof bu leer te gaaw. Laaj bi mooy: ${message}` }]
-        }
-      ]
-    });
+    // URL bu mat te baax ngir Gemini
+    const url = `https://googleapis.com{apiKey}`;
 
-    const options = {
-      hostname: '://googleapis.com',
-path: '/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}',
-
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(postData)
-      }
-    };
-
-    const apiReq = https.request(options, (apiRes) => {
-      let dataChunks = '';
-
-      apiRes.on('data', (chunk) => {
-        dataChunks += chunk;
-      });
-
-      apiRes.on('end', () => {
-        try {
-          const data = JSON.parse(dataChunks);
-
-          if (data.error) {
-            return res.status(200).json({ reply: 'Google Error: ' + data.error.message });
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            role: 'user',
+            parts: [{ text: `Yaw ab tontukaay AI nga bu tudd Gemini Wolof. Tontu ko ci Wolof bu leer te gaaw. Laaj bi mooy: ${message}` }]
           }
-
-          if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0]) {
-            const replyText = data.candidates[0].content.parts[0].text;
-            return res.status(200).json({ reply: replyText });
-          } else {
-            return res.status(200).json({ reply: 'Njuumte ci anam bu tontu bi.' });
-          }
-        } catch (e) {
-          return res.status(200).json({ reply: 'Recc-recc mbind: ' + e.message });
-        }
-      });
+        ]
+      })
     });
 
-    apiReq.on('error', (error) => {
-      return res.status(200).json({ reply: 'Recc-recc connection: ' + error.message });
-    });
+    const data = await response.json();
 
-    apiReq.write(postData);
-    apiReq.end();
+    if (data.error) {
+      return res.status(200).json({ reply: 'Google Error: ' + data.error.message });
+    }
+
+    if (data && data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0]) {
+      const replyText = data.candidates[0].content.parts[0].text;
+      return res.status(200).json({ reply: replyText });
+    } else {
+      return res.status(200).json({ reply: 'Njuumte ci anam bu tontu bi.' });
+    }
 
   } catch (error) {
     return res.status(200).json({ reply: 'Recc-recc: ' + error.message });
