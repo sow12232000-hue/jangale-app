@@ -193,7 +193,8 @@ async function sendMessage() {
         });
 
         var data = await res.json();
-        var tontuAi = data.reply || data.AI || data.text || "Recc-recc am na...";
+   var tontuAi = data.text || data.reply || data.content || data.message || (typeof data === 'string' ? data : JSON.stringify(data));
+     
 
         area.innerHTML += '<div style="margin-top:5px;color:#1E2746;"><b>AI:</b> ' + tontuAi + '</div>';
     } catch(e) {
