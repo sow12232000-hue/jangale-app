@@ -11,7 +11,7 @@ export default async function handler(req, res) {
             return res.status(200).json({ reply: 'Caabi API manke na!' });
         }
 
-const url = "https://googleapis.com" + apiKey;
+const url "https://googleapis.com" + apiKey;
 
         
 
