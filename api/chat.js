@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ reply: 'Method not allowed' });
@@ -15,25 +17,22 @@ export default async function handler(req, res) {
       return res.status(200).json({ reply: 'Mbind mi nga laaj manke na!' });
     }
 
-    // URL bu mat te baax ngir Gemini
     const url = `https://googleapis.com{apiKey}`;
 
-    const response = await fetch(url, {
-      method: 'POST',
+    const response = await axios.post(url, {
+      contents: [
+        {
+          role: 'user',
+          parts: [{ text: `Yaw ab tontukaay AI nga bu tudd Gemini Wolof. Tontu ko ci Wolof bu leer te gaaw. Laaj bi mooy: ${message}` }]
+        }
+      ]
+    }, {
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            role: 'user',
-            parts: [{ text: `Yaw ab tontukaay AI nga bu tudd Gemini Wolof. Tontu ko ci Wolof bu leer te gaaw. Laaj bi mooy: ${message}` }]
-          }
-        ]
-      })
+      }
     });
 
-    const data = await response.json();
+    const data = response.data;
 
     if (data.error) {
       return res.status(200).json({ reply: 'Google Error: ' + data.error.message });
@@ -47,6 +46,7 @@ export default async function handler(req, res) {
     }
 
   } catch (error) {
-    return res.status(200).json({ reply: 'Recc-recc: ' + error.message });
+    const errorMsg = error.response ? JSON.stringify(error.response.data) : error.message;
+    return res.status(200).json({ reply: 'Recc-recc: ' + errorMsg });
   }
 }
