@@ -157,6 +157,46 @@
         <a href="https://wa.me" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
     
     </div>
+<!-- Bërabu seetukaay AI ci Wolof -->
+<div id="ai-chat" style="position:fixed; bottom:20px; right:20px; z-index:1000;">
+  <button onclick="toggleChat()" style="background:#1E2746; color:white; border:none; padding:15px; border-radius:50%; font-size:24px; cursor:pointer; box-shadow:0 4px 8px rgba(0,0,0,0.2);">💬</button>
+  <div id="chat-box" style="display:none; width:300px; height:400px; background:white; border:1px solid #ccc; border-radius:10px; position:absolute; bottom:60px; right:0; box-shadow:0 4px 12px rgba(0,0,0,0.15); flex-direction:column;">
+    <div style="background:#1E2746; color:white; padding:10px; font-weight:bold; border-top-left-radius:10px; border-top-right-radius:10px;">Gemini AI - Wolof</div>
+    <div id="chat-messages" style="flex:1; padding:10px; overflow-y:auto; font-size:14px; color:black;"></div>
+    <div style="padding:10px; border-top:1px solid #eee; display:flex;">
+      <input id="user-input" type="text" placeholder="Laajal fii..." style="flex:1; padding:5px; border:1px solid #ddd; border-radius:4px; color:black;">
+      <button onclick="sendMessage()" style="background:#1E2746; color:white; border:none; padding:5px 10px; margin-left:5px; border-radius:4px;">➡️</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleChat() {
+  var box = document.getElementById('chat-box');
+  box.style.display = box.style.display === 'none' ? 'flex' : 'none';
+}
+async function sendMessage() {
+  var input = document.getElementById('user-input');
+  var msg = input.value.trim();
+  if(!msg) return;
+  var area = document.getElementById('chat-messages');
+  area.innerHTML += '<div><b>Yaw:</b> ' + msg + '</div>';
+  input.value = '';
+
+  try {
+    var res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: msg })
+    });
+    var data = await res.json();
+    area.innerHTML += '<div style="margin-top:5px;color:#1E2746;"><b>AI:</b> ' + data.reply + '</div>';
+  } catch(e) {
+    area.innerHTML += '<div style="color:red;">Rëcc-rëcc am na...</div>';
+  }
+  area.scrollTop = area.scrollHeight;
+}
+</script>
 
 </body>
 
