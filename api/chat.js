@@ -13,7 +13,6 @@ export default async function handler(req, res) {
     const prompt = `Yaw ab tontukaay AI nga ngir application 'Jàngale'. Lépp lu ñu la laaj, danga koy tontu ci Wolof bu am kersa te yomb a jàng. Laaj bi mooy: ${message}`;
 
     try {
-        // Lëkkalekaay bu dëgg bu Gemini 1.5 Flash
         const response = await fetch(`https://googleapis.com{apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -24,8 +23,8 @@ export default async function handler(req, res) {
 
         const data = await response.json();
 
-        // Fii lañuy firi xibaar bi dëgg dëgg ci anam bu dagg
-        if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
+        // Sélal nañu xibaar bi ndax mu jël index [0] yu candidates ak parts dëgg dëgg
+        if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0]) {
             const reply = data.candidates[0].content.parts[0].text;
             return res.status(200).json({ reply: reply });
         } else {
