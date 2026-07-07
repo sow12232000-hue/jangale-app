@@ -172,31 +172,38 @@
 
 <script>
 function toggleChat() {
-  var box = document.getElementById('chat-box');
-  box.style.display = box.style.display === 'none' ? 'flex' : 'none';
+    var box = document.getElementById('chat-box');
+    box.style.display = box.style.display === 'none' ? 'flex' : 'none';
 }
-async function sendMessage() {
-  var input = document.getElementById('user-input');
-  var msg = input.value.trim();
-  if(!msg) return;
-  var area = document.getElementById('chat-messages');
-  area.innerHTML += '<div><b>Yaw:</b> ' + msg + '</div>';
-  input.value = '';
 
-  try {
-    var res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: msg })
-    });
-    var data = await res.json();
-    area.innerHTML += '<div style="margin-top:5px;color:#1E2746;"><b>AI:</b> ' + data.reply + '</div>';
-  } catch(e) {
-    area.innerHTML += '<div style="color:red;">Rëcc-rëcc am na...</div>';
-  }
-  area.scrollTop = area.scrollHeight;
+async function sendMessage() {
+    var input = document.getElementById('user-input');
+    var msg = input.value.trim();
+    if (!msg) return;
+
+    var area = document.getElementById('chat-messages');
+    area.innerHTML += '<div style="margin-top:5px;color:#1E2746;"><b>Yaw:</b> ' + msg + '</div>';
+    input.value = '';
+
+    try {
+        var res = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: msg })
+        });
+
+        var data = await res.json();
+        var tontuAi = data.reply || data.AI || data.text || "Recc-recc am na...";
+
+        area.innerHTML += '<div style="margin-top:5px;color:#1E2746;"><b>AI:</b> ' + tontuAi + '</div>';
+    } catch(e) {
+        area.innerHTML += '<div style="margin-top:5px;color:red;"><b>AI:</b> Recc-recc am na...</div>';
+    }
+
+    area.scrollTop = area.scrollHeight;
 }
 </script>
+
 
 </body>
 
