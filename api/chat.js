@@ -19,6 +19,7 @@ export default async function handler(req, res) {
 
     const url = `https://googleapis.com{apiKey}`;
 
+
     const response = await axios.post(url, {
       contents: [
         {
