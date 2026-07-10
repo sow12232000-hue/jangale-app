@@ -17,14 +17,19 @@ export default async function handler(req, res) {
       return res.status(200).json({ reply: 'Mbind mi nga laaj manke na!' });
     }
 
+    // URL bu baax bi te am model bu yees (gemini-1.5-flash)
     const url = `https://googleapis.com{apiKey}`;
-
 
     const response = await axios.post(url, {
       contents: [
         {
           role: 'user',
-          parts: [{ text: `Yaw ab tontukaay AI nga bu tudd Gemini Wolof. Tontu ko ci Wolof bu leer te gaaw. Laaj bi mooy: ${message}` }]
+          parts: [
+            { 
+              // Fi lañu boole mbindu digal bi ak laaj bi jóge ci jëfandikokat bi
+              text: `Yaw ab tontukaay AI nga bu tudd Gemini Wolof. Tontu ko ci Wolof bu leer te gaaw. Laaj bi mu ngi nii: ${message}` 
+            }
+          ]
         }
       ]
     }, {
@@ -39,7 +44,8 @@ export default async function handler(req, res) {
       return res.status(200).json({ reply: 'Google Error: ' + data.error.message });
     }
 
-    if (data && data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0]) {
+    // Xoolal ndax Gemini yone na tontu bu mat sëkk
+    if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0]) {
       const replyText = data.candidates[0].content.parts[0].text;
       return res.status(200).json({ reply: replyText });
     } else {
