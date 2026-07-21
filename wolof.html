@@ -3,108 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jàngale App - Abada ak Mbindum Wolof</title>
+    <title>Leson 2 - Baat yu am solo</title>
     <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #1a2530;
-            --card-bg: #ffffff;
-            --primary-purple: #4CAF50;
-            --border-light: #e0e0e0;
-            --btn-radius: 12px;
-        }
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
             margin: 0;
-            padding: 15px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
         }
+        .phone-container {
+            max-width: 412px;
+            width: 100%;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        /* Kaw ba (Header) */
         .header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .header h1 {
-            color: var(--primary-purple);
-            font-size: 28px;
-            margin-bottom: 5px;
+            background-color: #0b0c10;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
         .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            text-decoration: none;
-            color: var(--text-color);
+            background-color: #3a7bc8;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        /* Tittle u Leson bi */
+        .leson-title {
+            text-align: center;
+            font-size: 1.6rem;
             font-weight: bold;
-            background: var(--card-bg);
-            padding: 10px 15px;
-            border-radius: var(--btn-radius);
-            border: 1px solid var(--border-light);
+            color: #2c3e50;
+            padding: 20px 10px 10px 10px;
+            margin: 0;
         }
-        .lesson-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-left: 5px solid var(--primary-purple);
-            border-radius: var(--btn-radius);
-            padding: 15px;
-            margin-bottom: 15px;
+        .divider {
+            height: 2px;
+            background-color: #cbd5e1;
+            width: 80%;
+            margin: 0 auto 20px auto;
         }
-        .title-card {
-            color: var(--primary-purple);
-            font-weight: bold;
-            font-size: 22px;
-            margin-top: 0;
-            margin-bottom: 10px;
-            border-bottom: 2px solid var(--primary-purple);
-            padding-bottom: 5px;
-        }
-        .alphabet-grid {
+        /* Grid u baat yi */
+        .words-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 15px;
+            gap: 15px;
+            padding: 0 20px 20px 20px;
         }
-        .letter-box {
-            background: #f1f2f6;
-            padding: 8px;
-            border-radius: 8px;
-            font-size: 16px;
+        /* Card u baat yi */
+        .word-card {
+            background-color: white;
+            border: none;
+            border-radius: 18px;
+            padding: 20px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+            cursor: pointer;
+            text-align: left;
+            transition: transform 0.2s, background-color 0.2s;
         }
-        .letter-main { font-weight: bold; color: #4CAF50; }
-        .example-section { margin-top: 15px; padding-top: 5px; }
+        .word-card:active {
+            transform: scale(0.95);
+            background-color: #e8f4f8;
+        }
+        .word-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 1.1rem;
+            color: #000;
+            font-weight: bold;
+            max-width: 75%;
+        }
+        .prononciation {
+            font-weight: normal;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        .wolof-translation {
+            color: #0284c7;
+            font-size: 1.15rem;
+        }
+        .audio-icon {
+            font-size: 1.4rem;
+            color: #475569;
+        }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-btn">⬅️ Dellu gànnaaw</a>
-
+<div class="phone-container">
+    <!-- Header -->
     <div class="header">
-        <h1>Suje: Lire ak Bind Wolof</h1>
+        <button class="back-btn" onclick="window.history.back()">⬅️</button>
+        <div>jàngale</div>
+        <div style="background: #27ae60; padding: 5px; border-radius: 4px; font-size: 0.8rem;">JÀNGALE</div>
     </div>
 
-    <!-- Lëson 1 -->
-    <div class="lesson-card">
-        <div class="title-card">1. Xabeyi Wolof (Consonnes)</div>
-        <div class="alphabet-grid">
-            <div class="letter-box"><span class="letter-main">B b</span> - Ba</div>
-            <div class="letter-box"><span class="letter-main">C c</span> - Ca</div>
-            <div class="letter-box"><span class="letter-main">D d</span> - Da</div>
-            <div class="letter-box"><span class="letter-main">F f</span> - Fa</div>
-            <div class="letter-box"><span class="letter-main">G g</span> - Ga</div>
-            <div class="letter-box"><span class="letter-main">J j</span> - Ja</div>
-        </div>
-    </div>
+    <!-- Leson Title -->
+    <h2 class="leson-title">Leson 2 : Baat yu am solo yu bees</h2>
+    <div class="divider"></div>
 
-    <!-- Lëson 2 -->
-    <div class="lesson-card">
-        <div class="title-card">2. Éliif yi (Voyelles simples)</div>
-        <div class="alphabet-grid">
-            <div class="letter-box"><span class="letter-main">a</span> - [a] (fat-ha)</div>
-            <div class="letter-box"><span class="letter-main">e</span> - [é]</div>
-            <div class="letter-box"><span class="letter-main">i</span> - [i] (kasra)</div>
-            <div class="letter-box"><span class="letter-main">o</span> - [o]</div>
-            <div class="letter-box"><span class="letter-main">u</span> - [ou] (damma)</div>
-        </div>
-    </div>
+    <!-- Fi baat yi di guéné -->
+    <div class="words-grid" id="words-container"></div>
+</div>
+
+<script>
+    // Liste u baat yi dëppoo ak sa nataal
+    const baatYi = [
+        { francais: "Montagne", fonetik: "mõñtañ", wolof: "Tund", audio: "audio_fr/montagne.mp3" },
+        { francais: "Bouteille", fonetik: "butey", wolof: "Bitel", audio: "audio_fr/bouteille.mp3" },
+        { francais: "Chapeau", fonetik: "sapoo", wolof: "Mbaxana", audio: "audio_fr/chapeau.mp3" },
+        { francais: "Cuisine", fonetik: "kiwisin", wolof: "Waañ", audio: "audio_fr/cuisine.mp3" },
+        { francais: "Garçon", fonetik: "garsõ", wolof: "Xale bu góor", audio: "audio_fr/garcon.mp3" },
+        { francais: "Grenouille", fonetik: "grenuy", wolof: "Mbott", audio: "audio_fr/grenouille.mp3" },
+        { francais: "Oiseau", fonetik: "wazo", wolof: "Picc", audio: "audio_fr/oiseau.mp3" },
+        { francais: "Papillon", fonetik: "papiyõ", wolof: "Lëp-lëp", audio: "audio_fr/papillon.mp3" },
+        { francais: "Téléphone", fonetik: "telefon", wolof: "Telefoon", audio: "audio_fr/telephone.mp3" }
+    ];
+
+    const container = document.getElementById("words-container");
+
+    // Sàkk card yi ci biir grid bi
+    baatYi.forEach(item => {
+        const card = document.createElement("button");
+        card.className = "word-card";
+        
+        card.innerHTML = `
+            <div class="word-info">
+                <div>${item.francais}</div>
+                <div class="prononciation">(${item.fonetik})</div>
+                <div class="wolof-translation">-> ${item.wolof}</div>
+            </div>
+            <span class="audio-icon">🔊</span>
+        `;
+        
+        // Bu ñu cuqé card bi mu play audio
+        card.onclick = () => {
+            playAudio(item.audio);
+        };
+        
+        container.appendChild(card);
+    });
+
+    // Fonction buy dëgglu son bi
+    function playAudio(path) {
+        const audio = new Audio(path);
+        audio.play().catch(err => console.log("Audio bi manul a jouer: " + path));
+    }
+</script>
 
 </body>
 </html>
