@@ -12,7 +12,6 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            overflow-x: hidden;
         }
         .phone-container {
             max-width: 412px;
@@ -20,8 +19,6 @@
             background-color: #fcfcfd;
             min-height: 100vh;
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
         }
         /* Kaw ba (Header) */
         .header {
@@ -52,82 +49,83 @@
             font-weight: bold;
             text-transform: uppercase;
         }
-
-        /* 🚀 Buntu scroll horizontal bi lay laqal Leson 2 */
-        .lesons-wrapper {
+        /* Buntu tàqalé Leson yi */
+        .tabs-container {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            width: 100%;
-            padding-bottom: 20px;
+            gap: 15px;
+            padding: 20px 20px 10px 20px;
         }
-        /* Ngir dindi barre scroll bu ñaaw bi */
-        .lesons-wrapper::-webkit-scrollbar {
-            display: none;
+        .tab-btn {
+            flex: 1;
+            padding: 14px;
+            border: 2px solid #e2e8f0;
+            background-color: white;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
         }
-
-        /* Boite u Leson bu nekk */
-        .leson-section {
-            min-width: 100%;
-            box-sizing: border-box;
-            scroll-snap-align: start;
-            padding: 10px 20px;
-        }
-
-        /* Titre u Leson bi */
-        .leson-title-box {
+        .tab-btn.active {
             background-color: #0284c7;
             color: white;
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.15);
+            border-color: #0284c7;
+            box-shadow: 0 4px 12 rgba(2, 132, 199, 0.2);
         }
-        .leson-title-box.consonnes {
-            background-color: #10b981; /* Wirgo bu bees ngir koonsoo yi */
+        /* Liste vertical bu yaatu (1 colonne) ngir mu toftaloo ci suuf */
+        .araf-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px 20px 25px 20px;
         }
-
-        /* Grid 2 colonnes melni sa image bi */
-        .araf-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        /* Card yi melni sa natal dëgg */
+        /* Card yi toftaloo ci suuf */
         .araf-card {
             background-color: white;
             border: 1px solid #e2e8f0;
-            border-radius: 28px;
-            padding: 25px 20px;
+            border-radius: 20px;
+            padding: 15px 20px;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             cursor: pointer;
             transition: transform 0.2s;
         }
         .araf-card:active {
-            transform: scale(0.96);
+            transform: scale(0.98);
             background-color: #f1f5f9;
         }
+        /* Wetu loxo cammoñ: Araf ak Misaal */
+        .card-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
         .araf-main {
-            font-size: 3.4rem;
+            font-size: 3rem;
             font-weight: 900;
             color: #0f172a;
-            margin: 0 0 20px 0;
-            line-height: 1;
+            margin: 0;
+            width: 50px; /* Ngir araf yi alignment bi baax */
         }
-        /* Bouton Audio circular bu weex bu am shadow */
+        .misaal-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .misaal-label {
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+        .misaal-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #0284c7;
+            margin: 0;
+        }
+        /* Wetu loxo ndijoor: Bouton Audio */
         .audio-btn {
-            position: absolute;
-            top: 25px;
-            right: 20px;
             background-color: #f1f5f9;
             border: none;
             width: 48px;
@@ -139,27 +137,6 @@
             font-size: 1.4rem;
             color: #64748b;
             box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-        }
-        .misaal-container {
-            width: 100%;
-        }
-        .misaal-label {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            margin-bottom: 4px;
-        }
-        .misaal-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #0284c7;
-        }
-        /* Teytalu swipe / weccu ci suuf */
-        .swipe-hint {
-            text-align: center;
-            color: #94a3b8;
-            font-size: 0.9rem;
-            padding: 10px;
-            font-style: italic;
         }
     </style>
 </head>
@@ -173,24 +150,14 @@
         <div class="logo-tag">JÀNGALE</div>
     </div>
 
-    <div class="swipe-hint">Pousseel loxol ci wet ⬅️ ➡️ ngir guiss yeneen Leson</div>
-
-    <!-- 🚀 Buntu scroll horizontal bi -->
-    <div class="lesons-wrapper">
-        
-        <!-- SECTION 1: VOYELLES (Feeñ na saasa) -->
-        <div class="leson-section">
-            <div class="leson-title-box">(Leson 1) - Voyel yi</div>
-            <div class="araf-grid" id="voyelles-container"></div>
-        </div>
-
-        <!-- SECTION 2: CONSONNES (Mu ngi laqu ci wetu ndijoor) -->
-        <div class="leson-section">
-            <div class="leson-title-box consonnes">(Leson 2) - Koonsoo yi</div>
-            <div class="araf-grid" id="consonnes-container"></div>
-        </div>
-
+    <!-- Tab Leson yi -->
+    <div class="tabs-container">
+        <button class="tab-btn active" id="btn-voyelles" onclick="switchLeson('voyelles')">(Leson 1)</button>
+        <button class="tab-btn" id="btn-consonnes" onclick="switchLeson('consonnes')">(Leson 2)</button>
     </div>
+
+    <!-- Fi araf yi di toftaloo ci suuf -->
+    <div class="araf-list" id="araf-container"></div>
 </div>
 
 <script>
@@ -229,20 +196,25 @@
         { araf: "Y", misaal: "Yaram", wax: "Yë", son: "audio/araf_y.mp3" }
     ];
 
-    // Fonction buy sàkk card yi ci biir genn section
-    function sakkCardYi(liste, containerId) {
-        const container = document.getElementById(containerId);
+    const container = document.getElementById("araf-container");
+
+    // Fonction buy wone liste bi mu toftaloo ci suuf
+    function woneArafYi(liste) {
+        container.innerHTML = ""; 
+        
         liste.forEach(item => {
             const card = document.createElement("div");
             card.className = "araf-card";
             
             card.innerHTML = `
-                <h1 class="araf-main">${item.araf}</h1>
-                <button class="audio-btn">🔊</button>
-                <div class="misaal-container">
-                    <div class="misaal-label">Misaal:</div>
-                    <div class="misaal-text">${item.misaal}</div>
+                <div class="card-left">
+                    <h1 class="araf-main">${item.araf}</h1>
+                    <div class="misaal-container">
+                        <span class="misaal-label">Misaal:</span>
+                        <span class="misaal-text">${item.misaal}</span>
+                    </div>
                 </div>
+                <button class="audio-btn">🔊</button>
             `;
             
             card.onclick = () => {
@@ -251,6 +223,20 @@
             
             container.appendChild(card);
         });
+    }
+
+    // Fonction buy soppi Leson bi
+    function switchLeson(type) {
+        document.getElementById("btn-voyelles").classList.remove("active");
+        document.getElementById("btn-consonnes").classList.remove("active");
+
+        if (type === 'voyelles') {
+            document.getElementById("btn-voyelles").classList.add("active");
+            woneArafYi(voyelles);
+        } else {
+            document.getElementById("btn-consonnes").classList.add("active");
+            woneArafYi(consonnes);
+        }
     }
 
     // Fonction buy déglu son bi
@@ -264,9 +250,8 @@
         });
     }
 
-    // Dóoral liggéey bi ngir ñaari leson yi bën yoon
-    sakkCardYi(voyelles, "voyelles-container");
-    sakkCardYi(consonnes, "consonnes-container");
+    // Dóoral liggéey bi ak Voyelles (Leson 1)
+    woneArafYi(voyelles);
 </script>
 
 </body>
