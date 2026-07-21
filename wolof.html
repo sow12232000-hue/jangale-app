@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leson 2 - Baat yu am solo</title>
+    <title>Arafu Wolof - Audio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,7 +20,7 @@
             min-height: 100vh;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        /* Kaw ba (Header) */
+        /* Header bi */
         .header {
             background-color: #0b0c10;
             color: white;
@@ -40,14 +40,21 @@
             cursor: pointer;
             font-size: 1.1rem;
         }
-        /* Tittle u Leson bi */
+        /* Titre */
         .leson-title {
             text-align: center;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: #2c3e50;
-            padding: 20px 10px 10px 10px;
+            padding: 20px 10px 5px 10px;
             margin: 0;
+        }
+        .subtitle {
+            text-align: center;
+            color: #27ae60;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
         .divider {
             height: 2px;
@@ -55,52 +62,68 @@
             width: 80%;
             margin: 0 auto 20px auto;
         }
-        /* Grid u baat yi */
-        .words-grid {
+        /* Grid */
+        .araf-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             padding: 0 20px 20px 20px;
         }
-        /* Card u baat yi */
-        .word-card {
+        /* Card */
+        .araf-card {
             background-color: white;
-            border: none;
+            border: 2px solid #e2e8f0;
             border-radius: 18px;
-            padding: 20px 15px;
+            padding: 15px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: space-between;
             box-shadow: 0 4px 8px rgba(0,0,0,0.06);
             cursor: pointer;
             text-align: left;
-            transition: transform 0.2s, background-color 0.2s;
+            transition: all 0.2s ease;
+            min-height: 110px;
         }
-        .word-card:active {
+        .araf-card:active {
             transform: scale(0.95);
             background-color: #e8f4f8;
+            border-color: #3a7bc8;
         }
-        .word-info {
+        .card-top {
             display: flex;
-            flex-direction: column;
-            gap: 5px;
-            font-size: 1.1rem;
-            color: #000;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .araf-main {
+            font-size: 2.2rem;
             font-weight: bold;
-            max-width: 75%;
+            color: #1e293b;
         }
-        .prononciation {
-            font-weight: normal;
-            color: #475569;
-            font-size: 0.95rem;
+        .audio-btn {
+            background-color: #f1f5f9;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #3a7bc8;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .wolof-translation {
+        .misaal-box {
+            margin-top: 10px;
+        }
+        .misaal-label {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+        .misaal-text {
+            font-size: 1.1rem;
+            font-weight: bold;
             color: #0284c7;
-            font-size: 1.15rem;
-        }
-        .audio-icon {
-            font-size: 1.4rem;
-            color: #475569;
         }
     </style>
 </head>
@@ -114,56 +137,83 @@
         <div style="background: #27ae60; padding: 5px; border-radius: 4px; font-size: 0.8rem;">JÀNGALE</div>
     </div>
 
-    <!-- Leson Title -->
-    <h2 class="leson-title">Leson 2 : Baat yu am solo yu bees</h2>
+    <!-- Titre -->
+    <h2 class="leson-title">Araf yiñuy jëfandikoo</h2>
+    <div class="subtitle">Cuqal bouton 🔊 ngir déglu son bi</div>
     <div class="divider"></div>
 
-    <!-- Fi baat yi di guéné -->
-    <div class="words-grid" id="words-container"></div>
+    <!-- Fi Araf yi di guéné -->
+    <div class="araf-grid" id="araf-container"></div>
 </div>
 
 <script>
-    // Liste u baat yi dëppoo ak sa nataal
-    const baatYi = [
-        { francais: "Montagne", fonetik: "mõñtañ", wolof: "Tund", audio: "audio_fr/montagne.mp3" },
-        { francais: "Bouteille", fonetik: "butey", wolof: "Bitel", audio: "audio_fr/bouteille.mp3" },
-        { francais: "Chapeau", fonetik: "sapoo", wolof: "Mbaxana", audio: "audio_fr/chapeau.mp3" },
-        { francais: "Cuisine", fonetik: "kiwisin", wolof: "Waañ", audio: "audio_fr/cuisine.mp3" },
-        { francais: "Garçon", fonetik: "garsõ", wolof: "Xale bu góor", audio: "audio_fr/garcon.mp3" },
-        { francais: "Grenouille", fonetik: "grenuy", wolof: "Mbott", audio: "audio_fr/grenouille.mp3" },
-        { francais: "Oiseau", fonetik: "wazo", wolof: "Picc", audio: "audio_fr/oiseau.mp3" },
-        { francais: "Papillon", fonetik: "papiyõ", wolof: "Lëp-lëp", audio: "audio_fr/papillon.mp3" },
-        { francais: "Téléphone", fonetik: "telefon", wolof: "Telefoon", audio: "audio_fr/telephone.mp3" }
+    // Arafu Wolof dëgg dëgg ak seen son
+    const arafWolof = [
+        { araf: "A", misaal: "Amoo", wax: "A", son: "audio/a.mp3" },
+        { araf: "B", misaal: "Boon", wax: "Bé", son: "audio/b.mp3" },
+        { araf: "C", misaal: "Ceeb", wax: "Cé", son: "audio/c.mp3" },
+        { araf: "D", misaal: "Daba", wax: "Dé", son: "audio/d.mp3" },
+        { araf: "E", misaal: "Eskee", wax: "É", son: "audio/e.mp3" },
+        { araf: "Ë", misaal: "Ëtt", wax: "Ë", son: "audio/ee.mp3" },
+        { araf: "F", misaal: "Fas", wax: "Ef", son: "audio/f.mp3" },
+        { araf: "G", misaal: "Góor", wax: "Gé", son: "audio/g.mp3" },
+        { araf: "I", misaal: "Ite", wax: "I", son: "audio/i.mp3" },
+        { araf: "J", misaal: "Jërëjëf", wax: "Jé", son: "audio/j.mp3" },
+        { araf: "K", misaal: "Kër", wax: "Ka", son: "audio/k.mp3" },
+        { araf: "L", misaal: "Lakk", wax: "El", son: "audio/l.mp3" },
+        { araf: "M", misaal: "Mbaar", wax: "Em", son: "audio/m.mp3" },
+        { araf: "N", misaal: "Nit", wax: "En", son: "audio/n.mp3" },
+        { araf: "Ñ", misaal: "Ñari", wax: "Gñé", son: "audio/gn.mp3" },
+        { araf: "Ŋ", misaal: "Ŋam", wax: "Ŋé", son: "audio/ng.mp3" },
+        { araf: "O", misaal: "Oolo", wax: "Ó", son: "audio/o.mp3" },
+        { araf: "P", misaal: "Picc", wax: "Pé", son: "audio/p.mp3" },
+        { araf: "Q", misaal: "Qaat", wax: "Qá", son: "audio/q.mp3" },
+        { araf: "R", misaal: "Ragal", wax: "Er", son: "audio/r.mp3" },
+        { araf: "S", misaal: "Suf", wax: "Es", son: "audio/s.mp3" },
+        { araf: "T", misaal: "Tund", wax: "Té", son: "audio/t.mp3" },
+        { araf: "U", misaal: "Ubi", wax: "U", son: "audio/u.mp3" },
+        { araf: "W", misaal: "Waaw", wax: "We", son: "audio/w.mp3" },
+        { araf: "X", misaal: "Xale", wax: "Xa", son: "audio/x.mp3" },
+        { araf: "Y", misaal: "Yaram", wax: "Ye", son: "audio/y.mp3" }
     ];
 
-    const container = document.getElementById("words-container");
+    const container = document.getElementById("araf-container");
 
-    // Sàkk card yi ci biir grid bi
-    baatYi.forEach(item => {
-        const card = document.createElement("button");
-        card.className = "word-card";
+    // Sàkk card yi
+    arafWolof.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "araf-card";
         
         card.innerHTML = `
-            <div class="word-info">
-                <div>${item.francais}</div>
-                <div class="prononciation">(${item.fonetik})</div>
-                <div class="wolof-translation">-> ${item.wolof}</div>
+            <div class="card-top">
+                <span class="araf-main">${item.araf}</span>
+                <button class="audio-btn">🔊</button>
             </div>
-            <span class="audio-icon">🔊</span>
+            <div class="misaal-box">
+                <div class="misaal-label">Misaal:</div>
+                <div class="misaal-text">${item.misaal}</div>
+            </div>
         `;
         
-        // Bu ñu cuqé card bi mu play audio
+        // Bu ñu cuqé card bi, mu jplay son bi
         card.onclick = () => {
-            playAudio(item.audio);
+            playAudio(item.son, item.misaal);
         };
         
         container.appendChild(card);
     });
 
-    // Fonction buy dëgglu son bi
-    function playAudio(path) {
-        const audio = new Audio(path);
-        audio.play().catch(err => console.log("Audio bi manul a jouer: " + path));
+    // Fonction buy jéll son bi diko play (ak fànn buy wax bu file bi amul)
+    function playAudio(audioPath, fallbackText) {
+        const audio = new Audio(audioPath);
+        
+        audio.play().catch(err => {
+            console.log("File audio bi amul, sàkk naa bat dëgg: " + audioPath);
+            // Bu mp3 bi amul ci dossier bi, telefone bi dina wax baat bi saasa
+            const utterance = new SpeechSynthesisUtterance(fallbackText);
+            utterance.lang = 'fr-FR'; // Day jëfandikoo bat bu gëna laane
+            window.speechSynthesis.speak(utterance);
+        });
     }
 </script>
 
