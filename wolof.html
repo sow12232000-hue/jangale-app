@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arafu Wolof - Leson yu tàqaliku</title>
+    <title>Arafu Wolof</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,18 +40,27 @@
             cursor: pointer;
             font-size: 1.1rem;
         }
+        .logo-tag {
+            background-color: #10b981;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
         /* Buntu tàqalé Leson yi */
         .tabs-container {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             padding: 20px 20px 10px 20px;
         }
         .tab-btn {
             flex: 1;
-            padding: 12px;
+            padding: 14px;
             border: 2px solid #e2e8f0;
             background-color: white;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 1.1rem;
             font-weight: bold;
             color: #64748b;
@@ -62,26 +71,26 @@
             background-color: #0284c7;
             color: white;
             border-color: #0284c7;
-            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.2);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
         }
-        /* Grid u Araf yi */
+        /* Grid 2 colonnes melni sa image bi */
         .araf-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 15px 20px 25px 20px;
         }
-        /* Card yi */
+        /* Card yi melni sa natal dëgg */
         .araf-card {
             background-color: white;
             border: 1px solid #e2e8f0;
-            border-radius: 24px;
+            border-radius: 28px;
             padding: 25px 20px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             position: relative;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
             cursor: pointer;
             transition: transform 0.2s;
         }
@@ -90,37 +99,39 @@
             background-color: #f1f5f9;
         }
         .araf-main {
-            font-size: 3.2rem;
+            font-size: 3.4rem;
             font-weight: 900;
             color: #0f172a;
             margin: 0 0 20px 0;
             line-height: 1;
         }
+        /* Bouton Audio circular bu weex bu am shadow */
         .audio-btn {
             position: absolute;
             top: 25px;
             right: 20px;
             background-color: #f1f5f9;
             border: none;
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #64748b;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
         }
         .misaal-container {
             width: 100%;
         }
         .misaal-label {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #94a3b8;
             margin-bottom: 4px;
         }
         .misaal-text {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #0284c7;
         }
@@ -133,13 +144,13 @@
     <div class="header">
         <button class="back-btn" onclick="window.history.back()">⬅️</button>
         <div>jàngale</div>
-        <div style="background-color: #10b981; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem;">WOLOF</div>
+        <div class="logo-tag">JÀNGALE</div>
     </div>
 
-    <!-- Bouton tàqalé Leson yi -->
+    <!-- Bouton tàqalé Leson yi (Voyelles / Consonnes) -->
     <div class="tabs-container">
-        <button class="tab-btn active" id="btn-voyelles" onclick="switchLeson('voyelles')">Voyel yi (Leson 1)</button>
-        <button class="tab-btn" id="btn-consonnes" onclick="switchLeson('consonnes')">Koonsoo yi (Leson 2)</button>
+        <button class="tab-btn active" id="btn-voyelles" onclick="switchLeson('voyelles')">(Leson 1)</button>
+        <button class="tab-btn" id="btn-consonnes" onclick="switchLeson('consonnes')">(Leson 2)</button>
     </div>
 
     <!-- Fi araf yi di feeñé -->
@@ -147,7 +158,7 @@
 </div>
 
 <script>
-    // Teeré Voyel yi (Leson 1)
+    // Limu Voyel yi (Leson 1)
     const voyelles = [
         { araf: "A", misaal: "Amoo", wax: "Ah", son: "audio/araf_a.mp3" },
         { araf: "E", misaal: "Eskee", wax: "É", son: "audio/araf_e.mp3" },
@@ -157,13 +168,14 @@
         { araf: "U", misaal: "Ubi", wax: "U", son: "audio/araf_u.mp3" }
     ];
 
-    // Teeré Koonsoo yi (Leson 2)
+    // Limu Koonsoo yi (Leson 2) - Légui mat na mukk!
     const consonnes = [
         { araf: "B", misaal: "Boon", wax: "Bë", son: "audio/araf_b.mp3" },
         { araf: "C", misaal: "Ceeb", wax: "Cë", son: "audio/araf_c.mp3" },
         { araf: "D", misaal: "Daba", wax: "Dë", son: "audio/araf_d.mp3" },
         { araf: "F", misaal: "Fas", wax: "Fë", son: "audio/araf_f.mp3" },
         { araf: "G", misaal: "Góor", wax: "Gë", son: "audio/araf_g.mp3" },
+        { araf: "H", misaal: "Habsatou", wax: "Hë", son: "audio/araf_h.mp3" },
         { araf: "J", misaal: "Jërëjëf", wax: "Jë", son: "audio/araf_j.mp3" },
         { araf: "K", misaal: "Kër", wax: "Kë", son: "audio/araf_k.mp3" },
         { araf: "L", misaal: "Lakk", wax: "Lë", son: "audio/araf_l.mp3" },
@@ -183,9 +195,9 @@
 
     const container = document.getElementById("araf-container");
 
-    // Fonction buy fésal araf yi dëppoo ak leson bi ñu tann
+    // Fonction buy wone araf yi
     function woneArafYi(liste) {
-        container.innerHTML = ""; // Dindi li fi nekkoon jëkk
+        container.innerHTML = ""; 
         
         liste.forEach(item => {
             const card = document.createElement("div");
@@ -208,7 +220,7 @@
         });
     }
 
-    // Fonction buy soppi tab bi (Voyelles / Consonnes)
+    // Fonction buy soppi Leson bi
     function switchLeson(type) {
         document.getElementById("btn-voyelles").classList.remove("active");
         document.getElementById("btn-consonnes").classList.remove("active");
@@ -222,7 +234,7 @@
         }
     }
 
-    // Fonction buy déglu son bi (and ak robot bu waxinu Wolof dëgg bi "Ah, É, Eu, Bë...")
+    // Fonction buy déglu son bi
     function playAudio(audioPath, arafWax) {
         const audio = new Audio(audioPath);
         audio.play().catch(err => {
@@ -233,7 +245,7 @@
         });
     }
 
-    // Dóoral liggéey bi ak Leson 1 (Voyelles)
+    // Dóoral liggéey bi ak Voyelles (Leson 1)
     woneArafYi(voyelles);
 </script>
 
