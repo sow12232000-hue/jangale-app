@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="wo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jàngale App - Abada ak Mbindum Wolof</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #1a2530;
+            --card-bg: #ffffff;
+            --primary-purple: #4CAF50;
+            --border-light: #e0e0e0;
+            --btn-radius: 12px;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 15px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            color: var(--primary-purple);
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            background: var(--card-bg);
+            padding: 10px 15px;
+            border-radius: var(--btn-radius);
+            border: 1px solid var(--border-light);
+        }
+        .lesson-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-left: 5px solid var(--primary-purple);
+            border-radius: var(--btn-radius);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .title-card {
+            color: var(--primary-purple);
+            font-weight: bold;
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--primary-purple);
+            padding-bottom: 5px;
+        }
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .letter-box {
+            background: #f1f2f6;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .letter-main { font-weight: bold; color: #4CAF50; }
+        .example-section { margin-top: 15px; padding-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-btn">⬅️ Dellu gànnaaw</a>
+
+    <div class="header">
+        <h1>Suje: Lire ak Bind Wolof</h1>
+    </div>
+
+    <!-- Lëson 1 -->
+    <div class="lesson-card">
+        <div class="title-card">1. Xabeyi Wolof (Consonnes)</div>
+        <div class="alphabet-grid">
+            <div class="letter-box"><span class="letter-main">B b</span> - Ba</div>
+            <div class="letter-box"><span class="letter-main">C c</span> - Ca</div>
+            <div class="letter-box"><span class="letter-main">D d</span> - Da</div>
+            <div class="letter-box"><span class="letter-main">F f</span> - Fa</div>
+            <div class="letter-box"><span class="letter-main">G g</span> - Ga</div>
+            <div class="letter-box"><span class="letter-main">J j</span> - Ja</div>
+        </div>
+    </div>
+
+    <!-- Lëson 2 -->
+    <div class="lesson-card">
+        <div class="title-card">2. Éliif yi (Voyelles simples)</div>
+        <div class="alphabet-grid">
+            <div class="letter-box"><span class="letter-main">a</span> - [a] (fat-ha)</div>
+            <div class="letter-box"><span class="letter-main">e</span> - [é]</div>
+            <div class="letter-box"><span class="letter-main">i</span> - [i] (kasra)</div>
+            <div class="letter-box"><span class="letter-main">o</span> - [o]</div>
+            <div class="letter-box"><span class="letter-main">u</span> - [ou] (damma)</div>
+        </div>
+    </div>
+
+</body>
+</html>
