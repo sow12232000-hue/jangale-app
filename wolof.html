@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jàngale Wolof - Application bu Bees</title>
+    <title>JÀNGALE WOLOF - 20 Baat</title>
     <style>
-        /* DESIGN BU BEES BU RAFET TE YOMB A LIRE */
         * {
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,12 +20,11 @@
             min-height: 100vh;
         }
 
-        /* Ekránu Téléphone bi */
         .phone-container {
             width: 100%;
             max-width: 420px;
             height: 100vh;
-            max-height: 850px;
+            max-height: 900px;
             background-color: #ffffff;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -35,7 +33,6 @@
             border-radius: 20px;
         }
 
-        /* Kaw application bi (Header) */
         .header {
             background: linear-gradient(135deg, #0284c7, #0369a1);
             color: white;
@@ -46,7 +43,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Biir paj bi (Mën na dox ca suuf) */
         .main-content {
             padding: 20px;
             flex: 1;
@@ -61,13 +57,22 @@
             font-weight: 500;
         }
 
-        /* Cax yu bees yi (Lesson Cards) - Da fa rëy ngir mu yomb a bës */
+        /* Touru wàll bi (Category Title) */
+        .category-title {
+            font-size: 18px;
+            color: #0369a1;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e2e8f0;
+            font-weight: bold;
+        }
+
         .lesson-card {
             background: #ffffff;
             border: 2px solid #e2e8f0;
             border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 18px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -75,7 +80,6 @@
             transition: all 0.2s ease;
         }
 
-        /* Li day wone ne bës nga ko */
         .lesson-card:hover, .lesson-card:active {
             border-color: #0284c7;
             background-color: #f0f9ff;
@@ -89,29 +93,27 @@
         }
 
         .wolof-word {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
             color: #1e293b;
         }
 
         .meaning-word {
-            font-size: 15px;
+            font-size: 14px;
             color: #64748b;
             font-style: italic;
         }
 
-        /* Butoŋu Audio bu rëy bi (Speaker) */
         .speaker-icon {
             background-color: #e0f2fe;
             color: #0284c7;
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            transition: background-color 0.2s;
+            font-size: 22px;
         }
 
         .lesson-card:active .speaker-icon {
@@ -123,70 +125,132 @@
 <body>
 
 <div class="phone-container">
-    <!-- Header -->
     <div class="header">
         🇸🇳 JÀNGALE WOLOF
     </div>
 
-    <!-- Biir Paj bi -->
     <div class="main-content">
         <p class="instruction-text">Bësël kàddú bu nekk ngir dégg son bi:</p>
 
-        <!-- Misal 1: Arafu Ŋ -->
+        <!-- WÀLL 1: ARAF YI -->
+        <div class="category-title">1. Jàngum Araf yi</div>
+
         <div class="lesson-card" onclick="lexoWolof('Ŋam')">
-            <div class="text-section">
-                <span class="wolof-word">Ŋam</span>
-                <span class="meaning-word">Jàngum Araf bi: Ŋ</span>
-            </div>
+            <div class="text-section"><span class="wolof-word">Ŋam</span><span class="meaning-word">Manger (Araf bi: Ŋ)</span></div>
             <div class="speaker-icon">🔊</div>
         </div>
 
-        <!-- Misal 2: Arafu Ñ -->
         <div class="lesson-card" onclick="lexoWolof('Ñari')">
-            <div class="text-section">
-                <span class="wolof-word">Ñari</span>
-                <span class="meaning-word">Jàngum Araf bi: Ñ</span>
-            </div>
+            <div class="text-section"><span class="wolof-word">Ñari</span><span class="meaning-word">Deux (Araf bi: Ñ)</span></div>
             <div class="speaker-icon">🔊</div>
         </div>
 
-        <!-- Misal 3: Arafu Ë -->
         <div class="lesson-card" onclick="lexoWolof('Fëgg')">
-            <div class="text-section">
-                <span class="wolof-word">Fëgg</span>
-                <span class="meaning-word">Jàngum Araf bi: Ë</span>
-            </div>
+            <div class="text-section"><span class="wolof-word">Fëgg</span><span class="meaning-word">Frapper (Araf bi: Ë)</span></div>
             <div class="speaker-icon">🔊</div>
         </div>
 
-        <!-- Misal 4: Nanga def -->
+        <div class="lesson-card" onclick="lexoWolof('Cabi')">
+            <div class="text-section"><span class="wolof-word">Cabi</span><span class="meaning-word">Clé (Araf bi: C)</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Xaj')">
+            <div class="text-section"><span class="wolof-word">Xaj</span><span class="meaning-word">Chien (Araf bi: X)</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Golo')">
+            <div class="text-section"><span class="wolof-word">Golo</span><span class="meaning-word">Singe (Araf bi: G)</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <!-- WÀLL 2: NUYOO AK KÀDDÚ YU AM SOLO -->
+        <div class="category-title">2. Nuyoowu ak Kàddú yu am solo</div>
+
         <div class="lesson-card" onclick="lexoWolof('Nanga def')">
-            <div class="text-section">
-                <span class="wolof-word">Nanga def?</span>
-                <span class="meaning-word">Nuyoowu Wolof</span>
-            </div>
+            <div class="text-section"><span class="wolof-word">Nanga def?</span><span class="meaning-word">Comment ça va?</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Mangi fi rekk')">
+            <div class="text-section"><span class="wolof-word">Mangi fi rekk</span><span class="meaning-word">Je vais bien juste</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Jërëjëf')">
+            <div class="text-section"><span class="wolof-word">Jërëjëf</span><span class="meaning-word">Merci</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Ba beneen')">
+            <div class="text-section"><span class="wolof-word">Ba beneen</span><span class="meaning-word">À la prochaine</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Waaw')">
+            <div class="text-section"><span class="wolof-word">Waaw</span><span class="meaning-word">Oui</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Déet')">
+            <div class="text-section"><span class="wolof-word">Déet</span><span class="meaning-word">Non</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Lu bees')">
+            <div class="text-section"><span class="wolof-word">Lu bees?</span><span class="meaning-word">Quoi de neuf?</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Sante Yalla')">
+            <div class="text-section"><span class="wolof-word">Sante Yalla</span><span class="meaning-word">Dieu soit loué</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <!-- WÀLL 3: LIM YI (NUMRO YI) -->
+        <div class="category-title">3. Lim yi</div>
+
+        <div class="lesson-card" onclick="lexoWolof('Benn')">
+            <div class="text-section"><span class="wolof-word">Benn</span><span class="meaning-word">Un (1)</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Ñatt')">
+            <div class="text-section"><span class="wolof-word">Ñatt</span><span class="meaning-word">Trois (3)</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Ñeent')">
+            <div class="text-section"><span class="wolof-word">Ñeent</span><span class="meaning-word">Quatre (4)</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Juróom')">
+            <div class="text-section"><span class="wolof-word">Juróom</span><span class="meaning-word">Cinq (5)</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Fukk')">
+            <div class="text-section"><span class="wolof-word">Fukk</span><span class="meaning-word">Dix (10)</span></div>
+            <div class="speaker-icon">🔊</div>
+        </div>
+
+        <div class="lesson-card" onclick="lexoWolof('Nit')">
+            <div class="text-section"><span class="wolof-word">Nit</span><span class="meaning-word">Personne</span></div>
             <div class="speaker-icon">🔊</div>
         </div>
 
     </div>
 </div>
 
-<!-- SYSTEME AUDIO BI KÓY LIRAL TÉLÉPHONE BI -->
 <script>
 function lexoWolof(teksti) {
     if ('speechSynthesis' in window) {
-        // Lii day tax mu arrêté audio bu jiitu woon ngir mu baña boole baatyi
         window.speechSynthesis.cancel();
-
         var utterance = new SpeechSynthesisUtterance(teksti);
-        
-        // Vitesse bi: 0.75 day tax mu yex lool ngir nit ki dégg ko bu baax
         utterance.rate = 0.75; 
-        
-        // Code làkku Wolof (wo-SN)
         utterance.lang = 'wo-SN'; 
-
-        // Liral jëfandikoo-kat bi
         window.speechSynthesis.speak(utterance);
     } else {
         alert("Sa téléphone mënul doxal wàllu audio bi otomatikament.");
