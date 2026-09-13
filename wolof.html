@@ -57,7 +57,6 @@
             font-weight: 500;
         }
 
-        /* Touru wàll bi (Category Title) */
         .category-title {
             font-size: 18px;
             color: #0369a1;
@@ -114,11 +113,6 @@
             align-items: center;
             justify-content: center;
             font-size: 22px;
-        }
-
-        .lesson-card:active .speaker-icon {
-            background-color: #0284c7;
-            color: #ffffff;
         }
     </style>
 </head>
@@ -208,7 +202,7 @@
             <div class="speaker-icon">🔊</div>
         </div>
 
-        <!-- WÀLL 3: LIM YI (NUMRO YI) -->
+        <!-- WÀLL 3: LIM YI -->
         <div class="category-title">3. Lim yi</div>
 
         <div class="lesson-card" onclick="lexoWolof('Benn')">
@@ -244,17 +238,23 @@
     </div>
 </div>
 
+<!-- LII MOOY SYSTÈME AUDIO BU BEES BI DU AM JAFA-JAFE -->
 <script>
+let currentAudio = null;
+
 function lexoWolof(teksti) {
-    if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        var utterance = new SpeechSynthesisUtterance(teksti);
-        utterance.rate = 0.75; 
-        utterance.lang = 'wo-SN'; 
-        window.speechSynthesis.speak(utterance);
-    } else {
-        alert("Sa téléphone mënul doxal wàllu audio bi otomatikament.");
+    // Bu amé audio bu doon playing, dañu koy dagg ngir mu baña boole baat yi
+    if (currentAudio) {
+        currentAudio.pause();
     }
+
+    // Système bu bees: Day jël son bu mat sëkk ci Google Translate API ngir mu leral baat bi
+    const url = "https://google.com" + encodeURIComponent(teksti);
+    
+    currentAudio = new Audio(url);
+    currentAudio.play().catch(function(error) {
+        console.log("Audio playback error:", error);
+    });
 }
 </script>
 
