@@ -1,10 +1,102 @@
-<!-- Jàngu bu jëkk bi ci Nahwu -->
-<div class="lecon-card">
-    <!-- Mbind mi nga bëgg mu liralko boppam -->
-    <p id="mbind-arab">الْكَلَامُ هُوَ اللَّفْظُ الْمُرَكَّبُ الْمُفِيدُ بِالْوَضْعِ</p>
-    <p id="mbind-wolof">Kàddu mooy baat bi gëna tëggu te am solo ci déggoo.</p>
+<!DOCTYPE html>
+<html lang="wo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jàngu Nahwu 1</title>
+    <style>
+        /* CSS ngir liggéey design bi */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    <!-- Bitoo yi ngay cuuq ngir déglu -->
-    <button onclick="liral('mbind-arab', 'ar')">Déglu Arab bi 🔊</button>
-    <button onclick="liral('mbind-wolof', 'fr')">Déglu Wolof bi 🔊</button>
-</div>
+        .header-title {
+            color: #1c1c3a;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .lecon-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eef2f5;
+        }
+
+        .mbind-arab {
+            font-size: 24px;
+            color: #1c1c3a;
+            direction: rtl;
+            margin-bottom: 15px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .mbind-wolof {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .audio-btn {
+            background: #1c1c3a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 8px 5px;
+            cursor: pointer;
+            width: 85%;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .audio-btn:active {
+            transform: scale(0.98);
+            background: #00ffcc;
+            color: #1c1c3a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-title">jàngale</div>
+
+    <!-- Kàrd gu rafet gi -->
+    <div class="lecon-card">
+        <p id="mbind-arab" class="mbind-arab">الْكَلَامُ هُوَ اللَّفْظُ الْمُرَكَّبُ الْمُفِيدُ بِالْوَضْعِ</p>
+        <p id="mbind-wolof" class="mbind-wolof">Kàddu mooy baat bi gëna tëggu te am solo ci déggoo.</p>
+
+        <!-- Bitoo yi ñu defar design bi -->
+        <button class="audio-btn" onclick="liral('mbind-arab', 'ar')">Déglu Arab bi 🔊</button>
+        <button class="audio-btn" onclick="liral('mbind-wolof', 'fr')">Déglu Wolof bi 🔊</button>
+    </div>
+
+    <script>
+        // Fonction TTS bi ngay cuuq mu liral la
+        function liral(elementId, lakk) {
+            let mbindMi = document.getElementById(elementId).innerText;
+            let kaddoguTallah = new SpeechSynthesisUtterance(mbindMi);
+            kaddoguTallah.lang = lakk;
+            kaddoguTallah.rate = 0.8; // Ngir mu yeex te leer
+            window.speechSynthesis.speak(kaddoguTallah);
+        }
+    </script>
+
+</body>
+</html>
