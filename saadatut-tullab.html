@@ -14,7 +14,6 @@
             flex-direction: column;
             align-items: center;
         }
-
         .header-title {
             color: #1c1c3a;
             font-size: 22px;
@@ -22,15 +21,12 @@
             margin-bottom: 5px;
             text-align: center;
         }
-
         .header-subtitle {
             color: #666;
             font-size: 16px;
             margin-bottom: 25px;
             text-align: center;
         }
-
-        /* Tëggu grid bi ngir kàrd yi am 2 colonnes mel ni sa leson Franse ba */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -38,7 +34,6 @@
             width: 100%;
             max-width: 500px;
         }
-
         .lecon-card {
             background: white;
             border-radius: 15px;
@@ -50,9 +45,7 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
-
         .mbind-arab {
             font-size: 20px;
             color: #1c1c3a;
@@ -60,29 +53,30 @@
             margin: 5px 0;
             font-weight: bold;
         }
-
         .mbind-wolof {
             font-size: 14px;
             color: #555;
             margin: 5px 0 15px 0;
         }
-
-        /* Bitoo audio bu ndaw bu mel ni haut-parleur bi ci sa nataal bi */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
         .audio-btn {
             background: #f0f4f8;
             color: #1c1c3a;
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: bold;
             transition: 0.2s;
         }
-
         .audio-btn:active {
             background: #1c1c3a;
             color: white;
@@ -94,81 +88,110 @@
     <div class="header-title">jàngale</div>
     <div class="header-subtitle">Leson 3 : 3 Xeeti baat yi ci Nahwu</div>
 
-    <!-- Grid container bi yor kàrd yu bari yi -->
     <div class="grid-container">
 
-        <!-- Kàrd 1: Al-Ismu -->
+        <!-- Kàrd 1 -->
         <div class="lecon-card">
             <div>
                 <p id="arab-1" class="mbind-arab">اَلِاسْمُ</p>
                 <p id="wolof-1" class="mbind-wolof">Tur (Mel ni: Zayd, Xaj, Garab)</p>
             </div>
-            <button class="audio-btn" onclick="liral('arab-1', 'ar')">🔊</button>
+            <div class="btn-group">
+                <button class="audio-btn" onclick="liral('arab-1', 'ar')">ع</button>
+                <button class="audio-btn" onclick="liral('wolof-1', 'wo')">W</button>
+            </div>
         </div>
 
-        <!-- Kàrd 2: Al-Fi'lu -->
+        <!-- Kàrd 2 -->
         <div class="lecon-card">
             <div>
                 <p id="arab-2" class="mbind-arab">اَلْفِعْلُ</p>
                 <p id="wolof-2" class="mbind-wolof">Jëf (Mel ni: Bind, Lekk, Dem)</p>
             </div>
-            <button class="audio-btn" onclick="liral('arab-2', 'ar')">🔊</button>
+            <div class="btn-group">
+                <button class="audio-btn" onclick="liral('arab-2', 'ar')">ع</button>
+                <button class="audio-btn" onclick="liral('wolof-2', 'wo')">W</button>
+            </div>
         </div>
 
-        <!-- Kàrd 3: Al-Harfu -->
+        <!-- Kàrd 3 -->
         <div class="lecon-card">
             <div>
                 <p id="arab-3" class="mbind-arab">اَلْحَرْفُ</p>
                 <p id="wolof-3" class="mbind-wolof">Baat bu amul solo loxxu (Mel ni: Ci, Ak)</p>
             </div>
-            <button class="audio-btn" onclick="liral('arab-3', 'ar')">🔊</button>
+            <div class="btn-group">
+                <button class="audio-btn" onclick="liral('arab-3', 'ar')">ع</button>
+                <button class="audio-btn" onclick="liral('wolof-3', 'wo')">W</button>
+            </div>
         </div>
 
-        <!-- Kàrd 4: Misal bu mboole -->
+        <!-- Kàrd 4 -->
         <div class="lecon-card">
             <div>
                 <p id="arab-4" class="mbind-arab">جَاءَ زَيْدٌ</p>
                 <p id="wolof-4" class="mbind-wolof">Zayd ñëw na (Jëf + Tur)</p>
             </div>
-            <button class="audio-btn" onclick="liral('arab-4', 'ar')">🔊</button>
+            <div class="btn-group">
+                <button class="audio-btn" onclick="liral('arab-4', 'ar')">ع</button>
+                <button class="audio-btn" onclick="liral('wolof-4', 'wo')">W</button>
+            </div>
         </div>
 
     </div>
 
-    <!-- Code JavaScript TTS bi -->
     <script>
+        // Fonction bi nuy uutale baat yi ngir Franse bi meen ko wax ni Wolof dëgg
+        function dëppaleWolof(mbind) {
+            let texte = mbind.toLowerCase();
+            
+            // Dañuy dindi kàrd yi ak mbindu parenthese yi ngir mu baña liral loolu
+            texte = texte.replace(/\(.*?\)/g, ""); 
+
+            // Dañuy dindi binde Wolof mi jox ko binde Franse buy wax ni Wolof
+            texte = texte.replace(/jëf/g, "djëf");
+            texte = texte.replace(/xaj/g, "khadj");
+            texte = texte.replace(/zayd/g, "zayed");
+            texte = texte.replace(/ñëw/g, "gniow");
+            texte = texte.replace(/na/g, "na");
+            texte = texte.replace(/ci/g, "thi");
+            texte = texte.replace(/baat/g, "baat");
+            texte = texte.replace(/tur/g, "tour");
+            texte = texte.replace(/garab/g, "garabe");
+            texte = texte.replace(/loxxu/g, "lokhou");
+
+            return texte;
+        }
+
         function liral(elementId, lakk) {
             var synth = window.speechSynthesis || window.webkitSpeechSynthesis;
             if (!synth) return;
 
             let mbindMi = document.getElementById(elementId).innerText;
-            synth.cancel(); // Dagg lu jëkk gi ci saasa
+            synth.cancel(); 
 
-            let kaddoguTallah = new SpeechSynthesisUtterance(mbindMi);
-            kaddoguTallah.lang = lakk;
-            kaddoguTallah.rate = 0.75; // Yeexal kàddu gi ngir mu leer ci Nahwu
+            let kaddoguTallah = new SpeechSynthesisUtterance();
+            kaddoguTallah.rate = 0.75; // Yeexal ko ngir mu leer
+
+            if (lakk === 'wo') {
+                // Boo cuuqe Wolof, day jaaral mbind mi ci fonction dëppale bi soga jël 'fr'
+                kaddoguTallah.text = dëppaleWolof(mbindMi);
+                kaddoguTallah.lang = 'fr-FR'; 
+            } else {
+                kaddoguTallah.text = mbindMi;
+                kaddoguTallah.lang = lakk; 
+            }
 
             if (synth.getVoices) {
                 let voices = synth.getVoices();
-                let voiceFound = voices.find(v => v.lang.startsWith(lakk));
+                let langTarget = lakk === 'wo' ? 'fr' : lakk;
+                let voiceFound = voices.find(v => v.lang.startsWith(langTarget));
                 if (voiceFound) {
                     kaddoguTallah.voice = voiceFound;
                 }
             }
 
-            // Dindi alert "interrupted" bi ngir mu baña gen ci screen bi
-            kaddoguTallah.onerror = function(event) {
-                if (event.error !== 'interrupted') {
-                    console.log("Erreur TTS: " + event.error);
-                }
-            };
-
             synth.speak(kaddoguTallah);
-        }
-
-        var synth = window.speechSynthesis || window.webkitSynthesis;
-        if (synth && synth.onvoiceschanged !== undefined) {
-            synth.onvoiceschanged = synth.getVoices;
         }
     </script>
 
