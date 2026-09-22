@@ -1,38 +1,117 @@
-function liral(elementId, lakk) {
-    // 1. Xool ndax synthesis bi mu ngi dox ci phone bi
-    if (!('speechSynthesis' in window)) {
-        alert("Sa phone mënul jëfandikoo TTS bi. Jaaral ko ci Google Speech Services.");
-        return;
-    }
+<!DOCTYPE html>
+<html lang="wo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jàngu Nahwu 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header-title {
+            color: #1c1c3a;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .lecon-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eef2f5;
+        }
+        .mbind-arab {
+            font-size: 24px;
+            color: #1c1c3a;
+            direction: rtl;
+            margin-bottom: 15px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+        .mbind-wolof {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .audio-btn {
+            background: #1c1c3a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 8px 5px;
+            cursor: pointer;
+            width: 85%;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .audio-btn:active {
+            background: #00ffcc;
+            color: #1c1c3a;
+        }
+    </style>
+</head>
+<body>
 
-    // 2. Jël mbind mi
-    let mbindMi = document.getElementById(elementId).innerText;
-    
-    // Nañu téye kàddu yiy wax bu jëkk ngir mu baña tàllal yaqule
-    window.speechSynthesis.cancel();
+    <div class="header-title">jàngale</div>
 
-    let kaddoguTallah = new SpeechSynthesisUtterance(mbindMi);
-    kaddoguTallah.lang = lakk;
-    kaddoguTallah.rate = 0.75; // Yeexal ko ngir mu leer
-    kaddoguTallah.pitch = 1.0;
+    <!-- Kàrd gi -->
+    <div class="lecon-card">
+        <p id="mbind-arab" class="mbind-arab">الْكَلَامُ هُوَ اللَّفْظُ الْمُرَكَّبُ الْمُفِيدُ بِالْوَضْعِ</p>
+        <p id="mbind-wolof" class="mbind-wolof">Kàddu mooy baat bi gëna tëggu te am solo ci déggoo.</p>
 
-    // 3. Wut kàddu gu dëppoo dëgg dëgg gu nekk ci biir phone bi
-    let voices = window.speechSynthesis.getVoices();
-    let voiceFound = voices.find(v => v.lang.startsWith(lakk));
-    if (voiceFound) {
-        kaddoguTallah.voice = voiceFound;
-    }
+        <!-- Bitoo yi -->
+        <button class="audio-btn" onclick="liral('mbind-arab', 'ar')">Déglu Arab bi 🔊</button>
+        <button class="audio-btn" onclick="liral('mbind-wolof', 'fr')">Déglu Wolof bi 🔊</button>
+    </div>
 
-    // 4. Lu am solo: xool bu amé erreur
-    kaddoguTallah.onerror = function(event) {
-        alert("Erreur TTS: " + event.error);
-    };
+    <!-- FI LA CODE BI WARA NEKK: CI BIIR TAG SCRIPT BI -->
+    <script>
+        function liral(elementId, lakk) {
+            if (!('speechSynthesis' in window)) {
+                alert("Sa phone mënul jëfandikoo TTS bi.");
+                return;
+            }
 
-    // 5. Wax ko mu liral
-    window.speechSynthesis.speak(kaddoguTallah);
-}
+            let mbindMi = document.getElementById(elementId).innerText;
+            window.speechSynthesis.cancel(); // Téye kàddu yiy wax bu jëkk
 
-// Loolu day fexé ba kàddu yi di charge ba fichiye bi di tàllalu
-if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
-    speechSynthesis.onvoiceschanged = window.speechSynthesis.getVoices;
-}
+            let kaddoguTallah = new SpeechSynthesisUtterance(mbindMi);
+            kaddoguTallah.lang = lakk;
+            kaddoguTallah.rate = 0.75; // Yeexal ko ngir mu leer
+
+            // Wut lakk bi ci biir phone bi
+            let voices = window.speechSynthesis.getVoices();
+            let voiceFound = voices.find(v => v.lang.startsWith(lakk));
+            if (voiceFound) {
+                kaddoguTallah.voice = voiceFound;
+            }
+
+            kaddoguTallah.onerror = function(event) {
+                alert("Erreur TTS: " + event.error);
+            };
+
+            window.speechSynthesis.speak(kaddoguTallah);
+        }
+
+        if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = window.speechSynthesis.getVoices;
+        }
+    </script>
+
+</body>
+</html>
