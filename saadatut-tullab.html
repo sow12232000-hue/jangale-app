@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leson 3 : 10 Baat ngir mën a lakk</title>
-    <!-- Font Awesome ngir icône bitoo dellu gannaaw bi -->
+    <title>Jàngu Nahwu : 20 Baat yu am solo</title>
+    <!-- Font Awesome ngir icône bitoo dellu gannaaw bi ak haut-parleur bi -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         body {
@@ -22,7 +22,7 @@
             display: flex;
             align-items: center;
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
             margin-bottom: 10px;
         }
 
@@ -54,7 +54,7 @@
             text-transform: uppercase;
             flex-grow: 1;
             text-align: center;
-            margin-right: 40px; /* Ngir mu fete digg */
+            margin-right: 40px;
         }
 
         .header-title {
@@ -63,17 +63,17 @@
             font-weight: bold;
             margin: 15px 0 25px 0;
             text-align: center;
-            max-width: 300px;
+            max-width: 400px;
             line-height: 1.3;
         }
 
-        /* Tëggu grid bi ngir kàrd yi fees (2 colonnes) */
+        /* Grid container bi yor 20 kàrd yi (2 colonnes) */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
             margin-bottom: 30px;
         }
 
@@ -86,45 +86,53 @@
             border: 1px solid #eef2f5;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            position: relative;
-            min-height: 130px;
+            min-height: 165px;
         }
 
-        .mbind-fr {
-            font-size: 18px;
+        .mbind-ar {
+            font-size: 22px;
             color: #1c1c3a;
             font-weight: bold;
             margin: 0 0 5px 0;
+            direction: rtl;
         }
 
         .mbind-phonetic {
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
             margin: 0 0 8px 0;
+            font-style: italic;
         }
 
         .mbind-wo {
-            font-size: 16px;
+            font-size: 15px;
             color: #1c1c3a;
             font-weight: 500;
             margin: 5px 0 0 0;
         }
 
-        /* Bitoo haut-parleur bu buloo bu mel ni sa nataal bi */
+        /* Buntu bitoo audio yi */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        /* Bitoo haut-parleur bu buloo */
         .speaker-btn {
             background: none;
             border: none;
-            color: #5c85d6; /* Buloo bu niroo ak sa icône bi */
-            font-size: 22px;
+            color: #5c85d6; /* Buloo bu rafet ba */
+            font-size: 16px;
             cursor: pointer;
-            margin-top: 10px;
             padding: 5px;
             transition: 0.2s;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 4px;
+            font-weight: bold;
         }
 
         .speaker-btn:active {
@@ -143,109 +151,135 @@
         <div class="app-name">jàngale</div>
     </div>
     
-    <div class="header-title">Leson 3 : 10 Baat ngir mën a lakk</div>
+    <div class="header-title">Tàmbali Nahwu : 20 Baat yu am solo</div>
 
-    <!-- Grid bi am 10 kàrd yu fees yi -->
+    <!-- Grid bi am 20 kàrd yu fees yi -->
     <div class="grid-container">
 
-        <!-- Kàrd 1 -->
+        <!-- 1 -->
         <div class="lecon-card">
-            <p id="fr-1" class="mbind-fr">Bonjour</p>
-            <p class="mbind-phonetic">(bõsur) -></p>
-            <p class="mbind-wo">Nanga def</p>
-            <button class="speaker-btn" onclick="liral('fr-1')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-1" class="mbind-ar">اَلنَّحْوُ</p>
+                <p class="mbind-phonetic">(An-Nahwu)</p>
+                <p id="wo-1" class="mbind-wo">Tëggi kàddu</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-1', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-1', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 2 -->
+        <!-- 2 -->
         <div class="lecon-card">
-            <p id="fr-2" class="mbind-fr">Merci</p>
-            <p class="mbind-phonetic">(mèrsi) -></p>
-            <p class="mbind-wo">Jërëjëf</p>
-            <button class="speaker-btn" onclick="liral('fr-2')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-2" class="mbind-ar">اَلْكَلَامُ</p>
+                <p class="mbind-phonetic">(Al-Kalâmu)</p>
+                <p id="wo-2" class="mbind-wo">Kàddu gu mat</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-2', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-2', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 3 -->
+        <!-- 3 -->
         <div class="lecon-card">
-            <p id="fr-3" class="mbind-fr">S'il vous plaît</p>
-            <p class="mbind-phonetic">(sil vu plé) -></p>
-            <p class="mbind-wo">Su la neexee</p>
-            <button class="speaker-btn" onclick="liral('fr-3')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-3" class="mbind-ar">اَلِاسْمُ</p>
+                <p class="mbind-phonetic">(Al-Ismu)</p>
+                <p id="wo-3" class="mbind-wo">Tur</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-3', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-3', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 4 -->
+        <!-- 4 -->
         <div class="lecon-card">
-            <p id="fr-4" class="mbind-fr">Oui</p>
-            <p class="mbind-phonetic">(wi) -></p>
-            <p class="mbind-wo">Waaw</p>
-            <button class="speaker-btn" onclick="liral('fr-4')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-4" class="mbind-ar">اَلْفِعْلُ</p>
+                <p class="mbind-phonetic">(Al-Fi'lu)</p>
+                <p id="wo-4" class="mbind-wo">Jëf</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-4', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-4', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 5 -->
+        <!-- 5 -->
         <div class="lecon-card">
-            <p id="fr-5" class="mbind-fr">Non</p>
-            <p class="mbind-phonetic">(nõ) -></p>
-            <p class="mbind-wo">Déet</p>
-            <button class="speaker-btn" onclick="liral('fr-5')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-5" class="mbind-ar">اَلْحَرْfُ</p>
+                <p class="mbind-phonetic">(Al-Harfu)</p>
+                <p id="wo-5" class="mbind-wo">Baat bu ndaw</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-5', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-5', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 6 -->
+        <!-- 6 -->
         <div class="lecon-card">
-            <p id="fr-6" class="mbind-fr">Ça va</p>
-            <p class="mbind-phonetic">(sa va) -></p>
-            <p class="mbind-wo">Mbaa yaangi ci jamm</p>
-            <button class="speaker-btn" onclick="liral('fr-6')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-6" class="mbind-ar">اَلْمُرَكَّبُ</p>
+                <p class="mbind-phonetic">(Al-Murakkabu)</p>
+                <p id="wo-6" class="mbind-wo">Li ñu tëgg mboole</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-6', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-6', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 7 -->
+        <!-- 7 -->
         <div class="lecon-card">
-            <p id="fr-7" class="mbind-fr">Au revoir</p>
-            <p class="mbind-phonetic">(ourevwar) -></p>
-            <p class="mbind-wo">Ba beneen yoon</p>
-            <button class="speaker-btn" onclick="liral('fr-7')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-7" class="mbind-ar">اَلْمُفِيدُ</p>
+                <p class="mbind-phonetic">(Al-Mufîdu)</p>
+                <p id="wo-7" class="mbind-wo">Li am solo</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-7', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-7', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 8 -->
+        <!-- 8 -->
         <div class="lecon-card">
-            <p id="fr-8" class="mbind-fr">Bienvenue</p>
-            <p class="mbind-phonetic">(byẽvni) -></p>
-            <p class="mbind-wo">Dalal jamm</p>
-            <button class="speaker-btn" onclick="liral('fr-8')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-8" class="mbind-ar">اَلْوَضْعُ</p>
+                <p class="mbind-phonetic">(Al-Wadh'u)</p>
+                <p id="wo-8" class="mbind-wo">Tëggu lamiñ</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-8', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-8', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 9 -->
+        <!-- 9 -->
         <div class="lecon-card">
-            <p id="fr-9" class="mbind-fr">À bientôt</p>
-            <p class="mbind-phonetic">(a biẽto) -></p>
-            <p class="mbind-wo">Ba léegi rekk</p>
-            <button class="speaker-btn" onclick="liral('fr-9')"><i class="fas fa-volume-up"></i></button>
+            <div>
+                <p id="ar-9" class="mbind-ar">اَلْجُمْلَةُ</p>
+                <p class="mbind-phonetic">(Al-Jumlatu)</p>
+                <p id="wo-9" class="mbind-wo">Kàddu gu mboole</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-9', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-9', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
+            </div>
         </div>
 
-        <!-- Kàrd 10 -->
+        <!-- 10 -->
         <div class="lecon-card">
-            <p id="fr-10" class="mbind-fr">Excusez-moi</p>
-            <p class="mbind-phonetic">(èkskizé mwa) -></p>
-            <p class="mbind-wo">Baal ma</p>
-            <button class="speaker-btn" onclick="liral('fr-10')"><i class="fas fa-volume-up"></i></button>
-        </div>
-
-    </div>
-
-    <!-- JAVASCRIPT BU WOOR NGIR FRAnSE BI WAX -->
-    <script>
-        function liral(elementId) {
-            var synth = window.speechSynthesis || window.webkitSpeechSynthesis;
-            if (!synth) return;
-
-            let mbindMi = document.getElementById(elementId).innerText;
-            synth.cancel(); // Dagg lu jëkk gi ci saasa
-
-            let kaddoguTallah = new SpeechSynthesisUtterance(mbindMi);
-            kaddoguTallah.lang = 'fr-FR'; // Liral Franse kese ni mu wara binde dëgg
-            kaddoguTallah.rate = 0.80; // Yeexal ko ngir mu leer ci jàng mi
-
-            synth.speak(kaddoguTallah);
-        }
-    </script>
-
-</body>
-</html>
+            <div>
+                <p id="ar-10" class="mbind-ar">اَللَّفْظُ</p>
+                <p class="mbind-phonetic">(Al-Lafzhu)</p>
+                <p id="wo-10" class="mbind-wo">Baat bi génn lamiñ</p>
+            </div>
+            <div class="btn-group">
+                <button class="speaker-btn" onclick="liral('ar-10', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="speaker-btn" onclick="liral('wo-10', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
