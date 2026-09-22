@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jàngu Nahwu 1</title>
+    <!-- Font Awesome ngir icône bitoo dellu gannaaw bi ak audio bi -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,21 +17,56 @@
             align-items: center;
         }
 
+        /* Tëggu buntu kaw bi (bitoo dellu gannaaw ak tiitmar bi) */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .back-btn {
+            background: #1c1c3a;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-decoration: none; /* Ngir bu doon link HTML */
+        }
+
+        .back-btn:active {
+            background: #00ffcc;
+            color: #1c1c3a;
+        }
+
         .header-title {
             color: #1c1c3a;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
-            margin-bottom: 5px;
             text-transform: uppercase;
+            flex-grow: 1;
+            text-align: center;
+            margin-right: 40px; /* Ngir mu fete digg dëgg dëgg */
         }
 
         .header-subtitle {
             color: #666;
             font-size: 16px;
             margin-bottom: 25px;
+            text-align: center;
         }
 
-        /* Tëggu grid bi ngir kàrd yu bari yi */
+        /* Grid container bi yor kàrd yu bari yi */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -70,32 +107,39 @@
             gap: 10px;
         }
 
-        /* Bitoo audio yu rafet te raye */
+        /* Bitoo audio yu rafet yu dëgër */
         .audio-btn {
-            background: #f0f4f8;
-            color: #1c1c3a;
+            background: #1c1c3a;
+            color: white;
             border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 5px;
             font-weight: bold;
             transition: 0.2s;
         }
 
         .audio-btn:active {
-            background: #1c1c3a;
-            color: white;
+            background: #00ffcc;
+            color: #1c1c3a;
         }
     </style>
 </head>
 <body>
 
-    <div class="header-title">jàngale</div>
+    <!-- Buntu kaw: Bitoo dellu gannaaw ak Titre bi -->
+    <div class="top-bar">
+        <!-- Soo bëggé mu delloo la ci index.html walla beneen page, soppi link bi fi -->
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="header-title">jàngale</div>
+    </div>
+    
     <div class="header-subtitle">Darsu Nahwu - Xeeti baat yi</div>
 
     <div class="grid-container">
@@ -107,8 +151,8 @@
                 <p id="wolof-1" class="mbind-wolof">Tur</p>
             </div>
             <div class="btn-group">
-                <button class="audio-btn" onclick="liral('arab-1', 'ar')">ع</button>
-                <button class="audio-btn" onclick="liral('wolof-1', 'wo')">W</button>
+                <button class="audio-btn" onclick="liral('arab-1', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="audio-btn" onclick="liral('wolof-1', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
             </div>
         </div>
 
@@ -119,8 +163,8 @@
                 <p id="wolof-2" class="mbind-wolof">Jëf</p>
             </div>
             <div class="btn-group">
-                <button class="audio-btn" onclick="liral('arab-2', 'ar')">ع</button>
-                <button class="audio-btn" onclick="liral('wolof-2', 'wo')">W</button>
+                <button class="audio-btn" onclick="liral('arab-2', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="audio-btn" onclick="liral('wolof-2', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
             </div>
         </div>
 
@@ -131,8 +175,8 @@
                 <p id="wolof-3" class="mbind-wolof">Harf</p>
             </div>
             <div class="btn-group">
-                <button class="audio-btn" onclick="liral('arab-3', 'ar')">ع</button>
-                <button class="audio-btn" onclick="liral('wolof-3', 'wo')">W</button>
+                <button class="audio-btn" onclick="liral('arab-3', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="audio-btn" onclick="liral('wolof-3', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
             </div>
         </div>
 
@@ -143,61 +187,39 @@
                 <p id="wolof-4" class="mbind-wolof">Zayd ñëw na</p>
             </div>
             <div class="btn-group">
-                <button class="audio-btn" onclick="liral('arab-4', 'ar')">ع</button>
-                <button class="audio-btn" onclick="liral('wolof-4', 'wo')">W</button>
+                <button class="audio-btn" onclick="liral('arab-4', 'ar')"><i class="fas fa-volume-up"></i> Ar</button>
+                <button class="audio-btn" onclick="liral('wolof-4', 'wo')"><i class="fas fa-volume-up"></i> Wo</button>
             </div>
         </div>
 
     </div>
 
-    <!-- CODE JAVASCRIPT BU WOOR TE GAW -->
+    <!-- CODE JAVASCRIPT BU WOOR TE GAW NGIR KÀDDU GI -->
     <script>
         function liral(elementId, lakk) {
-            // Jël kàddu gu tàllal gu biir phone bi (window walla webkit)
             var synth = window.speechSynthesis || window.webkitSpeechSynthesis;
             if (!synth) return;
 
-            // Jël mbind mi nekk ci biir id bi nga cuuq
             let mbindMi = document.getElementById(elementId).innerText;
-            
-            // Dagg kàddu gu jëkk gi ci saasa ngir mu baña bloqué
-            synth.cancel(); 
+            synth.cancel(); // Dagg lu jëkk gi ci saasa
 
             let kaddoguTallah = new SpeechSynthesisUtterance();
-            kaddoguTallah.rate = 0.70; // Yeexal ko ngir mu leer lool ci jàng mi
+            kaddoguTallah.rate = 0.70; // Yeexal kàddu gi ngir mu leer lool
 
             if (lakk === 'wo') {
-                // Soppi mbindu Wolof mi ci wàllu phonétique ngir kàddu gu Franse bi wax ko ni Wolof dëgg
                 let textePhonetic = mbindMi.toLowerCase();
                 textePhonetic = textePhonetic.replace(/jëf/g, "djëf");
                 textePhonetic = textePhonetic.replace(/ñëw/g, "gniow");
                 textePhonetic = textePhonetic.replace(/zayd/g, "zayed");
                 
                 kaddoguTallah.text = textePhonetic;
-                kaddoguTallah.lang = 'fr-FR'; // Jëfandikoo kàddu gu Franse bu yeex bi
+                kaddoguTallah.lang = 'fr-FR'; 
             } else {
                 kaddoguTallah.text = mbindMi;
-                kaddoguTallah.lang = 'ar-SA'; // Jëfandikoo kàddu gu Arab
+                kaddoguTallah.lang = 'ar-SA'; 
             }
 
-            // Wut lakk bi gëna dëppoo ci biir système phone bi
-            if (synth.getVoices) {
-                let voices = synth.getVoices();
-                let langTarget = lakk === 'wo' ? 'fr' : 'ar';
-                let voiceFound = voices.find(v => v.lang.startsWith(langTarget));
-                if (voiceFound) {
-                    kaddoguTallah.voice = voiceFound;
-                }
-            }
-
-            // Mu liral ko tàllal
             synth.speak(kaddoguTallah);
-        }
-
-        // Weeral kàddu yi bu sàyt bi di tàllalu
-        var synth = window.speechSynthesis || window.webkitSpeechSynthesis;
-        if (synth && synth.onvoiceschanged !== undefined) {
-            synth.onvoiceschanged = synth.getVoices;
         }
     </script>
 
